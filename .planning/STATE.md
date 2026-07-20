@@ -16,16 +16,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-20)
 
 **Core value:** A visually striking, dark-themed gym website that authentically represents the GripGym brand and compels visitors to join.
-**Current focus:** Phase 2 — Header, Navigation & Hero
+**Current focus:** Phase 3 — About & Services
 
 ## Current Position
 
-Phase: 1 of 6 (complete — Phase 2 pending)
-Plan: 6 of 6 in Phase 1
-Status: Phase 1 executed — ready to plan Phase 2
-Last activity: 2026-07-20 — Phase 1 executed (brand tokens, dark theme, GripGym rebrand)
+Phase: 2 of 6 (complete — Phase 3 pending)
+Plan: 5 of 5 in Phase 2
+Status: Phase 2 executed — ready to plan Phase 3
+Last activity: 2026-07-20 — Phase 2 executed (hero rebrand + header tokenization complete)
 
-Progress: [█░░░░░░░░░] 17%
+Progress: [████████░░░░░░░░░░░░░] 33%
 
 ## Performance Metrics
 
@@ -39,6 +39,7 @@ Progress: [█░░░░░░░░░] 17%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Brand Foundation | 6/6 | ~30 min | ~5 min |
+| 2. Header, Navigation & Hero | 5/5 | ~30 min | ~6 min |
 
 *Updated after each plan completion*
 
