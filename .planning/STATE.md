@@ -1,31 +1,59 @@
-# Project State: GripGym
-
-**Milestone:** v1.0 — Rebrand & Redesign
-**Status:** Planning complete — ready for Phase 1
-**Last updated:** 2026-07-20
-
+---
+gsd_state_version: '1.0'
+status: planning
+progress:
+  total_phases: 6
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
-## Current Phase
+# Project State
 
-**None** — run `/gsd-plan-phase 1` to begin Phase 1.
+## Project Reference
 
----
+See: .planning/PROJECT.md (updated 2026-07-20)
 
-## Phase Status
+**Core value:** A visually striking, dark-themed gym website that authentically represents the GripGym brand and compels visitors to join.
+**Current focus:** Phase 1 — Brand Foundation & Design System
 
-| Phase | Title | Status | Started | Completed |
-|-------|-------|--------|---------|-----------|
-| 1 | Brand Foundation & Design System | Not started | — | — |
-| 2 | Header, Navigation & Hero | Not started | — | — |
-| 3 | About & Services Sections | Not started | — | — |
-| 4 | Classes & Schedule Sections | Not started | — | — |
-| 5 | Pricing & Contact Sections | Not started | — | — |
-| 6 | Gallery, Footer & Final Polish | Not started | — | — |
+## Current Position
 
----
+Phase: 0 of 6 (not started)
+Plan: 0 of 0 in current phase
+Status: Ready to plan
+Last activity: 2026-07-20 — Project initialized via /gsd-new-project
 
-## Content Handoff Tracker
+Progress: [░░░░░░░░░░] 0%
+
+## Performance Metrics
+
+**Velocity:**
+- Total plans completed: 0
+- Average duration: —
+- Total execution time: 0 hours
+
+**By Phase:**
+
+| Phase | Plans | Total | Avg/Plan |
+|-------|-------|-------|----------|
+| - | - | - | - |
+
+*Updated after each plan completion*
+
+## Accumulated Context
+
+### Decisions
+
+Decisions are logged in PROJECT.md Key Decisions table.
+
+- 2026-07-20: Plain HTML/CSS/JS retained — no build tooling overhead
+- 2026-07-20: Dark & bold design direction chosen for GripGym brand
+- 2026-07-20: CSS custom properties chosen for design system foundation
+- 2026-07-20: WOW.js + Animate.css animations retained
+
+### Content Handoff Tracker
 
 Track user-supplied content needed per phase. Mark ✓ when content received.
 
@@ -43,19 +71,18 @@ Track user-supplied content needed per phase. Mark ✓ when content received.
 | 6 | 6+ gym photos for gallery | ⬜ Pending |
 | 6 | Footer: social links, any additional nav links | ⬜ Pending |
 
----
+### Pending Todos
 
-## History
+None yet.
 
-| Date | Event |
-|------|-------|
-| 2026-07-20 | Project initialized via /gsd-new-project |
+### Blockers/Concerns
 
----
+None yet.
 
-## Notes
+## Deferred Items
 
-- Workflow: commit-per-task, medium granularity
-- Tech: HTML5 / CSS3 / Vanilla JS (no build tools)
-- Before starting Phase 2, supply hero copy (see Content Handoff Tracker above)
-- Each phase requires user-supplied content — collect before starting that phase
+- Online booking system — v2
+- Member portal / login — v2
+- Blog / news section — v2
+- WhatsApp / social media integration — v2
+- CMS integration — v2
