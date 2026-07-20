@@ -414,14 +414,14 @@ header .ham-burger.active span:nth-child(2){
 .classes .content .text h2{
     font-size: 30px;
     font-weight: 500;
-    color: #000000;
+    color: var(--color-text-base);
     padding: 0px 0px 20px;
 }
 
 .classes .content .text p{
 	font-size: 15px;
     line-height: 20px;
-    color: #000000;
+    color: var(--color-text-base);
     margin: 0;
     padding: 0px 0px 30px;
     font-family: var(--font-body);
@@ -585,14 +585,14 @@ header .ham-burger.active span:nth-child(2){
 .schedule .content .text h2{
    font-size: 30px;
     font-weight: 500;
-    color: #000000;
+    color: var(--color-text-base);
     padding: 0px 0px 20px;
 }
 
 .schedule .content .text p{
 	font-size: 15px;
     line-height: 20px;
-    color: #222222;
+    color: var(--color-text-muted);
     margin: 0;
     padding: 0px 0px 20px;
     font-family: var(--font-body);
@@ -608,21 +608,21 @@ header .ham-burger.active span:nth-child(2){
 }
 
 .schedule .content .timing .table td{
-	border:1px solid #dfdfdf;
+	border:1px solid var(--color-border);
 	padding: 8px;
 	font-size: 15px;
 	text-align: center;
-	color:#222222;
+	color: var(--color-text-base);
 }
 
 .schedule .content .timing .table tr:nth-child(even) td.day{
-	background-color: #222222;
+	background-color: var(--color-bg-surface);
 }
 .schedule .content .timing .table tr:nth-child(odd) td.day{
-	background-color: #444444;
+	background-color: var(--color-border-light);
 }
 .schedule .content .timing .table tr:nth-child(1) td.day{
-	background-color: #c11325;
+	background-color: var(--color-primary);
 }
 .schedule .content .timing .table tr td.day{
 	color:#ffffff;
@@ -658,7 +658,7 @@ header .ham-burger.active span:nth-child(2){
 .gallery h2{
 	font-size: 30px;
     font-weight: 500;
-    color: #000000;
+    color: var(--color-text-base);
     padding: 0px 0px 20px;
     text-align: center;
 }
@@ -673,7 +673,7 @@ header .ham-burger.active span:nth-child(2){
 .price-package h2{
 	font-size: 30px;
 	font-weight: 500;
-	color:#000000;
+	color: var(--color-text-base);
 	padding: 0px 0px 20px;
 	text-align: center;
 }
@@ -681,7 +681,7 @@ header .ham-burger.active span:nth-child(2){
 .price-package .title-p{
  font-size: 15px;
  line-height: 20px;
- color:#222222;
+ color: var(--color-text-muted);
  margin:0;
  text-align: center;
  padding:0 20% 50px;
@@ -714,7 +714,7 @@ header .ham-burger.active span:nth-child(2){
 }
 .price-package .content .box .inner .text h3{
 	font-size: 24px;
-	color:#222222;
+	color: var(--color-text-base);
 	margin:0;
 	padding:0px 0px 20px;
 	font-weight: 700;
@@ -722,7 +722,7 @@ header .ham-burger.active span:nth-child(2){
 .price-package .content .box .inner .text p{
  font-size: 15px;
  line-height: 20px;
- color:#222222;
+ color: var(--color-text-muted);
  margin:0;
  text-align: center;
  padding:0 0 5px;
@@ -741,8 +741,8 @@ header .ham-burger.active span:nth-child(2){
     margin-top: 10px;
 }
 .price-package .content .box .inner .text .btn:hover{
-	border-color:#222222;
-	color:#222222;
+	border-color: var(--color-text-base);
+	color: var(--color-text-base);
 	background-color: transparent;
 }
 .price-package .content .box .inner .img img{
