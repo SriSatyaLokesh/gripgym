@@ -887,6 +887,78 @@ header .ham-burger.active span:nth-child(2){
 
 
 
+/* ===== Dark Theme Overrides ===== */
+
+/* --- Sections: light backgrounds -> dark --- */
+.about {
+  background-color: var(--color-bg-secondary);
+}
+
+.classes {
+  background-color: var(--color-bg-secondary);
+}
+
+.schedule {
+  background-color: var(--color-bg-primary);
+}
+
+.gallery {
+  background-color: var(--color-bg-primary);
+}
+
+.price-package {
+  background-color: var(--color-bg-secondary);
+}
+
+.price-package .content .box .inner {
+  background-color: var(--color-bg-surface);
+}
+
+/* --- Text: formerly-white-section dark text -> light --- */
+.classes .content .text h2,
+.classes .content .text p {
+  color: var(--color-text-base);
+}
+
+.schedule .content .text h2 {
+  color: var(--color-text-base);
+}
+
+.schedule .content .text p {
+  color: var(--color-text-muted);
+}
+
+.schedule .content .timing .table td {
+  color: var(--color-text-base);
+  border-color: var(--color-border);
+}
+
+.gallery h2 {
+  color: var(--color-text-base);
+}
+
+.price-package h2 {
+  color: var(--color-text-base);
+}
+
+.price-package .title-p {
+  color: var(--color-text-muted);
+}
+
+.price-package .content .box .inner .text h3 {
+  color: var(--color-text-base);
+}
+
+.price-package .content .box .inner .text p {
+  color: var(--color-text-muted);
+}
+
+.price-package .content .box .inner .text .btn:hover {
+  border-color: var(--color-text-base);
+  color: var(--color-text-base);
+}
+
+
 /*Responsive*/
 
 /*if screen width is less than or equal to 991px then*/
