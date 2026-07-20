@@ -445,7 +445,7 @@ header .ham-burger.active span:nth-child(2){
 
 .classes .content .text h2{
     font-size: 30px;
-    font-weight: 500;
+    font-weight: var(--fw-semibold);
     color: var(--color-text-base);
     padding: 0px 0px 20px;
 }
@@ -492,7 +492,7 @@ header .ham-burger.active span:nth-child(2){
 	height: 50px;
 	width: 60px;
 	font-size:20px;
-	font-weight: 500; 
+	font-weight: var(--fw-semibold); 
 	color:#ffffff;
 	text-align: center;
 	line-height: 50px;
@@ -511,7 +511,7 @@ header .ham-burger.active span:nth-child(2){
 	font-size: 20px;
     margin: 0;
     padding: 0px 0px 15px;
-    font-weight: 500;
+    font-weight: var(--fw-semibold);
     color: #ffffff;
     text-transform: capitalize;
     text-align: left;
@@ -610,13 +610,13 @@ header .ham-burger.active span:nth-child(2){
 
 .schedule .content .box{
 	flex:0 0 50%;
-	max-width: 100%;
+	max-width: 50%;
 	padding:15px;
 }
 
 .schedule .content .text h2{
    font-size: 30px;
-    font-weight: 500;
+    font-weight: var(--fw-semibold);
     color: var(--color-text-base);
     padding: 0px 0px 20px;
 }
@@ -931,7 +931,7 @@ header .ham-burger.active span:nth-child(2){
 }
 
 .schedule {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
 }
 
 .gallery {
@@ -1050,6 +1050,14 @@ header .ham-burger.active span:nth-child(2){
 .schedule .content .box{
 flex: 0 0 100%;
     max-width: 100%;	
+}
+.schedule .content .timing {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+}
+.schedule .content .timing .table {
+  min-width: 600px;
 }
 .start-today .content{
 	flex-wrap: wrap;
