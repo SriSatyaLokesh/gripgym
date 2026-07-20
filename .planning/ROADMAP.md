@@ -109,7 +109,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Brand Foundation & Design System | 6/6 | Executed | 2026-07-20 |
 | 2. Header, Navigation & Hero | 5/5 | Executed | 2026-07-20 |
-| 3. About & Services | 0/TBD | Not started | - |
+| 3. About & Services | 4/4 | Planned | 2026-07-20 |
 | 4. Classes & Schedule | 0/TBD | Not started | - |
 | 5. Pricing & Contact | 0/TBD | Not started | - |
 | 6. Gallery, Footer & Final Polish | 0/TBD | Not started | - |
