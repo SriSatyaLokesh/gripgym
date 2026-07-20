@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "workflow": {
+    "granularity": "medium",
+    "git": "commit-per-task",
+    "yolo": false,
+    "agents": true
+  },
+  "project": {
+    "name": "GripGym",
+    "type": "brownfield",
+    "tech": ["HTML5", "CSS3", "JavaScript"],
+    "phase_count": 6
+  },
+  "created": "2026-07-20"
+}
