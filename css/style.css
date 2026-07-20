@@ -1,18 +1,58 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+  /* Backgrounds */
+  --color-bg-primary:   #0f0f0f;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-surface:   #242424;
+
+  /* Brand accent */
+  --color-primary:      #e8192c;
+  --color-primary-dark: #b0111f;
+
+  /* Text */
+  --color-text-base:       #f0f0f0;
+  --color-text-muted:      #8a8a8a;
+  --color-text-on-accent:  #ffffff;
+
+  /* Borders */
+  --color-border:       #2e2e2e;
+  --color-border-light: #444444;
+
+  /* Typography */
+  --font-display:  'Bebas Neue', sans-serif;
+  --font-heading:  'Barlow Condensed', sans-serif;
+  --font-body:     'Inter', sans-serif;
+
+  /* Font weights */
+  --fw-regular:  400;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+}
 
 body{
 	margin:0;
 	padding:0;
 	overflow-x: hidden;
+	background-color: var(--color-bg-primary);
+	color: var(--color-text-base);
 }
 
 *{
 	box-sizing: border-box;
 	margin:0;
 	padding:0;
-	font-family: 'Oswald', sans-serif;
+	font-family: var(--font-heading);
+}
+
+p,
+li,
+input,
+textarea,
+button,
+.table td {
+  font-family: var(--font-body);
 }
 
 /*Header*/
