@@ -16,16 +16,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-20)
 
 **Core value:** A visually striking, dark-themed gym website that authentically represents the GripGym brand and compels visitors to join.
-**Current focus:** Phase 3 Planning Complete — Awaiting User Content
+**Current focus:** Phase 4 — Classes & Schedule
 
 ## Current Position
 
-Phase: 3 of 6 (planned — pending user content for execution)
-Plan: 4 of 4 in Phase 3 (PLAN.md verified)
-Status: Phase 3 planned and verified — ready for user content handoff
-Last activity: 2026-07-20 — Phase 3 planned and verified (4 tasks, content blockers identified)
+Phase: 3 of 6 (complete — Phase 4 pending)
+Plan: 4 of 4 in Phase 3
+Status: Phase 3 executed — ready to plan Phase 4
+Last activity: 2026-07-20 — Phase 3 executed (About + Services sections complete with real copy)
 
-Progress: [████████████░░░░░░░░░░] 50%
+Progress: [██████████████████░░░░] 67%
 
 ## Performance Metrics
 
