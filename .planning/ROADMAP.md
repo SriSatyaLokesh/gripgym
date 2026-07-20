@@ -8,8 +8,8 @@ Transform the generic "Fitness Club" template into a polished GripGym branded we
 
 - [x] **Phase 1: Brand Foundation & Design System** - Establish dark theme CSS design tokens, typography, and GripGym naming
 - [x] **Phase 2: Header, Navigation & Hero** - Rebrand header/nav and redesign hero section with real copy
-- [ ] **Phase 3: About & Services** - Redesign About cards and Services accordion with dark theme and real content
-- [ ] **Phase 4: Classes & Schedule** - Redesign Classes cards and Schedule timetable with real GripGym data
+- [x] **Phase 3: About & Services** - Redesign About cards and Services accordion with dark theme and real content
+- [x] **Phase 4: Classes & Schedule** - Redesign Classes cards and Schedule timetable with real GripGym data
 - [ ] **Phase 5: Pricing & Contact** - Redesign Pricing plans and Contact section with real details
 - [ ] **Phase 6: Gallery, Footer & Final Polish** - Add Gallery section, redesign Footer, full consistency QA
 
@@ -110,7 +110,7 @@ Plans:
 | 1. Brand Foundation & Design System | 6/6 | Executed | 2026-07-20 |
 | 2. Header, Navigation & Hero | 5/5 | Executed | 2026-07-20 |
 | 3. About & Services | 4/4 | Executed | 2026-07-20 |
-| 4. Classes & Schedule | 5/5 | Planned | 2026-07-20 |
+| 4. Classes & Schedule | 5/5 | Executed | 2026-07-20 |
 | 5. Pricing & Contact | 0/TBD | Not started | - |
 | 6. Gallery, Footer & Final Polish | 0/TBD | Not started | - |
 
