@@ -229,10 +229,11 @@ header .ham-burger.active span:nth-child(2){
 	font-weight: 700;
 	text-transform: uppercase;
 	margin:0;
+	font-family: var(--font-display);
 }
 
 .home h1 span{
-	color:#c11325;;
+	color: var(--color-primary);
 }
 
 
@@ -280,7 +281,7 @@ header .ham-burger.active span:nth-child(2){
 	color:#ffffff;
 	text-align: center;
 	margin:0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: var(--font-body);
 }
 
 
@@ -314,7 +315,7 @@ header .ham-burger.active span:nth-child(2){
 	color:#ffffff;
 	margin:0;
 	padding:0px 0px 20px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: var(--font-body);
 }
 
 .service .content .text .btn{
@@ -382,7 +383,7 @@ header .ham-burger.active span:nth-child(2){
 	color:#ffffff;
 	margin:0;
 	padding:0;
-	font-family: 'Open Sans', sans-serif;	
+	font-family: var(--font-body);
 }
 
 
@@ -423,7 +424,7 @@ header .ham-burger.active span:nth-child(2){
     color: #000000;
     margin: 0;
     padding: 0px 0px 30px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-body);
 }
 
 
@@ -491,7 +492,7 @@ header .ham-burger.active span:nth-child(2){
     text-align:left;
     margin: 0;
     padding:0 0 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-body);
 }
 .classes .content .class-items .item .item-text a{
  font-size: 16px;
@@ -541,7 +542,7 @@ header .ham-burger.active span:nth-child(2){
     color: #ffffff;
     margin: 0;
     padding: 0px 0px 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-body);
 }
 
 .start-today .content .text .btn{
@@ -594,7 +595,7 @@ header .ham-burger.active span:nth-child(2){
     color: #222222;
     margin: 0;
     padding: 0px 0px 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-body);
 }
 .schedule .content .text img{
 	width: 100%;
@@ -684,7 +685,7 @@ header .ham-burger.active span:nth-child(2){
  margin:0;
  text-align: center;
  padding:0 20% 50px;
- font-family: 'Open-sans', sans-serif;
+ font-family: var(--font-body);
 }
 
 .price-package .content{
@@ -725,7 +726,7 @@ header .ham-burger.active span:nth-child(2){
  margin:0;
  text-align: center;
  padding:0 0 5px;
- font-family: 'Open-sans', sans-serif;	
+ font-family: var(--font-body);
 }
 .price-package .content .box .inner .text .btn{
     padding: 8px 30px;
@@ -776,7 +777,7 @@ header .ham-burger.active span:nth-child(2){
  margin-bottom: 25px;
  background-color: transparent;
  border:1px solid #ffffff;
- font-family: 'Open-sans',sans-serif;
+ font-family: var(--font-body);
  color:#ffffff;
 }
 .contact .content .form input:focus,
@@ -822,7 +823,7 @@ header .ham-burger.active span:nth-child(2){
     color: #ffffff;
     margin: 0;
     padding: 0px 0px 30px;
-    font-family: 'Open-sans', sans-serif;
+    font-family: var(--font-body);
 }
 
 .contact .content .text .info ul{
@@ -839,7 +840,7 @@ header .ham-burger.active span:nth-child(2){
 	letter-spacing: 1px;
 	position: relative;
 	padding-left: 40px;
-	font-family: 'Open-Sans',sans-serif;
+	font-family: var(--font-body);
 }
 .contact .content .text .info li span{
 	display: inline-block;
