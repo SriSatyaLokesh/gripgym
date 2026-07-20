@@ -76,8 +76,9 @@ header .container{
 header .logo a{
 	font-size: 30px;
 	text-decoration: none;
-	color:#ffffff;
-	font-weight: 700;
+	color: var(--color-text-on-accent);
+	font-weight: var(--fw-bold);
+	font-family: var(--font-heading);
 }
 header .logo a span{
 	color: var(--color-primary);
@@ -111,8 +112,10 @@ display: block;
 header .nav ul li a{
 	text-decoration: none;
 	font-size: 30px;
-	font-weight: 400;
-    color:#ffffff;
+	font-weight: var(--fw-semibold);
+    color: var(--color-text-on-accent);
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
     display: block;
     position: relative;
     padding:10px 30px;
@@ -155,7 +158,7 @@ header .ham-burger span{
 	height: 3px;
 	margin-bottom:8px;
 	display: block;
-	background-color:#ffffff;
+	background-color: var(--color-text-base);
 	width:30px;
 	-webkit-transition: transform .5s ease;
 	transition: transform .5s ease;
