@@ -33,7 +33,9 @@ Plans:
 - [ ] 01-03: Add :root CSS design token block (10 colors, 3 fonts, 4 weights)
 - [ ] 01-04: Update global font rules and body base styles; fix Open-sans typo
 - [ ] 01-05: Apply dark theme overrides to light-background sections
-- [ ] 01-06: Token-update already-dark sections (housekeeping, no visual change)
+- [x] 01-06: Token-update already-dark sections (housekeeping, no visual change)
+
+### Phase 2: Header, Navigation & Hero
 **Goal**: First impression is GripGym-branded, dark, and bold — visitor knows immediately what site they're on.
 **Depends on**: Phase 1
 **Requirements**: NAV-01, NAV-02, NAV-03, NAV-04, HERO-01, HERO-02, HERO-03, HERO-04
@@ -44,9 +46,14 @@ Plans:
   4. Hero headline and sub-headline contain real GripGym copy (no Lorem Ipsum)
   5. Hero CTA button is styled and scrolls to correct section on click
   6. No white flash on page load
-**Plans**: TBD
+**Plans**: 1 plan (02-PLAN.md)
 
-### Phase 3: About & Services
+Plans:
+- [ ] 02-01: Replace hero HTML copy and add CTA anchor
+- [ ] 02-02: Hero overlay, flex centering, and background fallback CSS
+- [ ] 02-03: Tokenize hero h1 CSS and set container gap
+- [ ] 02-04: Add .hero-cta CSS class with hover state + responsive overrides
+- [ ] 02-05: Tokenize header CSS — logo, nav links, hamburger
 **Goal**: Core "who we are" and "what we offer" sections match GripGym brand and contain real content.
 **Depends on**: Phase 2
 **Requirements**: ABOUT-01, ABOUT-02, ABOUT-03, SERVICE-01, SERVICE-02, SERVICE-03, SERVICE-04
