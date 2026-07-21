@@ -2773,5 +2773,26 @@ header .logo a,
   }
 }
 
+/* 14. Hero Subtitle Tagline Styling */
+.hero-subtitle {
+  font-family: var(--font-heading) !important;
+  font-size: 42px !important;
+  font-weight: var(--fw-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--color-text-on-accent) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+  text-align: left !important;
+}
+
+@media(max-width: 767px) {
+  .hero-subtitle {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
+}
+
 
 
