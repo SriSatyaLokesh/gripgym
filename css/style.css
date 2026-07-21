@@ -2493,5 +2493,149 @@ section:not(.home) h2,
   }
 }
 
+/* 10. Redesigned Classes Grid & Card Styles */
+.classes .section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.classes .section-header h2 {
+  margin-bottom: 15px !important;
+}
+
+.classes .section-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.class-card {
+  background: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.class-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(232, 25, 44, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(232, 25, 44, 0.35);
+  background: rgba(30, 30, 30, 0.65);
+}
+
+.class-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.class-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.class-card:hover .class-card-img img {
+  transform: scale(1.08);
+}
+
+.class-card-price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.class-card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.class-card-body h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-base);
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.coach-tag {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 15px;
+}
+
+.class-card-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.class-details-btn {
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 24px;
+  border-radius: 6px !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.class-details-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(232, 25, 44, 0.3);
+  color: #ffffff !important;
+}
+
+@media(max-width: 767px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .class-card-body {
+    padding: 20px;
+  }
+}
+
 
 
