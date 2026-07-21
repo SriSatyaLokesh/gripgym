@@ -187,15 +187,54 @@ header .ham-burger.active span:nth-child(2){
 /*Home section*/
 .home{
 	height: 100vh;
-	background-image: linear-gradient(rgba(15,15,15,0.65), rgba(15,15,15,0.85)), url('../images/home.jpg');
 	background-color: var(--color-bg-primary);
-	background-size: cover;
 	padding:15px;
 	-webkit-display: flex;
 	display: flex;
 	align-items: center;
 	position: relative;
+	overflow: hidden; /* Prevent animated background from spilling out */
 }
+
+.home::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(rgba(15,15,15,0.7), rgba(15,15,15,0.8)), url('../images/home.jpg');
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+	animation: kenBurns 28s ease-in-out infinite alternate;
+	pointer-events: none;
+}
+
+@keyframes kenBurns {
+	0% {
+		transform: scale(1.0) translate(0, 0);
+	}
+	100% {
+		transform: scale(1.12) translate(-1%, 0.5%);
+	}
+}
+
+.hero-glow-aura {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(232, 25, 44, 0.14) 0%, rgba(232, 25, 44, 0.03) 50%, rgba(0, 0, 0, 0) 70%);
+	filter: blur(50px);
+	pointer-events: none;
+	z-index: 2; /* In front of animated bg (z-index 1), behind text box (z-index 3) */
+	will-change: transform;
+	transform: translate3d(-1000px, -1000px, 0); /* Start offscreen */
+}
+
 .home .go-down{
   position: absolute;
   bottom: 50px;
@@ -207,6 +246,7 @@ header .ham-burger.active span:nth-child(2){
   text-align: center;
   left:50%;
   margin-left: -13px;
+  z-index: 3; /* Ensure it floats above the animated bg */
 }
 .home .go-down .fa{
 	color:#ffffff;
@@ -229,6 +269,8 @@ header .ham-burger.active span:nth-child(2){
   gap: 12px;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+  z-index: 3; /* Ensure it is in front of animated bg and glow aura */
 }
 
 .home h1{

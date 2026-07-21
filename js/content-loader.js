@@ -308,3 +308,45 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Dynamic Hero Glow Aura Tracking (60fps LERP)
+document.addEventListener('DOMContentLoaded', function() {
+  const heroSection = document.querySelector('.home');
+  if (heroSection) {
+    const glowAura = document.createElement('div');
+    glowAura.className = 'hero-glow-aura';
+    heroSection.appendChild(glowAura);
+
+    let mouseX = -1000;
+    let mouseY = -1000;
+    let currentX = -1000;
+    let currentY = -1000;
+    let isTracking = false;
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+      isTracking = true;
+    });
+
+    // Reset position if mouse leaves hero section to prevent trailing glow
+    heroSection.addEventListener('mouseleave', () => {
+      mouseX = -1000;
+      mouseY = -1000;
+    });
+
+    function animateGlow() {
+      const dx = mouseX - currentX;
+      const dy = mouseY - currentY;
+      
+      currentX += dx * 0.08;
+      currentY += dy * 0.08;
+
+      glowAura.style.transform = `translate3d(${currentX - 150}px, ${currentY - 150}px, 0)`;
+      requestAnimationFrame(animateGlow);
+    }
+    
+    animateGlow();
+  }
+});
+
