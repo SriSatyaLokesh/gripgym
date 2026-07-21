@@ -2637,5 +2637,43 @@ section:not(.home) h2,
   }
 }
 
+/* 11. Full-Width Schedule Layout Upgrades */
+.schedule .section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.schedule .section-header h2 {
+  margin-bottom: 15px !important;
+}
+
+.schedule .section-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.schedule-table-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-table {
+  width: 100% !important;
+}
+
+.schedule-table td {
+  width: 42.5%;
+}
+
+.schedule-table .day-col {
+  width: 15% !important;
+}
+
 
 
