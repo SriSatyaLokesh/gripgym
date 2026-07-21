@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "gym_name": "GripGym",
+    "version": "1.0",
+    "last_updated": "2026-07-21",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111"
+  },
+  "pricing": {
+    "intro": "Flexible membership plans for every fitness level at GripGym. Choose the plan that fits your goals and budget.",
+    "tiers": [
+      {
+        "id": "basic",
+        "name": "Basic Membership",
+        "price": 999,
+        "duration": "per month",
+        "features": [
+          "Gym access during off-peak hours (9 AM - 5 PM)",
+          "Full equipment access (cardio, strength, functional)",
+          "1 welcome session with trainer",
+          "Locker facility",
+          "Access to gym amenities (changing room, shower)"
+        ]
+      },
+      {
+        "id": "premium",
+        "name": "Premium Membership",
+        "price": 1999,
+        "duration": "per month",
+        "features": [
+          "24/7 gym access",
+          "Unlimited group fitness classes (all 4 class types)",
+          "2 personal training sessions per month",
+          "Nutrition consultation (monthly)",
+          "Premium locker facility",
+          "Towel service included",
+          "Priority class booking"
+        ]
+      },
+      {
+        "id": "elite",
+        "name": "Elite Pro Membership",
+        "price": 3499,
+        "duration": "per month",
+        "features": [
+          "24/7 gym access",
+          "Unlimited all classes (Grip Strength, Power Lifting, HIIT, Mobility)",
+          "8 personal training sessions per month",
+          "Monthly nutrition planning and consultation",
+          "Premium locker + full amenities access",
+          "Guest privileges (2 times per week)",
+          "Recovery room and cold plunge access",
+          "Priority in all programs and events"
+        ]
+      },
+      {
+        "id": "annual",
+        "name": "Annual Elite",
+        "price": 35999,
+        "duration": "per year",
+        "discount_label": "Save ₹6,000/year",
+        "features": [
+          "24/7 gym access (full year)",
+          "Unlimited all classes (Grip Strength, Power Lifting, HIIT, Mobility)",
+          "10 personal training sessions per month",
+          "Monthly nutrition planning and consultation",
+          "Premium locker + full amenities access",
+          "Guest privileges (3 times per week)",
+          "Recovery room and cold plunge access",
+          "Priority in all programs and events",
+          "Quarterly fitness assessments with detailed reports",
+          "Free guest membership (1 month value)"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+91-9876543210",
+    "email": "info@gripgym.com",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "hours": {
+      "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
+      "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
+    },
+    "form_type": "email",
+    "social_media": {
+      "instagram": "https://instagram.com/gripgym",
+      "facebook": "https://facebook.com/gripgym"
+    }
+  }
+}
