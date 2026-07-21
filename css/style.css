@@ -2514,7 +2514,7 @@ section:not(.home) h2,
 }
 
 .schedule-table .men-slot {
-  background: rgba(232, 25, 44, 0.06);
+  background: var(--color-primary-alpha, rgba(232, 25, 44, 0.06));
   border-left: 3px solid var(--color-primary);
   color: var(--color-text-base);
 }

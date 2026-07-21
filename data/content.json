@@ -29,7 +29,8 @@
     "text_muted": "#8a8a8a",
     "text_on_accent": "#ffffff",
     "border": "#2e2e2e",
-    "border_light": "#444444"
+    "border_light": "#444444",
+    "primary_alpha": "rgba(232, 25, 44, 0.06)"
   },
   "hero": {
     "tagline": "Train Harder. Grip Stronger.",
