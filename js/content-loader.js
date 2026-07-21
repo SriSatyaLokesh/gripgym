@@ -20,6 +20,10 @@ async function loadContent() {
       console.log('[ContentLoader] Theme colors applied');
     }
     
+    // Render Navigation
+    renderNavigation(data.navigation);
+    console.log('[ContentLoader] Navigation rendered');
+    
     // Render Header branding and SEO meta tags
     renderHeader(data.metadata, data.hero ? data.hero.tagline : '', data);
     console.log('[ContentLoader] Header rendered');
@@ -65,7 +69,11 @@ async function loadContent() {
     console.log('[ContentLoader] Footer rendered');
     
     // Attach form handler
-    attachFormHandler();
+    attachFormHandler(data.contact);
+    
+    // Initialize navigation event listeners
+    initNavigationListeners();
+    console.log('[ContentLoader] Navigation listeners initialized');
     
     // Reinitialize WOW.js for newly rendered elements
     if (typeof WOW !== 'undefined') {
@@ -143,6 +151,18 @@ function renderHeader(metadata, tagline, data) {
     metaDesc.setAttribute('content', `${metadata.gym_name} - ${tagline || 'Bhadrachalam premier strength destination.'}`);
   }
   
+  // Update keywords meta tag
+  const metaKeywords = document.querySelector('meta[name="keywords"]');
+  if (metaKeywords && metadata.keywords) {
+    metaKeywords.setAttribute('content', metadata.keywords);
+  }
+  
+  // Update theme-color meta tag
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor && data.theme && data.theme.bg_primary) {
+    metaThemeColor.setAttribute('content', data.theme.bg_primary);
+  }
+  
   // Update Open Graph tags
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute('content', `${metadata.gym_name} - Your Premium Fitness Destination`);
@@ -150,12 +170,21 @@ function renderHeader(metadata, tagline, data) {
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.setAttribute('content', `Expert-led fitness classes at ${metadata.gym_name}. Join us today!`);
   
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage && metadata.og_image) ogImage.setAttribute('content', metadata.og_image);
+  
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl && metadata.og_url) ogUrl.setAttribute('content', metadata.og_url);
+  
   // Update Twitter Card tags
   const twitterTitle = document.querySelector('meta[name="twitter:title"]');
   if (twitterTitle) twitterTitle.setAttribute('content', `${metadata.gym_name} - Your Premium Fitness Destination`);
   
   const twitterDesc = document.querySelector('meta[name="twitter:description"]');
   if (twitterDesc) twitterDesc.setAttribute('content', `Expert-led fitness classes at ${metadata.gym_name}. Join us today!`);
+  
+  const twitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (twitterImage && metadata.og_image) twitterImage.setAttribute('content', metadata.og_image);
   
   // Update JSON-LD LocalBusiness Schema
   const jsonLdScript = document.querySelector('script[type="application/ld+json"]');
@@ -166,7 +195,7 @@ function renderHeader(metadata, tagline, data) {
         "@type": "LocalBusiness",
         "name": metadata.gym_name || "GripGym",
         "description": `${metadata.gym_name || "GripGym"} - Premium fitness classes including powerlifting, strength training, and conditioning`,
-        "url": window.location.href,
+        "url": metadata.og_url || window.location.href,
         "telephone": data.contact ? data.contact.phone : "+91-9876543210",
         "address": {
           "@type": "PostalAddress",
@@ -176,7 +205,7 @@ function renderHeader(metadata, tagline, data) {
           "postalCode": "507111",
           "addressCountry": "IN"
         },
-        "image": "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg",
+        "image": metadata.og_image || "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg",
         "priceRange": "$$",
         "areaServed": "Bhadrachalam, Telangana",
         "serviceType": "Fitness Classes, Personal Training, Strength Training"
@@ -185,6 +214,23 @@ function renderHeader(metadata, tagline, data) {
     } catch (e) {
       console.error('Error updating JSON-LD LocalBusiness Schema:', e);
     }
+  }
+  
+  // Dynamically load Google Analytics if configured
+  if (metadata.google_analytics_id && metadata.google_analytics_id !== 'G-XXXXXXXXXX') {
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + metadata.google_analytics_id;
+    document.head.appendChild(gaScript);
+    
+    const gaInlineScript = document.createElement('script');
+    gaInlineScript.textContent = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${metadata.google_analytics_id}');
+    `;
+    document.head.appendChild(gaInlineScript);
   }
 }
 
@@ -328,7 +374,7 @@ function renderServices(servicesData) {
           if (c !== container) {
             c.classList.remove('active');
             const b = c.querySelector('.body');
-            if (b) $(b).slideUp();
+            if (b) slideUp(b);
             const s = c.querySelector('.head span');
             if (s) {
               s.className = 'fa fa-angle-up';
@@ -340,11 +386,11 @@ function renderServices(servicesData) {
         const mySpan = container.querySelector('.head span');
         if (container.classList.contains('active')) {
           container.classList.remove('active');
-          if (myBody) $(myBody).slideUp();
+          if (myBody) slideUp(myBody);
           if (mySpan) mySpan.className = 'fa fa-angle-up';
         } else {
           container.classList.add('active');
-          if (myBody) $(myBody).slideDown();
+          if (myBody) slideDown(myBody);
           if (mySpan) mySpan.className = 'fa fa-angle-down';
         }
       });
@@ -454,6 +500,7 @@ function renderClasses(classesData) {
 
 function renderSchedule(scheduleData) {
   const header = document.getElementById('schedule-header');
+  const thead = document.getElementById('schedule-table-header');
   const tbody = document.getElementById('schedule-table-body');
   if (!scheduleData) return;
   
@@ -466,6 +513,29 @@ function renderSchedule(scheduleData) {
     p.textContent = scheduleData.description;
     header.appendChild(h2);
     header.appendChild(p);
+  }
+  
+  if (thead) {
+    thead.innerHTML = '';
+    const tr = document.createElement('tr');
+    
+    const dayLabel = scheduleData.headers && scheduleData.headers.day ? scheduleData.headers.day : "Day";
+    const morningLabel = scheduleData.headers && scheduleData.headers.morning ? scheduleData.headers.morning : "Morning Sessions";
+    const eveningLabel = scheduleData.headers && scheduleData.headers.evening ? scheduleData.headers.evening : "Evening Sessions";
+    
+    const thDay = document.createElement('th');
+    thDay.textContent = dayLabel;
+    
+    const thMorning = document.createElement('th');
+    thMorning.textContent = morningLabel;
+    
+    const thEvening = document.createElement('th');
+    thEvening.textContent = eveningLabel;
+    
+    tr.appendChild(thDay);
+    tr.appendChild(thMorning);
+    tr.appendChild(thEvening);
+    thead.appendChild(tr);
   }
   
   if (tbody && scheduleData.days) {
@@ -521,8 +591,8 @@ function renderSchedule(scheduleData) {
 function renderPricing(pricingData) {
   // Update pricing section title
   const title = document.getElementById('pricing-title');
-  if (title && pricingData.title) {
-    title.textContent = pricingData.title;
+  if (title) {
+    title.textContent = pricingData.title || "Membership Plans";
   }
 
   const intro = document.querySelector('.intro-text');
@@ -570,9 +640,12 @@ function renderPricing(pricingData) {
     
     const button = document.createElement('button');
     button.className = 'select-plan-btn';
-    button.textContent = 'Select Plan';
+    button.textContent = tier.cta_text || 'Select Plan';
     button.onclick = function() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
     };
     
     card.appendChild(name);
@@ -630,8 +703,8 @@ function renderGallery(galleryData) {
 function renderContact(contactData) {
   // Update contact section title
   const title = document.getElementById('contact-title');
-  if (title && contactData.title) {
-    title.textContent = contactData.title;
+  if (title) {
+    title.textContent = contactData.title || "Get In Touch";
   }
 
   const contactInfo = document.getElementById('contact-info');
@@ -680,6 +753,22 @@ function renderContact(contactData) {
   contactInfo.appendChild(email);
   contactInfo.appendChild(address);
   contactInfo.appendChild(hours);
+  
+  // Populate form placeholders dynamically
+  const form = document.getElementById('contact-form');
+  if (form && contactData.form) {
+    const nameInput = form.querySelector('input[name="name"]');
+    if (nameInput) nameInput.placeholder = contactData.form.name_placeholder || "Your Name";
+    
+    const emailInput = form.querySelector('input[name="email"]');
+    if (emailInput) emailInput.placeholder = contactData.form.email_placeholder || "Your Email";
+    
+    const messageInput = form.querySelector('textarea[name="message"]');
+    if (messageInput) messageInput.placeholder = contactData.form.message_placeholder || "Your Message";
+    
+    const submitBtn = document.getElementById('contact-submit-btn');
+    if (submitBtn) submitBtn.textContent = contactData.form.submit_button_text || "Send Message";
+  }
 }
 
 function renderFooter(footerData, metadata) {
@@ -700,33 +789,76 @@ function renderFooter(footerData, metadata) {
     footerBranding.appendChild(taglineP);
   }
 
+  // Set location header
+  const footerHeaderLoc = document.getElementById('footer-header-location');
+  if (footerHeaderLoc && footerData.headers && footerData.headers.location) {
+    footerHeaderLoc.textContent = footerData.headers.location;
+  } else if (footerHeaderLoc) {
+    footerHeaderLoc.textContent = "Location";
+  }
+
   // Update footer location address
   const footerLoc = document.getElementById('footer-location');
   if (footerLoc) {
     footerLoc.innerHTML = (footerData.address || metadata.address || "Old Market Road<br>Bhadrachalam, Telangana 507111<br>India").replace(/\n/g, '<br>');
   }
 
+  // Set Contact header
+  const footerHeaderContact = document.getElementById('footer-header-contact');
+  if (footerHeaderContact && footerData.headers && footerData.headers.contact) {
+    footerHeaderContact.textContent = footerData.headers.contact;
+  } else if (footerHeaderContact) {
+    footerHeaderContact.textContent = "Contact";
+  }
+
+  // Set phone/email labels
+  const footerLabelPhone = document.getElementById('footer-label-phone');
+  if (footerLabelPhone) {
+    footerLabelPhone.textContent = footerData.labels && footerData.labels.phone ? footerData.labels.phone : "Phone:";
+  }
   const footerPhone = document.getElementById('footer-phone');
   if (footerPhone) {
     footerPhone.textContent = footerData.phone;
   }
   
+  const footerLabelEmail = document.getElementById('footer-label-email');
+  if (footerLabelEmail) {
+    footerLabelEmail.textContent = footerData.labels && footerData.labels.email ? footerData.labels.email : "Email:";
+  }
   const footerEmail = document.getElementById('footer-email');
   if (footerEmail) {
     footerEmail.textContent = footerData.email;
   }
   
+  // Set Hours header
+  const footerHeaderHours = document.getElementById('footer-header-hours');
+  if (footerHeaderHours && footerData.headers && footerData.headers.hours) {
+    footerHeaderHours.textContent = footerData.headers.hours;
+  } else if (footerHeaderHours) {
+    footerHeaderHours.textContent = "Hours";
+  }
+
   const footerHours = document.getElementById('footer-hours');
   if (footerHours) {
     footerHours.innerHTML = '';
     const weekdaysP = document.createElement('p');
-    weekdaysP.innerHTML = '<strong>Weekdays:</strong> ' + footerData.hours.weekdays;
+    const weekdaysLabel = footerData.labels && footerData.labels.weekdays ? footerData.labels.weekdays : "Weekdays:";
+    weekdaysP.innerHTML = '<strong>' + weekdaysLabel + '</strong> ' + footerData.hours.weekdays;
     const weekendP = document.createElement('p');
-    weekendP.innerHTML = '<strong>Weekends:</strong> ' + footerData.hours.weekends;
+    const weekendsLabel = footerData.labels && footerData.labels.weekends ? footerData.labels.weekends : "Weekends:";
+    weekendP.innerHTML = '<strong>' + weekendsLabel + '</strong> ' + footerData.hours.weekends;
     footerHours.appendChild(weekdaysP);
     footerHours.appendChild(weekendP);
   }
   
+  // Set Follow Us header
+  const footerHeaderSocial = document.getElementById('footer-header-social');
+  if (footerHeaderSocial && footerData.headers && footerData.headers.follow_us) {
+    footerHeaderSocial.textContent = footerData.headers.follow_us;
+  } else if (footerHeaderSocial) {
+    footerHeaderSocial.textContent = "Follow Us";
+  }
+
   const footerSocial = document.getElementById('footer-social');
   if (footerSocial && footerData.social_links) {
     footerSocial.innerHTML = '';
@@ -751,25 +883,37 @@ function renderFooter(footerData, metadata) {
   if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
   }
+
+  const footerCopyright = document.getElementById('footer-copyright');
+  if (footerCopyright) {
+    footerCopyright.textContent = footerData.copyright_text || "All rights reserved.";
+  }
 }
 
-function attachFormHandler() {
+function attachFormHandler(contactData) {
   const form = document.getElementById('contact-form');
   if (!form) return;
   
-  form.addEventListener('submit', function(e) {
+  // Clean up any existing listeners by cloning form
+  const newForm = form.cloneNode(true);
+  form.parentNode.replaceChild(newForm, form);
+  
+  newForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = document.querySelector('input[name="name"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
-    
+    const name = newForm.querySelector('input[name="name"]').value;
     const msgDiv = document.getElementById('form-message');
-    msgDiv.textContent = 'Thank you ' + name + '! Your message has been sent. We will contact you shortly.';
+    
+    let successPattern = 'Thank you {name}! Your message has been sent. We will contact you shortly.';
+    if (contactData && contactData.form && contactData.form.success_message) {
+      successPattern = contactData.form.success_message;
+    }
+    
+    msgDiv.textContent = successPattern.replace('{name}', name);
     msgDiv.className = 'success';
     msgDiv.style.display = 'block';
     
-    form.reset();
+    newForm.reset();
     
     setTimeout(function() {
       msgDiv.style.display = 'none';
@@ -829,3 +973,127 @@ document.addEventListener('DOMContentLoaded', function() {
     animateGlow();
   }
 });
+
+// Helper Functions for Accordion and Navigation Transitions (Vanilla JS counterparts of jQuery slideUp/slideDown)
+function slideUp(element, duration = 300) {
+  element.style.transition = `height ${duration}ms ease, padding ${duration}ms ease, margin ${duration}ms ease`;
+  element.style.boxSizing = 'border-box';
+  element.style.height = element.offsetHeight + 'px';
+  element.offsetHeight; // force repaint
+  element.style.overflow = 'hidden';
+  element.style.height = '0';
+  element.style.paddingTop = '0';
+  element.style.paddingBottom = '0';
+  element.style.marginTop = '0';
+  element.style.marginBottom = '0';
+  
+  window.setTimeout(() => {
+    element.style.display = 'none';
+    element.style.removeProperty('height');
+    element.style.removeProperty('padding-top');
+    element.style.removeProperty('padding-bottom');
+    element.style.removeProperty('margin-top');
+    element.style.removeProperty('margin-bottom');
+    element.style.removeProperty('overflow');
+    element.style.removeProperty('transition');
+  }, duration);
+}
+
+function slideDown(element, duration = 300) {
+  element.style.removeProperty('display');
+  let display = window.getComputedStyle(element).display;
+  if (display === 'none') display = 'block';
+  element.style.display = display;
+  
+  let height = element.offsetHeight;
+  element.style.overflow = 'hidden';
+  element.style.height = '0';
+  element.style.paddingTop = '0';
+  element.style.paddingBottom = '0';
+  element.style.marginTop = '0';
+  element.style.marginBottom = '0';
+  element.offsetHeight; // force repaint
+  
+  element.style.transition = `height ${duration}ms ease, padding ${duration}ms ease, margin ${duration}ms ease`;
+  element.style.height = height + 'px';
+  element.style.removeProperty('padding-top');
+  element.style.removeProperty('padding-bottom');
+  element.style.removeProperty('margin-top');
+  element.style.removeProperty('margin-bottom');
+  
+  window.setTimeout(() => {
+    element.style.removeProperty('height');
+    element.style.removeProperty('overflow');
+    element.style.removeProperty('transition');
+  }, duration);
+}
+
+function renderNavigation(navData) {
+  const navUl = document.querySelector('.nav ul');
+  if (!navUl || !navData) return;
+  navUl.innerHTML = '';
+  
+  navData.forEach(item => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = item.link;
+    a.textContent = item.label;
+    li.appendChild(a);
+    navUl.appendChild(li);
+  });
+}
+
+function initNavigationListeners() {
+  // Mobile ham-burger toggler
+  const hamBurger = document.querySelector('.ham-burger');
+  const nav = document.querySelector('.nav');
+  
+  if (hamBurger && nav) {
+    // Clear old event listener to prevent duplicates
+    const newHamBurger = hamBurger.cloneNode(true);
+    hamBurger.parentNode.replaceChild(newHamBurger, hamBurger);
+    
+    newHamBurger.addEventListener('click', function(e) {
+      nav.classList.toggle('open');
+      newHamBurger.classList.toggle('active');
+      e.stopPropagation();
+    });
+    
+    // Close nav on clicking a link
+    nav.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (link) {
+        nav.classList.remove('open');
+        newHamBurger.classList.remove('active');
+      }
+    });
+  }
+  
+  // Smooth scroll links delegation
+  document.addEventListener('click', function(e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        
+        // Update active class on nav links
+        const navLinks = document.querySelectorAll('.nav ul li a');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === targetId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+        
+        // Update hash
+        window.history.pushState(null, null, targetId);
+      }
+    }
+  });
+}

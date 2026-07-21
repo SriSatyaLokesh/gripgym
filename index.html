@@ -3,58 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>GripGym — Train Harder. Grip Stronger.</title>
-	<meta name="description" content="GripGym - Premium fitness classes including powerlifting, CrossFit, yoga, boxing, and personal training for all fitness levels.">
-	<meta name="keywords" content="fitness, gym, CrossFit, powerlifting, yoga, boxing, personal training, strength training">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#000000">
+	<meta name="theme-color" content="">
 	<meta name="robots" content="index, follow">
 	
 	<!-- Open Graph Meta Tags -->
-	<meta property="og:title" content="GripGym - Your Premium Fitness Destination">
-	<meta property="og:description" content="Expert-led fitness classes in powerlifting, CrossFit, yoga, boxing, and personal training. Join us today!">
-	<meta property="og:image" content="https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg">
-	<meta property="og:url" content="https://sristayalokesh.is-a.dev/gripgym/">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
 	<meta property="og:type" content="website">
 	
 	<!-- Twitter Card Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="GripGym - Your Premium Fitness Destination">
-	<meta name="twitter:description" content="Expert-led fitness classes in powerlifting, CrossFit, yoga, boxing, and personal training. Join us today!">
-	<meta name="twitter:image" content="https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="">
 	
 	<!-- JSON-LD Structured Data (LocalBusiness Schema) -->
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "LocalBusiness",
-	  "name": "GripGym",
-	  "description": "Premium fitness gym offering powerlifting, CrossFit, yoga, boxing, and personal training classes",
-	  "url": "https://sristayalokesh.is-a.dev/gripgym/",
-	  "telephone": "+91-9876543210",
-	  "address": {
-	    "@type": "PostalAddress",
-	    "streetAddress": "Bhadrachalam",
-	    "addressLocality": "Bhadrachalam",
-	    "addressRegion": "Telangana",
-	    "postalCode": "507112",
-	    "addressCountry": "IN"
-	  },
-	  "image": "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg",
-	  "priceRange": "$$",
-	  "servesCuisine": "Fitness Services",
-	  "areaServed": "Bhadrachalam, Telangana",
-	  "serviceType": "Fitness Classes, Personal Training, Strength Training"
-	}
-	</script>
-	
-	<!-- Google Analytics 4 Tracking Code -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-XXXXXXXXXX');
-	</script>
+	<script type="application/ld+json"></script>
 	
   <link rel="stylesheet" href="css/animate.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,17 +50,10 @@
  	       <span></span>
  	 	</a>
  	 	<div class="nav">
- 	 		<ul>
- 	 			<li><a href="#home">Home</a></li>
- 	 			<li><a href="#about">About</a></li>
- 	 			<li><a href="#service">Services</a></li>
- 	 			<li><a href="#classes">Classes</a></li>
- 	 			<li><a href="#schedule">Schedule</a></li>
- 	 		<li><a href="#pricing">Pricing</a></li>
- 	 		<li><a href="#gallery">Gallery</a></li>
- 	 			<li><a href="#contact">Contact</a></li>
- 	 		</ul>
- 	 	</div>
+	 		<ul>
+	 			<!-- Rendered from data/content.json -->
+	 		</ul>
+	 	</div>
  	 </div>
  </header>
  <!-- End Header  -->
@@ -158,12 +120,8 @@
         <div class="section-header wow fadeInUp" id="schedule-header"></div>
         <div class="schedule-table-wrapper wow fadeInUp" data-wow-delay="0.2s">
             <table class="table schedule-table">
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Morning Sessions</th>
-                  <th>Evening Sessions</th>
-                </tr>
+              <thead id="schedule-table-header">
+                <!-- Rendered from data/content.json -->
               </thead>
               <tbody id="schedule-table-body"></tbody>
             </table>
@@ -205,10 +163,10 @@
       </div>
       <div class="contact-form-wrapper">
         <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
+          <input type="text" name="name" placeholder="" required />
+          <input type="email" name="email" placeholder="" required />
+          <textarea name="message" placeholder="" rows="5" required></textarea>
+          <button type="submit" id="contact-submit-btn"></button>
         </form>
         <div class="form-message" id="form-message" style="display: none;"></div>
       </div>
@@ -223,30 +181,30 @@
       <div class="footer-branding wow fadeIn" id="footer-branding"></div>
       <div class="footer-info wow fadeIn" data-wow-delay="0.2s">
         <div class="info-section">
-          <h4>Location</h4>
+          <h4 id="footer-header-location"></h4>
           <p id="footer-location"></p>
         </div>
         <div class="info-section">
-          <h4>Contact</h4>
-          <p><strong>Phone:</strong> <span id="footer-phone"></span></p>
-          <p><strong>Email:</strong> <span id="footer-email"></span></p>
+          <h4 id="footer-header-contact"></h4>
+          <p><strong id="footer-label-phone"></strong> <span id="footer-phone"></span></p>
+          <p><strong id="footer-label-email"></strong> <span id="footer-email"></span></p>
         </div>
       </div>
       <div class="footer-hours wow fadeIn" data-wow-delay="0.4s">
-        <h4>Hours</h4>
+        <h4 id="footer-header-hours"></h4>
         <div id="footer-hours">
           <!-- Rendered from content.json -->
         </div>
       </div>
       <div class="footer-social wow fadeIn" data-wow-delay="0.6s">
-        <h4>Follow Us</h4>
+        <h4 id="footer-header-social"></h4>
         <div class="social-links" id="footer-social">
           <!-- Rendered from content.json -->
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="footer-year"></span> <span id="footer-gym-name"></span>. All rights reserved.</p>
+      <p>&copy; <span id="footer-year"></span> <span id="footer-gym-name"></span>. <span id="footer-copyright"></span></p>
     </div>
   </div>
 </footer>
@@ -254,59 +212,7 @@
 
 
 
- <!-- jquery -->
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function(){
-
-      $(".ham-burger, .nav ul li a").click(function(){
-       
-        $(".nav").toggleClass("open")
-
-        $(".ham-burger").toggleClass("active");
-      })      
-      $(".accordian-container").click(function(){
-      	$(".accordian-container").children(".body").slideUp();
-      	$(".accordian-container").removeClass("active")
-      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
-      	$(this).children(".body").slideDown();
-      	$(this).addClass("active")
-      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
-      })
-
-       $(".nav ul li a, .go-down").click(function(event){
-         if(this.hash !== ""){
-
-              event.preventDefault();
-
-              var hash=this.hash; 
-
-              $('html,body').animate({
-                scrollTop:$(hash).offset().top
-              },800 , function(){
-                 window.location.hash=hash;
-              });
-
-              // add active class in navigation
-              $(".nav ul li a").removeClass("active")
-              $(this).addClass("active")
-         }
-      })
-})
-
-</script>
 <script src="js/wow.min.js"></script>
-<script>
-    wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       0,
-        mobile:       false
-      }
-    );
-    wow.init();
-  </script>
 <script src="js/lightbox.js"></script>
 <script src="js/content-loader.js"></script>
 </body>

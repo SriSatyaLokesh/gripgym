@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GripGym — Dynamic Content Automated Test Runner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: #111827;
+      --bg-element: #1f2937;
+      --primary: #e8192c;
+      --success: #10b981;
+      --error: #ef4444;
+      --info: #3b82f6;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 span {
+      color: var(--primary);
+    }
+
+    .badge-runner {
+      background-color: var(--primary);
+      color: white;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #c11325;
+    }
+
+    button:disabled {
+      background-color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 73px);
+      overflow: hidden;
+    }
+
+    .report-panel {
+      width: 50%;
+      height: 100%;
+      overflow-y: auto;
+      padding: 30px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .preview-panel {
+      width: 50%;
+      height: 100%;
+      background-color: #000;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .preview-header {
+      background-color: #1c1d22;
+      padding: 8px 15px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    iframe {
+      width: 100%;
+      flex: 1;
+      border: none;
+      background-color: #0f0f0f;
+    }
+
+    .summary-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .stat-box p {
+      font-size: 28px;
+      font-weight: 700;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .stat-box p.text-success { color: var(--success); }
+    .stat-box p.text-error { color: var(--error); }
+    .stat-box p.text-info { color: var(--info); }
+
+    .test-suites {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .suite-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .suite-header {
+      padding: 15px 20px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .suite-header:hover {
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    .suite-title {
+      font-weight: 600;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .suite-badge {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .suite-badge.pass { background-color: rgba(16, 185, 129, 0.2); color: var(--success); }
+    .suite-badge.fail { background-color: rgba(239, 68, 68, 0.2); color: var(--error); }
+    .suite-badge.pending { background-color: rgba(156, 163, 175, 0.2); color: var(--text-muted); }
+
+    .suite-content {
+      padding: 0;
+      display: none;
+    }
+
+    .suite-card.active .suite-content {
+      display: block;
+    }
+
+    .assertion-list {
+      list-style: none;
+    }
+
+    .assertion-item {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      font-size: 13.5px;
+    }
+
+    .assertion-item:last-child {
+      border-bottom: none;
+    }
+
+    .assertion-item.pass {
+      border-left: 3px solid var(--success);
+    }
+
+    .assertion-item.fail {
+      border-left: 3px solid var(--error);
+      background-color: rgba(239, 68, 68, 0.02);
+    }
+
+    .assertion-icon {
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    .assertion-item.pass .assertion-icon { color: var(--success); }
+    .assertion-item.fail .assertion-icon { color: var(--error); }
+
+    .assertion-details {
+      flex: 1;
+    }
+
+    .assertion-details p.name {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .assertion-details p.error-msg {
+      font-size: 12px;
+      color: var(--error);
+      font-family: monospace;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-top: 6px;
+      word-break: break-all;
+    }
+
+    .assertion-details .diff-view {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    .assertion-details .diff-view span {
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .assertion-details .diff-view .expected {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+    }
+
+    .assertion-details .diff-view .actual {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--error);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background-color: var(--bg-element);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 15px;
+      grid-column: 1 / -1;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--success);
+      transition: width 0.3s ease;
+    }
+
+    /* Console logging Panel */
+    .log-panel {
+      background-color: #05070c;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 150px;
+      overflow-y: auto;
+      color: #34d399;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .log-item {
+      display: flex;
+      gap: 10px;
+    }
+
+    .log-item .time { color: var(--text-muted); }
+    .log-item .msg { flex-grow: 1; }
+    .log-item.error { color: var(--error); }
+    .log-item.info { color: var(--info); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Grip<span>Gym</span> Automated Content Validator</h1>
+    <div class="actions">
+      <span class="badge-runner">Dynamic Core Verification</span>
+      <button id="run-btn" onclick="startVerification()"><i class="fa fa-play"></i> Run Validation</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="report-panel">
+      <div class="summary-card">
+        <div class="stat-box">
+          <h3>Total Tests</h3>
+          <p id="total-tests" class="text-info">-</p>
+        </div>
+        <div class="stat-box">
+          <h3>Passed</h3>
+          <p id="passed-tests" class="text-success">-</p>
+        </div>
+        <div class="stat-box">
+          <h3>Failed</h3>
+          <p id="failed-tests" class="text-error">-</p>
+        </div>
+        <div class="stat-box">
+          <h3>Pass Rate</h3>
+          <p id="pass-rate">-</p>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="log-panel" id="log-panel">
+        <div class="log-item info">
+          <span class="time">[System]</span>
+          <span class="msg">Ready. Click "Run Validation" to start tests.</span>
+        </div>
+      </div>
+
+      <div class="test-suites" id="suites-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <div class="preview-panel">
+      <div class="preview-header">
+        <span>Site Live Preview (Frame Sandbox)</span>
+        <span id="preview-url">index.html</span>
+      </div>
+      <iframe id="test-frame" src="about:blank"></iframe>
+    </div>
+  </main>
+
+  <script>
+    let testContext = {
+      suites: {},
+      stats: {
+        total: 0,
+        passed: 0,
+        failed: 0
+      }
+    };
+
+    function addLog(msg, type = 'info') {
+      const logPanel = document.getElementById('log-panel');
+      const item = document.createElement('div');
+      item.className = 'log-item ' + type;
+      
+      const timeStr = new Date().toLocaleTimeString();
+      item.innerHTML = `<span class="time">[${timeStr}]</span><span class="msg">${msg}</span>`;
+      
+      logPanel.appendChild(item);
+      logPanel.scrollTop = logPanel.scrollHeight;
+    }
+
+    function toggleSuite(id) {
+      const el = document.getElementById('suite-' + id);
+      if (el) {
+        el.classList.toggle('active');
+      }
+    }
+
+    async function startVerification() {
+      const runBtn = document.getElementById('run-btn');
+      runBtn.disabled = true;
+      runBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Running...';
+      
+      addLog('Fetching configuration from data/content.json...', 'info');
+      
+      try {
+        const response = await fetch('data/content.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch content.json: ' + response.statusText);
+        }
+        const config = await response.json();
+        addLog('content.json loaded successfully. Version: ' + (config.metadata ? config.metadata.version : 'unknown'));
+        
+        addLog('Reloading target website in sandbox iframe...', 'info');
+        const iframe = document.getElementById('test-frame');
+        
+        // Cache bust index.html
+        iframe.src = 'index.html?cb=' + Date.now();
+        
+        iframe.onload = function() {
+          addLog('Iframe loaded. Waiting for dynamic rendering engine to complete...', 'info');
+          
+          // Wait 1.5 seconds to let the content load dynamically
+          setTimeout(() => {
+            runTests(iframe.contentDocument || iframe.contentWindow.document, config);
+          }, 1500);
+        };
+      } catch (err) {
+        addLog(err.message, 'error');
+        runBtn.disabled = false;
+        runBtn.innerHTML = '<i class="fa fa-play"></i> Run Validation';
+      }
+    }
+
+    function runTests(doc, config) {
+      addLog('Running assertion checks...', 'info');
+      
+      testContext = {
+        suites: {
+          'theme': { name: 'Theme & Styling', assertions: [] },
+          'seo': { name: 'SEO & Metadata', assertions: [] },
+          'navigation': { name: 'Navigation Bar', assertions: [] },
+          'hero': { name: 'Hero Section', assertions: [] },
+          'about': { name: 'About Cards', assertions: [] },
+          'services': { name: 'Services & Accordion', assertions: [] },
+          'classes': { name: 'Classes & Training', assertions: [] },
+          'schedule': { name: 'Weekly Schedule', assertions: [] },
+          'pricing': { name: 'Pricing Tiers', assertions: [] },
+          'gallery': { name: 'Workout Gallery', assertions: [] },
+          'contact': { name: 'Contact & Feedback', assertions: [] },
+          'footer': { name: 'Footer & Branding', assertions: [] }
+        },
+        stats: { total: 0, passed: 0, failed: 0 }
+      };
+
+      const assert = {
+        equal: function(suiteId, name, actual, expected) {
+          testContext.stats.total++;
+          const suite = testContext.suites[suiteId];
+          const actualStr = String(actual).trim().replace(/\s+/g, ' ');
+          const expectedStr = String(expected).trim().replace(/\s+/g, ' ');
+          
+          if (actualStr === expectedStr) {
+            testContext.stats.passed++;
+            suite.assertions.push({ name, pass: true, actual, expected });
+          } else {
+            testContext.stats.failed++;
+            suite.assertions.push({ name, pass: false, actual, expected });
+            addLog(`FAIL: [${suite.name}] ${name}`, 'error');
+          }
+        },
+        ok: function(suiteId, name, condition, errorMsg = 'Condition not met') {
+          testContext.stats.total++;
+          const suite = testContext.suites[suiteId];
+          if (condition) {
+            testContext.stats.passed++;
+            suite.assertions.push({ name, pass: true });
+          } else {
+            testContext.stats.failed++;
+            suite.assertions.push({ name, pass: false, error: errorMsg });
+            addLog(`FAIL: [${suite.name}] ${name} - ${errorMsg}`, 'error');
+          }
+        }
+      };
+
+      // 1. THEME ASSERTIONS
+      const rootStyle = doc.documentElement.style;
+      const theme = config.theme || {};
+      assert.equal('theme', 'Primary theme color CSS variable', rootStyle.getPropertyValue('--color-primary').trim(), theme.primary);
+      assert.equal('theme', 'Primary dark color CSS variable', rootStyle.getPropertyValue('--color-primary-dark').trim(), theme.primary_dark);
+      assert.equal('theme', 'BG Primary CSS variable', rootStyle.getPropertyValue('--color-bg-primary').trim(), theme.bg_primary);
+      assert.equal('theme', 'BG Secondary CSS variable', rootStyle.getPropertyValue('--color-bg-secondary').trim(), theme.bg_secondary);
+      assert.equal('theme', 'BG Surface CSS variable', rootStyle.getPropertyValue('--color-bg-surface').trim(), theme.bg_surface);
+      assert.equal('theme', 'Border Color CSS variable', rootStyle.getPropertyValue('--color-border').trim(), theme.border);
+
+      // 2. SEO & METADATA ASSERTIONS
+      const metadata = config.metadata || {};
+      const tagline = config.hero ? config.hero.tagline : '';
+      assert.equal('seo', 'Document Title', doc.title, metadata.gym_name + (tagline ? " — " + tagline : ""));
+      
+      const metaDesc = doc.querySelector('meta[name="description"]');
+      assert.ok('seo', 'Meta Description Tag Exists', metaDesc !== null);
+      if (metaDesc) {
+        assert.equal('seo', 'Meta Description Content', metaDesc.getAttribute('content'), `${metadata.gym_name} - ${tagline || 'Bhadrachalam premier strength destination.'}`);
+      }
+      
+      const metaKeywords = doc.querySelector('meta[name="keywords"]');
+      assert.ok('seo', 'Meta Keywords Tag Exists', metaKeywords !== null);
+      if (metaKeywords) {
+        assert.equal('seo', 'Meta Keywords Content', metaKeywords.getAttribute('content'), metadata.keywords);
+      }
+
+      const metaThemeColor = doc.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor && theme.bg_primary) {
+        assert.equal('seo', 'Theme Color Meta content', metaThemeColor.getAttribute('content'), theme.bg_primary);
+      }
+
+      // OG Card checks
+      const ogTitle = doc.querySelector('meta[property="og:title"]');
+      if (ogTitle) assert.equal('seo', 'og:title content', ogTitle.getAttribute('content'), `${metadata.gym_name} - Your Premium Fitness Destination`);
+      
+      const ogDesc = doc.querySelector('meta[property="og:description"]');
+      if (ogDesc) assert.equal('seo', 'og:description content', ogDesc.getAttribute('content'), `Expert-led fitness classes at ${metadata.gym_name}. Join us today!`);
+      
+      const ogImage = doc.querySelector('meta[property="og:image"]');
+      if (ogImage) assert.equal('seo', 'og:image content', ogImage.getAttribute('content'), metadata.og_image);
+      
+      const ogUrl = doc.querySelector('meta[property="og:url"]');
+      if (ogUrl) assert.equal('seo', 'og:url content', ogUrl.getAttribute('content'), metadata.og_url);
+
+      // JSON-LD local schema check
+      const jsonLd = doc.querySelector('script[type="application/ld+json"]');
+      assert.ok('seo', 'JSON-LD Schema Script Tag Exists', jsonLd !== null);
+      if (jsonLd) {
+        try {
+          const schema = JSON.parse(jsonLd.textContent);
+          assert.equal('seo', 'JSON-LD Type', schema['@type'], 'LocalBusiness');
+          assert.equal('seo', 'JSON-LD Gym Name', schema.name, metadata.gym_name);
+          assert.equal('seo', 'JSON-LD Phone', schema.telephone, config.contact ? config.contact.phone : '');
+          assert.equal('seo', 'JSON-LD Street Address', schema.address.streetAddress, metadata.address);
+        } catch (e) {
+          assert.ok('seo', 'JSON-LD JSON parsing', false, 'Failed to parse JSON-LD schema: ' + e.message);
+        }
+      }
+
+      // 3. NAVIGATION ASSERTIONS
+      const navLinks = doc.querySelectorAll('.nav ul li a');
+      const expectedNav = config.navigation || [];
+      assert.equal('navigation', 'Navigation Items Count', navLinks.length, expectedNav.length);
+      expectedNav.forEach((item, index) => {
+        if (navLinks[index]) {
+          assert.equal('navigation', `Nav link ${index} label`, navLinks[index].textContent, item.label);
+          assert.equal('navigation', `Nav link ${index} href`, navLinks[index].getAttribute('href'), item.link);
+        }
+      });
+
+      // 4. HERO SECTION ASSERTIONS
+      const hero = config.hero || {};
+      const heroTagline = doc.getElementById('hero-tagline');
+      if (heroTagline) assert.equal('hero', 'Hero Tagline text', heroTagline.textContent, hero.tagline);
+      
+      const heroTitle = doc.getElementById('hero-title');
+      if (heroTitle) {
+        assert.equal('hero', 'Hero Title content', heroTitle.textContent, (hero.title_main || "Grip") + (hero.title_span || "Gym"));
+      }
+
+      const heroSubtitle = doc.getElementById('hero-subtitle');
+      if (heroSubtitle) assert.equal('hero', 'Hero Subtitle text', heroSubtitle.textContent, hero.subtitle);
+      
+      const heroDesc = doc.getElementById('hero-desc');
+      if (heroDesc) assert.equal('hero', 'Hero Description text', heroDesc.textContent, hero.description);
+
+      const heroCta1 = doc.querySelector('#hero-buttons .hero-cta.main-btn');
+      if (heroCta1) {
+        assert.equal('hero', 'Hero Primary Button Text', heroCta1.textContent, hero.cta_primary_text);
+        assert.equal('hero', 'Hero Primary Button Href', heroCta1.getAttribute('href'), hero.cta_primary_link);
+      }
+
+      const heroCta2 = doc.querySelector('#hero-buttons .hero-cta.outline-btn');
+      if (heroCta2) {
+        assert.equal('hero', 'Hero Outline Button Text', heroCta2.textContent, hero.cta_outline_text);
+        assert.equal('hero', 'Hero Outline Button Href', heroCta2.getAttribute('href'), hero.cta_outline_link);
+      }
+
+      // 5. ABOUT CARDS ASSERTIONS
+      const aboutCards = doc.querySelectorAll('#about-grid .box');
+      const expectedAboutCards = config.about ? config.about.cards : [];
+      assert.equal('about', 'About Cards Count', aboutCards.length, expectedAboutCards.length);
+      expectedAboutCards.forEach((card, index) => {
+        const renderedCard = aboutCards[index];
+        if (renderedCard) {
+          const titleEl = renderedCard.querySelector('h4');
+          const pEl = renderedCard.querySelector('p');
+          const imgEl = renderedCard.querySelector('img');
+          
+          if (titleEl) assert.equal('about', `About Card ${index} Title`, titleEl.textContent, card.title);
+          if (pEl) assert.equal('about', `About Card ${index} Text`, pEl.textContent, card.text);
+          if (imgEl) assert.equal('about', `About Card ${index} Image Src`, imgEl.getAttribute('src'), card.image);
+        }
+      });
+
+      // 6. SERVICES ASSERTIONS
+      const services = config.services || {};
+      const serviceTitle = doc.querySelector('#services-text h2');
+      if (serviceTitle) assert.equal('services', 'Services Title', serviceTitle.textContent, services.title);
+      
+      const serviceDesc = doc.querySelector('#services-text p');
+      if (serviceDesc) assert.equal('services', 'Services Description', serviceDesc.textContent, services.description);
+
+      const serviceCta = doc.querySelector('#services-text a.btn');
+      if (serviceCta) {
+        assert.equal('services', 'Services Button Text', serviceCta.textContent, services.cta_text);
+        assert.equal('services', 'Services Button Href', serviceCta.getAttribute('href'), services.cta_link);
+      }
+
+      const accordions = doc.querySelectorAll('#services-accordion .accordian-container');
+      const expectedAccs = services.accordion || [];
+      assert.equal('services', 'Services Accordion Items Count', accordions.length, expectedAccs.length);
+      expectedAccs.forEach((item, index) => {
+        const acc = accordions[index];
+        if (acc) {
+          const headEl = acc.querySelector('.head h4');
+          const bodyEl = acc.querySelector('.body p');
+          if (headEl) assert.equal('services', `Accordion ${index} Title`, headEl.textContent, item.title);
+          if (bodyEl) assert.equal('services', `Accordion ${index} Description`, bodyEl.textContent, item.description);
+        }
+      });
+
+      // 7. CLASSES ASSERTIONS
+      const classesData = config.classes_section || {};
+      const classesTitle = doc.querySelector('#classes-header h2');
+      if (classesTitle) assert.equal('classes', 'Classes Section Title', classesTitle.textContent, classesData.title);
+      
+      const classesDesc = doc.querySelector('#classes-header p');
+      if (classesDesc) assert.equal('classes', 'Classes Section Description', classesDesc.textContent, classesData.description);
+
+      const classCards = doc.querySelectorAll('#classes-grid .class-card');
+      const expectedClasses = classesData.cards || [];
+      assert.equal('classes', 'Class Cards Count', classCards.length, expectedClasses.length);
+      expectedClasses.forEach((card, index) => {
+        const cc = classCards[index];
+        if (cc) {
+          const title = cc.querySelector('h3');
+          const price = cc.querySelector('.class-card-price');
+          const coach = cc.querySelector('.coach-tag');
+          const desc = cc.querySelector('.class-card-text');
+          const img = cc.querySelector('.class-card-img img');
+          
+          if (title) assert.equal('classes', `Class ${index} Title`, title.textContent, card.title);
+          if (price) assert.equal('classes', `Class ${index} Price`, price.textContent, card.price);
+          if (coach) assert.equal('classes', `Class ${index} Coach`, coach.textContent, card.coach);
+          if (desc) assert.equal('classes', `Class ${index} Description`, desc.textContent, card.description);
+          if (img) assert.equal('classes', `Class ${index} Image Src`, img.getAttribute('src'), card.image);
+        }
+      });
+
+      // 8. SCHEDULE ASSERTIONS
+      const schedule = config.schedule_section || {};
+      const scheduleTitle = doc.querySelector('#schedule-header h2');
+      if (scheduleTitle) assert.equal('schedule', 'Schedule Section Title', scheduleTitle.textContent, schedule.title);
+      
+      const scheduleDesc = doc.querySelector('#schedule-header p');
+      if (scheduleDesc) assert.equal('schedule', 'Schedule Section Description', scheduleDesc.textContent, schedule.description);
+
+      const ths = doc.querySelectorAll('#schedule-table-header th');
+      const schedHeaders = schedule.headers || {};
+      if (ths.length >= 3) {
+        assert.equal('schedule', 'Schedule Day Column Header', ths[0].textContent, schedHeaders.day || 'Day');
+        assert.equal('schedule', 'Schedule Morning Column Header', ths[1].textContent, schedHeaders.morning || 'Morning Sessions');
+        assert.equal('schedule', 'Schedule Evening Column Header', ths[2].textContent, schedHeaders.evening || 'Evening Sessions');
+      }
+
+      const rows = doc.querySelectorAll('#schedule-table-body tr');
+      const expectedDays = schedule.days || [];
+      assert.equal('schedule', 'Schedule Rows Count', rows.length, expectedDays.length);
+      expectedDays.forEach((dayInfo, index) => {
+        const row = rows[index];
+        if (row) {
+          const dayCol = row.querySelector('.day-col');
+          if (dayCol) assert.equal('schedule', `Schedule Row ${index} Day Name`, dayCol.textContent, dayInfo.day);
+          
+          if (dayInfo.holiday) {
+            const badge = row.querySelector('.holiday-badge');
+            if (badge) assert.equal('schedule', `Schedule Row ${index} Holiday Label`, badge.textContent, dayInfo.holiday_label);
+          } else {
+            const slots = row.querySelectorAll('.slot');
+            const expectedMorningSlots = dayInfo.morning ? dayInfo.morning.length : 0;
+            const expectedEveningSlots = dayInfo.evening ? dayInfo.evening.length : 0;
+            assert.equal('schedule', `Row ${index} total slots`, slots.length, expectedMorningSlots + expectedEveningSlots);
+          }
+        }
+      });
+
+      // 9. PRICING ASSERTIONS
+      const pricing = config.pricing || {};
+      const pricingTitle = doc.getElementById('pricing-title');
+      if (pricingTitle) assert.equal('pricing', 'Pricing Section Title', pricingTitle.textContent, pricing.title || "Membership Plans");
+      
+      const pricingIntro = doc.querySelector('.intro-text');
+      if (pricingIntro) assert.equal('pricing', 'Pricing Intro Text', pricingIntro.textContent, pricing.intro);
+
+      const pricingCards = doc.querySelectorAll('#pricing-grid .pricing-card');
+      const expectedTiers = pricing.tiers || [];
+      assert.equal('pricing', 'Pricing Cards Count', pricingCards.length, expectedTiers.length);
+      expectedTiers.forEach((tier, index) => {
+        const pc = pricingCards[index];
+        if (pc) {
+          const name = pc.querySelector('h3');
+          const price = pc.querySelector('.price');
+          const duration = pc.querySelector('.duration');
+          
+          if (name) assert.equal('pricing', `Tier ${index} Name`, name.textContent, tier.name);
+          if (price) assert.equal('pricing', `Tier ${index} Price`, price.textContent, '₹' + tier.price.toLocaleString('en-IN'));
+          if (duration) assert.equal('pricing', `Tier ${index} Duration`, duration.textContent, tier.duration);
+          
+          const features = pc.querySelectorAll('.features li');
+          const expectedFeatures = tier.features || [];
+          assert.equal('pricing', `Tier ${index} Features count`, features.length, expectedFeatures.length);
+          expectedFeatures.forEach((f, fIdx) => {
+            if (features[fIdx]) {
+              assert.equal('pricing', `Tier ${index} Feature ${fIdx}`, features[fIdx].textContent, f);
+            }
+          });
+        }
+      });
+
+      // 10. GALLERY ASSERTIONS
+      const gallery = config.gallery || {};
+      const galleryTitle = doc.getElementById('gallery-title');
+      if (galleryTitle) assert.equal('gallery', 'Gallery Title', galleryTitle.textContent, gallery.title);
+      
+      const galleryIntro = doc.getElementById('gallery-intro');
+      if (galleryIntro) assert.equal('gallery', 'Gallery Intro Text', galleryIntro.textContent, gallery.intro);
+
+      const galleryItems = doc.querySelectorAll('#gallery-grid .gallery-item');
+      const expectedGalleryImgs = gallery.images || [];
+      assert.equal('gallery', 'Gallery Items Count', galleryItems.length, expectedGalleryImgs.length);
+      expectedGalleryImgs.forEach((imgInfo, index) => {
+        const item = galleryItems[index];
+        if (item) {
+          const img = item.querySelector('img');
+          const caption = item.querySelector('.gallery-item-caption');
+          
+          if (img) {
+            assert.equal('gallery', `Gallery Image ${index} Src`, img.getAttribute('src'), imgInfo.src);
+            assert.equal('gallery', `Gallery Image ${index} Alt`, img.getAttribute('alt'), imgInfo.alt);
+          }
+          if (caption) assert.equal('gallery', `Gallery Image ${index} Caption`, caption.textContent, imgInfo.caption);
+        }
+      });
+
+      // 11. CONTACT ASSERTIONS
+      const contact = config.contact || {};
+      const contactTitle = doc.getElementById('contact-title');
+      if (contactTitle) assert.equal('contact', 'Contact Title', contactTitle.textContent, contact.title || "Get In Touch");
+
+      const items = doc.querySelectorAll('#contact-info .contact-item');
+      assert.ok('contact', 'Contact Info Items Count', items.length >= 4);
+      if (items.length >= 4) {
+        assert.equal('contact', 'Contact Phone', items[0].querySelector('p').textContent, contact.phone);
+        assert.equal('contact', 'Contact Email', items[1].querySelector('p').textContent, contact.email);
+        assert.equal('contact', 'Contact Address', items[2].querySelector('p').textContent, contact.address);
+        assert.equal('contact', 'Contact Hours', items[3].querySelector('p').textContent, contact.hours.weekdays + '\n' + contact.hours.weekends);
+      }
+
+      // Form placeholders checks
+      const nameInput = doc.querySelector('#contact-form input[name="name"]');
+      if (nameInput) assert.equal('contact', 'Contact Form Name Placeholder', nameInput.getAttribute('placeholder'), contact.form.name_placeholder);
+      
+      const emailInput = doc.querySelector('#contact-form input[name="email"]');
+      if (emailInput) assert.equal('contact', 'Contact Form Email Placeholder', emailInput.getAttribute('placeholder'), contact.form.email_placeholder);
+      
+      const messageInput = doc.querySelector('#contact-form textarea[name="message"]');
+      if (messageInput) assert.equal('contact', 'Contact Form Message Placeholder', messageInput.getAttribute('placeholder'), contact.form.message_placeholder);
+
+      const submitBtn = doc.getElementById('contact-submit-btn');
+      if (submitBtn) assert.equal('contact', 'Contact Form Submit Text', submitBtn.textContent, contact.form.submit_button_text);
+
+      // 12. FOOTER ASSERTIONS
+      const footer = config.footer || {};
+      const footerBranding = doc.querySelector('#footer-branding h3');
+      if (footerBranding) {
+        assert.equal('footer', 'Footer Company Logo Text', footerBranding.textContent, footer.company_name || metadata.gym_name);
+      }
+      
+      const taglineP = doc.querySelector('#footer-branding .footer-tagline');
+      if (taglineP) assert.equal('footer', 'Footer Tagline Text', taglineP.textContent, footer.tagline);
+
+      // Headers
+      const fHeaderLoc = doc.getElementById('footer-header-location');
+      if (fHeaderLoc) assert.equal('footer', 'Footer Location Header', fHeaderLoc.textContent, footer.headers.location);
+      
+      const fHeaderContact = doc.getElementById('footer-header-contact');
+      if (fHeaderContact) assert.equal('footer', 'Footer Contact Header', fHeaderContact.textContent, footer.headers.contact);
+
+      const fHeaderHours = doc.getElementById('footer-header-hours');
+      if (fHeaderHours) assert.equal('footer', 'Footer Hours Header', fHeaderHours.textContent, footer.headers.hours);
+
+      const fHeaderSocial = doc.getElementById('footer-header-social');
+      if (fHeaderSocial) assert.equal('footer', 'Footer Social Header', fHeaderSocial.textContent, footer.headers.follow_us);
+
+      // Labels
+      const fLabelPhone = doc.getElementById('footer-label-phone');
+      if (fLabelPhone) assert.equal('footer', 'Footer Phone Label', fLabelPhone.textContent, footer.labels.phone);
+
+      const fLabelEmail = doc.getElementById('footer-label-email');
+      if (fLabelEmail) assert.equal('footer', 'Footer Email Label', fLabelEmail.textContent, footer.labels.email);
+
+      const footerLoc = doc.getElementById('footer-location');
+      if (footerLoc) {
+        assert.equal('footer', 'Footer Address', footerLoc.innerHTML, (footer.address || metadata.address).replace(/\n/g, '<br>'));
+      }
+
+      const footerPhone = doc.getElementById('footer-phone');
+      if (footerPhone) assert.equal('footer', 'Footer Phone Value', footerPhone.textContent, footer.phone);
+
+      const footerEmail = doc.getElementById('footer-email');
+      if (footerEmail) assert.equal('footer', 'Footer Email Value', footerEmail.textContent, footer.email);
+
+      const fCopyright = doc.getElementById('footer-copyright');
+      if (fCopyright) assert.equal('footer', 'Footer Copyright Text', fCopyright.textContent, footer.copyright_text);
+
+      const footerSocialLinks = doc.querySelectorAll('#footer-social a');
+      const expectedSocials = footer.social_links || [];
+      assert.equal('footer', 'Footer Social Links Count', footerSocialLinks.length, expectedSocials.length);
+      expectedSocials.forEach((link, index) => {
+        if (footerSocialLinks[index]) {
+          assert.equal('footer', `Footer Social ${index} Href`, footerSocialLinks[index].getAttribute('href'), link.url);
+          assert.equal('footer', `Footer Social ${index} Platform`, footerSocialLinks[index].getAttribute('title'), link.platform);
+        }
+      });
+
+      renderReport();
+    }
+
+    function renderReport() {
+      const container = document.getElementById('suites-container');
+      container.innerHTML = '';
+      
+      let passCount = 0;
+      let failCount = 0;
+      let totalCount = 0;
+      
+      for (const [id, suite] of Object.entries(testContext.suites)) {
+        const card = document.createElement('div');
+        card.className = 'suite-card';
+        card.id = 'suite-' + id;
+        
+        let suitePassed = true;
+        let suitePassCount = 0;
+        
+        const list = document.createElement('ul');
+        list.className = 'assertion-list';
+        
+        suite.assertions.forEach(assert => {
+          totalCount++;
+          if (assert.pass) {
+            suitePassCount++;
+            passCount++;
+          } else {
+            suitePassed = false;
+            failCount++;
+          }
+          
+          const li = document.createElement('li');
+          li.className = 'assertion-item ' + (assert.pass ? 'pass' : 'fail');
+          
+          let icon = assert.pass ? '<i class="fa fa-circle-check assertion-icon"></i>' : '<i class="fa fa-circle-xmark assertion-icon"></i>';
+          let diffHtml = '';
+          
+          if (!assert.pass && assert.expected !== undefined) {
+            diffHtml = `
+              <div class="diff-view">
+                <span class="expected">Expected: "${assert.expected}"</span>
+                <span class="actual">Actual: "${assert.actual}"</span>
+              </div>
+            `;
+          } else if (!assert.pass && assert.error) {
+            diffHtml = `<p class="error-msg">${assert.error}</p>`;
+          }
+          
+          li.innerHTML = `
+            ${icon}
+            <div class="assertion-details">
+              <p class="name">${assert.name}</p>
+              ${diffHtml}
+            </div>
+          `;
+          list.appendChild(li);
+        });
+        
+        const content = document.createElement('div');
+        content.className = 'suite-content';
+        content.appendChild(list);
+        
+        const header = document.createElement('div');
+        header.className = 'suite-header';
+        header.onclick = () => toggleSuite(id);
+        
+        const totalInSuite = suite.assertions.length;
+        const statusText = suitePassed ? 'PASS' : 'FAIL';
+        const badgeClass = suitePassed ? 'pass' : 'fail';
+        
+        header.innerHTML = `
+          <div class="suite-title">
+            <i class="fa ${suitePassed ? 'fa-check-double text-success' : 'fa-triangle-exclamation text-error'}"></i>
+            ${suite.name}
+          </div>
+          <span class="suite-badge ${badgeClass}">${suitePassCount}/${totalInSuite} ${statusText}</span>
+        `;
+        
+        card.appendChild(header);
+        card.appendChild(content);
+        
+        if (!suitePassed) {
+          card.classList.add('active'); // auto open failed suites
+        }
+        
+        container.appendChild(card);
+      }
+      
+      // Update statistics
+      document.getElementById('total-tests').textContent = totalCount;
+      document.getElementById('passed-tests').textContent = passCount;
+      document.getElementById('failed-tests').textContent = failCount;
+      
+      const rate = totalCount > 0 ? Math.round((passCount / totalCount) * 100) : 0;
+      const rateEl = document.getElementById('pass-rate');
+      rateEl.textContent = rate + '%';
+      if (rate === 100) {
+        rateEl.className = 'text-success';
+      } else if (rate > 80) {
+        rateEl.className = 'text-info';
+      } else {
+        rateEl.className = 'text-error';
+      }
+      
+      document.getElementById('progress-fill').style.width = rate + '%';
+      
+      addLog(`Test Run completed. Total: ${totalCount}, Passed: ${passCount}, Failed: ${failCount}. Pass Rate: ${rate}%`, failCount > 0 ? 'error' : 'info');
+      
+      const runBtn = document.getElementById('run-btn');
+      runBtn.disabled = false;
+      runBtn.innerHTML = '<i class="fa fa-play"></i> Run Validation';
+    }
+  </script>
+</body>
+</html>
