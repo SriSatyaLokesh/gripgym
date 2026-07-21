@@ -2695,5 +2695,83 @@ section:not(.home) h2,
   text-transform: uppercase;
 }
 
+/* 13. Stencil Rugged Branding & Hero Layout Upgrades */
+header .logo a,
+.footer-branding h3 {
+  font-family: 'Black Ops One', var(--font-heading) !important;
+  letter-spacing: 1px;
+}
+
+.home .container {
+  align-items: flex-start !important; /* Left align hero layout */
+  text-align: left !important;
+  max-width: 900px !important;
+  margin-left: 5% !important; /* Give it some margin from left edge on desktop */
+}
+
+.home h1 {
+  font-family: 'Black Ops One', var(--font-display) !important;
+  font-size: 90px !important;
+  text-align: left !important;
+  line-height: 1.0 !important;
+  letter-spacing: 2px !important;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(232, 25, 44, 0.25) !important;
+  margin-bottom: 20px !important;
+}
+
+.home h1 span {
+  color: var(--color-primary) !important;
+  text-shadow: 0 0 20px rgba(232, 25, 44, 0.5) !important;
+}
+
+.hero-tagline {
+  letter-spacing: 0.3em !important;
+  font-weight: var(--fw-bold) !important;
+  margin-bottom: 10px !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero-description {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 650px !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+  border-left: 4px solid var(--color-primary) !important;
+  padding-left: 20px !important;
+  margin-bottom: 35px !important;
+  text-align: left !important;
+}
+
+@media(max-width: 991px) {
+  .home .container {
+    margin-left: 0 !important;
+    padding: 0 20px !important;
+  }
+  .home h1 {
+    font-size: 70px !important;
+  }
+}
+
+@media(max-width: 767px) {
+  .home .container {
+    align-items: center !important; /* Center-align on mobile for better mobile UX */
+    text-align: center !important;
+  }
+  .home h1 {
+    font-size: 48px !important;
+    text-align: center !important;
+  }
+  .hero-description {
+    font-size: 15px !important;
+    text-align: center !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    border-top: 2px solid var(--color-primary) !important;
+    padding-top: 15px !important;
+  }
+}
+
 
 
