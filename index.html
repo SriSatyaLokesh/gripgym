@@ -144,21 +144,12 @@
 <!-- End Classes -->
 
 <!-- Start Today -->
- <section class="start-today">
- 	<div class="container">
- 		 <div class="content">
- 		 	  <div class="box text wow slideInLeft">
- 		 	  	 <h2>Start Your Training Today</h2>
- 		  	 <p>Ready to transform your fitness journey? Join GripGym today and experience the power of expert coaching, state-of-the-art facilities, and a supportive community dedicated to your success. Whether you're building grip strength, power, or overall conditioning, we have a program tailored to your goals. Take the first step toward stronger performance and lasting results.</p>
- 		 	  	 <a href="" class="btn">Start Now</a>
- 		 	  </div>
- 		 	  <div class="box img wow slideInRight">
- 		 	  	 <img src="images/gallery4.jpg" alt="start today" />
- 		 	  </div>
-
- 		 </div>
- 	</div>
- </section>
+  <section class="start-today">
+  	<div class="container">
+  		 <div class="content" id="start-today-content">
+  		 </div>
+  	</div>
+  </section>
 <!-- End Start Today -->
 
 <!-- Start Schedule -->
@@ -184,7 +175,7 @@
 <!-- Pricing Section -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <h1>Membership Plans</h1>
+    <h1 id="pricing-title">Membership Plans</h1>
     <p class="intro-text"></p>
     <div class="pricing-grid" id="pricing-grid">
       <!-- Rendered from data/content.json -->
@@ -195,8 +186,8 @@
 <!-- Gallery Section -->
 <section class="gallery" id="gallery">
   <div class="container">
-    <h2>Workout Gallery</h2>
-    <p class="gallery-intro">Experience our gym in action. See our members training, our facilities, and the community spirit that makes GripGym special.</p>
+    <h2 id="gallery-title">Workout Gallery</h2>
+    <p class="gallery-intro" id="gallery-intro"></p>
     <div class="gallery-grid" id="gallery-grid">
       <!-- Gallery items rendered from data/content.json -->
     </div>
@@ -207,7 +198,7 @@
 <!-- Contact Section -->
 <section class="contact" id="contact">
   <div class="container">
-    <h1>Get In Touch</h1>
+    <h1 id="contact-title">Get In Touch</h1>
     <div class="contact-grid">
       <div class="contact-info" id="contact-info">
         <!-- Contact details fetched from data/content.json -->
@@ -233,7 +224,7 @@
       <div class="footer-info wow fadeIn" data-wow-delay="0.2s">
         <div class="info-section">
           <h4>Location</h4>
-          <p>Old Market Road<br>Bhadrachalam, Telangana 507111<br>India</p>
+          <p id="footer-location"></p>
         </div>
         <div class="info-section">
           <h4>Contact</h4>
@@ -255,7 +246,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="footer-year"></span> GripGym. All rights reserved.</p>
+      <p>&copy; <span id="footer-year"></span> <span id="footer-gym-name"></span>. All rights reserved.</p>
     </div>
   </div>
 </footer>

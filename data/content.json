@@ -306,6 +306,13 @@
       }
     ]
   },
+  "start_today": {
+    "title": "Start Your Training Today",
+    "description": "Ready to transform your fitness journey? Join GripGym today and experience the power of expert coaching, state-of-the-art facilities, and a supportive community dedicated to your success. Whether you're building grip strength, power, or overall conditioning, we have a program tailored to your goals. Take the first step toward stronger performance and lasting results.",
+    "cta_text": "Start Now",
+    "cta_link": "#contact",
+    "image": "images/gallery4.jpg"
+  },
   "footer": {
     "company_name": "GripGym",
     "tagline": "Train Harder. Grip Stronger.",

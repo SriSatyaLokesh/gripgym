@@ -20,8 +20,8 @@ async function loadContent() {
       console.log('[ContentLoader] Theme colors applied');
     }
     
-    // Render Header branding
-    renderHeader(data.metadata, data.hero ? data.hero.tagline : '');
+    // Render Header branding and SEO meta tags
+    renderHeader(data.metadata, data.hero ? data.hero.tagline : '', data);
     console.log('[ContentLoader] Header rendered');
     
     // Render Hero section
@@ -35,6 +35,10 @@ async function loadContent() {
     // Render Services section
     renderServices(data.services);
     console.log('[ContentLoader] Services rendered');
+    
+    // Render Start Today section
+    renderStartToday(data.start_today);
+    console.log('[ContentLoader] Start Today rendered');
     
     // Render Classes section
     renderClasses(data.classes_section);
@@ -57,7 +61,7 @@ async function loadContent() {
     console.log('[ContentLoader] Contact rendered');
     
     // Render footer section
-    renderFooter(data.footer);
+    renderFooter(data.footer, data.metadata);
     console.log('[ContentLoader] Footer rendered');
     
     // Attach form handler
@@ -114,8 +118,10 @@ function applyTheme(themeData) {
   }
 }
 
-function renderHeader(metadata, tagline) {
+function renderHeader(metadata, tagline, data) {
   if (!metadata) return;
+  
+  // Set header logo link
   const logoLink = document.getElementById('logo-link');
   if (logoLink) {
     const name = metadata.gym_name || "GripGym";
@@ -126,8 +132,59 @@ function renderHeader(metadata, tagline) {
     }
   }
   
+  // Update document title
   if (metadata.gym_name) {
     document.title = metadata.gym_name + (tagline ? " — " + tagline : "");
+  }
+  
+  // Update description meta tag
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.setAttribute('content', `${metadata.gym_name} - ${tagline || 'Bhadrachalam premier strength destination.'}`);
+  }
+  
+  // Update Open Graph tags
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', `${metadata.gym_name} - Your Premium Fitness Destination`);
+  
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', `Expert-led fitness classes at ${metadata.gym_name}. Join us today!`);
+  
+  // Update Twitter Card tags
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twitterTitle) twitterTitle.setAttribute('content', `${metadata.gym_name} - Your Premium Fitness Destination`);
+  
+  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twitterDesc) twitterDesc.setAttribute('content', `Expert-led fitness classes at ${metadata.gym_name}. Join us today!`);
+  
+  // Update JSON-LD LocalBusiness Schema
+  const jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+  if (jsonLdScript) {
+    try {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": metadata.gym_name || "GripGym",
+        "description": `${metadata.gym_name || "GripGym"} - Premium fitness classes including powerlifting, strength training, and conditioning`,
+        "url": window.location.href,
+        "telephone": data.contact ? data.contact.phone : "+91-9876543210",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": metadata.address || "Old Market Road",
+          "addressLocality": "Bhadrachalam",
+          "addressRegion": "Telangana",
+          "postalCode": "507111",
+          "addressCountry": "IN"
+        },
+        "image": "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg",
+        "priceRange": "$$",
+        "areaServed": "Bhadrachalam, Telangana",
+        "serviceType": "Fitness Classes, Personal Training, Strength Training"
+      };
+      jsonLdScript.textContent = JSON.stringify(schema, null, 2);
+    } catch (e) {
+      console.error('Error updating JSON-LD LocalBusiness Schema:', e);
+    }
   }
 }
 
@@ -295,6 +352,43 @@ function renderServices(servicesData) {
   }
 }
 
+function renderStartToday(startTodayData) {
+  const container = document.getElementById('start-today-content');
+  if (!container || !startTodayData) return;
+  
+  container.innerHTML = '';
+  
+  const textDiv = document.createElement('div');
+  textDiv.className = 'box text wow slideInLeft';
+  
+  const h2 = document.createElement('h2');
+  h2.textContent = startTodayData.title || "Start Your Training Today";
+  
+  const p = document.createElement('p');
+  p.textContent = startTodayData.description;
+  
+  const a = document.createElement('a');
+  a.href = startTodayData.cta_link || '#contact';
+  a.className = 'btn';
+  a.textContent = startTodayData.cta_text || 'Start Now';
+  
+  textDiv.appendChild(h2);
+  textDiv.appendChild(p);
+  textDiv.appendChild(a);
+  
+  const imgDiv = document.createElement('div');
+  imgDiv.className = 'box img wow slideInRight';
+  
+  const img = document.createElement('img');
+  img.src = startTodayData.image || 'images/gallery4.jpg';
+  img.alt = 'start today';
+  
+  imgDiv.appendChild(img);
+  
+  container.appendChild(textDiv);
+  container.appendChild(imgDiv);
+}
+
 function renderClasses(classesData) {
   const header = document.getElementById('classes-header');
   const grid = document.getElementById('classes-grid');
@@ -425,6 +519,12 @@ function renderSchedule(scheduleData) {
 }
 
 function renderPricing(pricingData) {
+  // Update pricing section title
+  const title = document.getElementById('pricing-title');
+  if (title && pricingData.title) {
+    title.textContent = pricingData.title;
+  }
+
   const intro = document.querySelector('.intro-text');
   if (intro) {
     intro.textContent = pricingData.intro;
@@ -486,6 +586,17 @@ function renderPricing(pricingData) {
 }
 
 function renderGallery(galleryData) {
+  // Update gallery title and intro
+  const title = document.getElementById('gallery-title');
+  if (title && galleryData.title) {
+    title.textContent = galleryData.title;
+  }
+  
+  const intro = document.getElementById('gallery-intro');
+  if (intro && galleryData.intro) {
+    intro.textContent = galleryData.intro;
+  }
+
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
   
@@ -517,6 +628,12 @@ function renderGallery(galleryData) {
 }
 
 function renderContact(contactData) {
+  // Update contact section title
+  const title = document.getElementById('contact-title');
+  if (title && contactData.title) {
+    title.textContent = contactData.title;
+  }
+
   const contactInfo = document.getElementById('contact-info');
   if (!contactInfo) return;
   
@@ -565,12 +682,12 @@ function renderContact(contactData) {
   contactInfo.appendChild(hours);
 }
 
-function renderFooter(footerData) {
+function renderFooter(footerData, metadata) {
   const footerBranding = document.getElementById('footer-branding');
   if (footerBranding) {
     footerBranding.innerHTML = '';
     const h3 = document.createElement('h3');
-    const name = footerData.company_name || "GripGym";
+    const name = footerData.company_name || metadata.gym_name || "GripGym";
     if (name.toLowerCase().startsWith("grip")) {
       h3.innerHTML = 'Grip<span>' + name.substring(4) + '</span>';
     } else {
@@ -581,6 +698,12 @@ function renderFooter(footerData) {
     taglineP.textContent = footerData.tagline;
     footerBranding.appendChild(h3);
     footerBranding.appendChild(taglineP);
+  }
+
+  // Update footer location address
+  const footerLoc = document.getElementById('footer-location');
+  if (footerLoc) {
+    footerLoc.innerHTML = (footerData.address || metadata.address || "Old Market Road<br>Bhadrachalam, Telangana 507111<br>India").replace(/\n/g, '<br>');
   }
 
   const footerPhone = document.getElementById('footer-phone');
@@ -616,6 +739,12 @@ function renderFooter(footerData) {
       a.innerHTML = '<i class="' + link.icon + '"></i>';
       footerSocial.appendChild(a);
     });
+  }
+  
+  // Set bottom footer gym name
+  const footerGymName = document.getElementById('footer-gym-name');
+  if (footerGymName) {
+    footerGymName.textContent = metadata.gym_name || "GripGym";
   }
   
   const footerYear = document.getElementById('footer-year');
