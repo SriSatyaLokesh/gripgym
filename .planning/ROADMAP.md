@@ -184,6 +184,17 @@ Plans:
 
 - [x] Integrate fetch loader and dynamic DOM rendering for header, hero, about, services, classes, schedule, pricing, gallery, contact, and footer sections.
 
+### Phase 9: Add a dedicated GRIPMMA one-page sub-site at /mma with coaching and class data for MMA and martial arts
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 8
+**Plans:** 0 plans
+
+Plans:
+
+- [ ] TBD (run /gsd-plan-phase 9 to break down)
+
 ---
 *Roadmap created: 2026-07-20*
 *Last updated: 2026-07-21 — Phase 8 completed successfully*

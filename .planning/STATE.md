@@ -110,6 +110,7 @@ None yet.
 ### Roadmap Evolution
 
 - Phase 8 added: Dynamic Content & Theming: Fetch all gym name, timings, contacts, and brand colors from a single dynamic JSON configuration
+- Phase 9 added: Add a dedicated GRIPMMA one-page sub-site at /mma with coaching and class data for MMA and martial arts
 
 ## Rebuild Log
 
