@@ -116,9 +116,9 @@ Plans:
 | 2. Header, Navigation & Hero | 5/5 | Executed | 2026-07-20 |
 | 3. About & Services | 4/4 | Executed | 2026-07-20 |
 | 4. Classes & Schedule | 5/5 | Executed | 2026-07-20 |
-| 5. Pricing & Contact | 5/5 | Planned | 2026-07-21 |
+| 5. Pricing & Contact | 5/5 | Executed | 2026-07-21 |
 | 6. Gallery, Footer & Final Polish | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-07-20*
-*Last updated: 2026-07-21 — Phase 5 planned with JSON architecture*
+*Last updated: 2026-07-21 — Phase 5 executed (JSON architecture + pricing/contact complete)
