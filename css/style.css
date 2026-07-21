@@ -2205,5 +2205,204 @@ section[id] {
   }
 }
 
+/* ==========================================================================
+   UI/UX ALIGNMENTS & BREAKPOINTS POLISH (2026 STANDARDS)
+   ========================================================================== */
+
+/* 1. Global Typography Adjustments */
+body {
+  line-height: 1.6 !important;
+}
+
+section:not(.home) h1,
+section:not(.home) h2,
+.section-title {
+  font-family: var(--font-display) !important;
+  font-size: 48px !important;
+  font-weight: var(--fw-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--color-text-on-accent) !important;
+  text-align: center;
+  margin-bottom: 40px !important;
+}
+
+/* Adjust heading sizes for section headers in specific layouts */
+.service .content .text h2,
+.classes .content .text h2,
+.schedule .content .text h2 {
+  font-family: var(--font-display) !important;
+  font-size: 42px !important;
+  text-align: left;
+  margin-bottom: 20px !important;
+  color: var(--color-text-on-accent) !important;
+}
+
+/* 2. Responsive Breakpoint Overrides (≥992px for Desktop Layouts) */
+
+/* Desktop Navigation styling inside Capsule */
+@media(min-width: 992px) {
+  header .ham-burger {
+    display: none !important;
+  }
+  header .nav {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: block !important;
+  }
+  header .nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+  }
+  header .nav ul li {
+    display: inline-block !important;
+  }
+  header .nav ul li a {
+    font-size: 15px !important;
+    font-weight: var(--fw-semibold) !important;
+    padding: 8px 16px !important;
+    color: var(--color-text-base) !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.05em !important;
+  }
+  header .nav ul li a:hover,
+  header .nav ul li a.active {
+    color: var(--color-primary) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important;
+  }
+  header .nav ul li a::before,
+  header .nav ul li a:hover::before {
+    display: none !important;
+  }
+}
+
+/* Standardize wrapping breakpoints to 991px (Tablets / Portables) */
+@media(max-width: 991px) {
+  /* About section cards wrapping */
+  .about .content {
+    flex-wrap: wrap !important;
+  }
+  .about .content .box {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .about .content .box:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Service section columns wrapping */
+  .service .content {
+    flex-wrap: wrap !important;
+  }
+  .service .content .box {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .service .content .text {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .service .content .text h2 {
+    text-align: center !important;
+  }
+  
+  /* Classes section columns wrapping */
+  .classes .content {
+    flex-wrap: wrap !important;
+  }
+  .classes .content .box {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .classes .content .img {
+    display: none !important;
+  }
+  .classes .content .text h2 {
+    text-align: center !important;
+  }
+  .classes .content .text p {
+    text-align: center !important;
+  }
+  .classes .content .class-items .item {
+    flex-wrap: wrap !important;
+  }
+  .classes .content .class-items .item .item-text, 
+  .classes .content .class-items .item .item-img {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .classes .content .class-items .item .item-img .price {
+    right: 0 !important;
+    left: auto !important;
+  }
+  
+  /* Start Today section columns wrapping */
+  .start-today .content {
+    flex-wrap: wrap !important;
+  }
+  .start-today .content .box {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .start-today .content .text {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .start-today .content .img {
+    margin-top: 20px;
+  }
+  
+  /* Schedule section columns wrapping */
+  .schedule .content {
+    flex-wrap: wrap !important;
+  }
+  .schedule .content .box {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .schedule .content .text {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .schedule .content .text h2 {
+    text-align: center !important;
+  }
+  .schedule .content .timing {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+  }
+  .schedule .content .timing .table {
+    min-width: 600px !important;
+  }
+}
+
+/* Mobile specific styling adjustments */
+@media(max-width: 767px) {
+  section:not(.home) h1,
+  section:not(.home) h2,
+  .section-title {
+    font-size: 36px !important;
+  }
+  .service .content .text h2,
+  .classes .content .text h2,
+  .schedule .content .text h2 {
+    font-size: 32px !important;
+  }
+}
+
 
 
