@@ -87,111 +87,99 @@
   },
   "classes_section": {
     "title": "Combat Classes",
-    "description": "Review our core combat training classes led by certified instructors. Select a program that aligns with your goals and start building your skills today.",
+    "description": "Review our core combat training classes led by Coach Arshad. Select a program that aligns with your goals and start building your skills today.",
     "cards": [
       {
         "title": "Mixed Martial Arts (MMA)",
-        "coach": "Coach Vikram • MMA Champion & ISSA Trainer",
+        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,499/mo",
         "image": "images/class1.jpg",
-        "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound. 75 minutes, 4x per week."
+        "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound. 75 minutes."
       },
       {
         "title": "Brazilian Jiu-Jitsu (BJJ)",
-        "coach": "Coach Rahul • BJJ Purple Belt",
+        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,199/mo",
         "image": "images/class1.jpg",
-        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense. 60 minutes, 4x per week."
+        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense. 60 minutes."
       },
       {
         "title": "Boxing & Kickboxing",
-        "coach": "Coach Priya • Certified Boxing Coach",
+        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,799/mo",
         "image": "images/class1.jpg",
-        "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring. 60 minutes, 3x per week."
+        "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring. 60 minutes."
       },
       {
         "title": "Self-Defense & Karate",
-        "coach": "Trainer Anjali • Black Belt Shito-Ryu",
+        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,499/mo",
         "image": "images/class1.jpg",
-        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers. 60 minutes, 3x per week."
+        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers. 60 minutes."
       }
     ]
   },
   "schedule_section": {
     "title": "Training Timetable",
-    "description": "Our schedule features dedicated sessions for Men and Women. Morning slots focus on striking conditioning and self-defense, while evening slots specialize in MMA spar work, BJJ, and wrestling drills. Sunday is a rest day.",
+    "description": "Our schedule features dedicated MMA arts training sessions led by Coach Arshad. Morning sessions run from 5:30 AM to 7:00 AM, and evening sessions run from 5:00 PM to 6:00 PM. Sunday is a rest day.",
     "headers": {
       "day": "Day",
-      "morning": "Morning Sessions",
-      "evening": "Evening Sessions"
+      "morning": "Morning Session",
+      "evening": "Evening Session"
     },
     "days": [
       {
         "day": "Monday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
         "day": "Tuesday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
         "day": "Wednesday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
         "day": "Thursday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
         "day": "Friday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
         "day": "Saturday",
         "morning": [
-          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
-          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
-          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
         ]
       },
       {
