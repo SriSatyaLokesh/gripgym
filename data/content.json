@@ -86,5 +86,73 @@
       "instagram": "https://instagram.com/gripgym",
       "facebook": "https://facebook.com/gripgym"
     }
+  },
+  "gallery": {
+    "title": "Workout Gallery",
+    "intro": "Experience our gym in action. See our members training, our facilities, and the community spirit that makes GripGym special.",
+    "images": [
+      {
+        "id": "gallery1",
+        "src": "images/gallery1.jpg",
+        "alt": "Members performing grip strength training",
+        "caption": "Grip Strength Training"
+      },
+      {
+        "id": "gallery2",
+        "src": "images/gallery2.jpg",
+        "alt": "Functional strength training with kettlebells",
+        "caption": "Functional Strength"
+      },
+      {
+        "id": "gallery3",
+        "src": "images/gallery3.jpg",
+        "alt": "Powerlifting sessions at GripGym",
+        "caption": "Powerlifting Excellence"
+      },
+      {
+        "id": "gallery4",
+        "src": "images/gallery4.jpg",
+        "alt": "HIIT conditioning and cardio workout",
+        "caption": "HIIT Cardio Circuit"
+      },
+      {
+        "id": "gallery5",
+        "src": "images/about1.jpg",
+        "alt": "Personal training consultation",
+        "caption": "Expert Coaching"
+      },
+      {
+        "id": "gallery6",
+        "src": "images/about2.jpg",
+        "alt": "Community fitness event at GripGym",
+        "caption": "Community Spirit"
+      }
+    ]
+  },
+  "footer": {
+    "company_name": "GripGym",
+    "tagline": "Train Harder. Grip Stronger.",
+    "description": "Your premier fitness destination in Bhadrachalam, specializing in grip strength, functional training, and comprehensive fitness excellence.",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "phone": "+91-9876543210",
+    "email": "info@gripgym.com",
+    "hours": {
+      "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
+      "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
+    },
+    "social_links": [
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/gripgym",
+        "icon": "fa fa-instagram"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/gripgym",
+        "icon": "fa fa-facebook"
+      }
+    ],
+    "copyright_text": "All rights reserved."
   }
 }
+

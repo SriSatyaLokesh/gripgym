@@ -1,4 +1,4 @@
-// Content Loader — Fetch and render pricing & contact sections from data/content.json
+// Content Loader — Fetch and render pricing, gallery, contact & footer sections from data/content.json
 
 document.addEventListener('DOMContentLoaded', function() {
   loadContent();
@@ -12,18 +12,52 @@ async function loadContent() {
     }
     const data = await response.json();
     
+    console.log('[ContentLoader] Data loaded, starting renders...');
+    
     // Render pricing section
     renderPricing(data.pricing);
+    console.log('[ContentLoader] Pricing rendered');
+    
+    // Render gallery section
+    renderGallery(data.gallery);
+    console.log('[ContentLoader] Gallery rendered');
     
     // Render contact section
     renderContact(data.contact);
+    console.log('[ContentLoader] Contact rendered');
+    
+    // Render footer section
+    renderFooter(data.footer);
+    console.log('[ContentLoader] Footer rendered');
     
     // Attach form handler
     attachFormHandler();
+    
+    // Reinitialize WOW.js for newly rendered elements
+    if (typeof WOW !== 'undefined') {
+      new WOW({
+        animateClass: 'animated',
+        offset: 0
+      }).init();
+      console.log('[ContentLoader] WOW.js reinitialized');
+    }
+    
+    // Initialize lightbox after gallery render
+    if (typeof Lightbox !== 'undefined') {
+      Lightbox.init('.gallery-item');
+      console.log('[ContentLoader] Lightbox initialized');
+    }
+    
+    console.log('[ContentLoader] All content loaded and initialized');
   } catch (error) {
     console.error('Error loading content:', error);
-    document.getElementById('pricing-grid').textContent = 'Error loading pricing data. Please refresh the page.';
-    document.getElementById('contact-info').textContent = 'Error loading contact data. Please refresh the page.';
+    const pricingGrid = document.getElementById('pricing-grid');
+    const galleryGrid = document.getElementById('gallery-grid');
+    const contactInfo = document.getElementById('contact-info');
+    
+    if (pricingGrid) pricingGrid.textContent = 'Error loading pricing data. Please refresh the page.';
+    if (galleryGrid) galleryGrid.textContent = 'Error loading gallery data. Please refresh the page.';
+    if (contactInfo) contactInfo.textContent = 'Error loading contact data. Please refresh the page.';
   }
 }
 
@@ -95,6 +129,45 @@ function renderPricing(pricingData) {
   });
 }
 
+function renderGallery(galleryData) {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) {
+    console.warn('[ContentLoader] Gallery grid container not found');
+    return;
+  }
+  
+  grid.innerHTML = ''; // Clear placeholder
+  
+  if (!galleryData.images || galleryData.images.length === 0) {
+    console.warn('[ContentLoader] No gallery images found in data');
+    return;
+  }
+  
+  galleryData.images.forEach((image, index) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item wow fadeIn';
+    item.setAttribute('data-wow-delay', (index * 0.1) + 's');
+    item.setAttribute('data-image', image.id);
+    item.setAttribute('data-caption', image.caption);
+    
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.alt;
+    img.title = image.caption;
+    
+    const caption = document.createElement('div');
+    caption.className = 'gallery-item-caption';
+    caption.textContent = image.caption;
+    
+    item.appendChild(img);
+    item.appendChild(caption);
+    
+    grid.appendChild(item);
+    
+    console.log('[ContentLoader] Gallery item added:', image.caption);
+  });
+}
+
 function renderContact(contactData) {
   const contactInfo = document.getElementById('contact-info');
   if (!contactInfo) return;
@@ -146,6 +219,53 @@ function renderContact(contactData) {
   contactInfo.appendChild(email);
   contactInfo.appendChild(address);
   contactInfo.appendChild(hours);
+}
+
+function renderFooter(footerData) {
+  // Update footer phone
+  const footerPhone = document.getElementById('footer-phone');
+  if (footerPhone) {
+    footerPhone.textContent = footerData.phone;
+  }
+  
+  // Update footer email
+  const footerEmail = document.getElementById('footer-email');
+  if (footerEmail) {
+    footerEmail.textContent = footerData.email;
+  }
+  
+  // Update footer hours
+  const footerHours = document.getElementById('footer-hours');
+  if (footerHours) {
+    footerHours.innerHTML = '';
+    const weekdaysP = document.createElement('p');
+    weekdaysP.innerHTML = '<strong>Weekdays:</strong> ' + footerData.hours.weekdays;
+    const weekendP = document.createElement('p');
+    weekendP.innerHTML = '<strong>Weekends:</strong> ' + footerData.hours.weekends;
+    footerHours.appendChild(weekdaysP);
+    footerHours.appendChild(weekendP);
+  }
+  
+  // Update footer social links
+  const footerSocial = document.getElementById('footer-social');
+  if (footerSocial && footerData.social_links) {
+    footerSocial.innerHTML = '';
+    footerData.social_links.forEach(link => {
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.title = link.platform;
+      a.innerHTML = '<i class="' + link.icon + '"></i>';
+      footerSocial.appendChild(a);
+    });
+  }
+  
+  // Update footer year
+  const footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
 }
 
 function attachFormHandler() {
