@@ -2675,5 +2675,25 @@ section:not(.home) h2,
   width: 15% !important;
 }
 
+/* 12. Schedule Holiday Styling */
+.schedule-table .holiday-col {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.01) !important;
+}
+
+.schedule-table .holiday-badge {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 
 
