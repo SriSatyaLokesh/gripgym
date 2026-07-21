@@ -31,10 +31,11 @@
   --fw-black:    900;
 }
 
-body{
+html, body{
 	margin:0;
 	padding:0;
 	overflow-x: hidden;
+	max-width: 100%;
 	background-color: var(--color-bg-primary);
 	color: var(--color-text-base);
 }
@@ -153,6 +154,21 @@ header .ham-burger{
 	display: inline-block;
 	position: relative;
 	z-index: 100;
+	background: rgba(15, 15, 15, 0.85);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 8px;
+	padding: 10px 10px 2px 10px;
+	transition: all 0.3s ease;
+}
+header .ham-burger:hover{
+	background: rgba(30, 30, 30, 0.95);
+	border-color: var(--color-primary);
+}
+header .ham-burger.active{
+	background: rgba(15, 15, 15, 0.95);
+	border-color: rgba(255, 255, 255, 0.1);
 }
 header .ham-burger span{
 	height: 3px;
@@ -2004,7 +2020,6 @@ header .nav ul li a:hover {
 /* Pricing Grid & Cards */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -2855,6 +2870,20 @@ header .logo a span,
 
 /* 16. Mobile UI/UX Optimizations */
 @media(max-width: 767px) {
+  /* Mobile header positioning fix (remove transform to allow viewport-relative fixed drawer) */
+  header {
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    background: #0f0f0f !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 15px 20px !important;
+  }
+
   /* Section Padding Reductions */
   section {
     padding: 50px 0px !important;
@@ -2867,25 +2896,31 @@ header .logo a span,
     margin-top: 25px !important;
   }
   
-  /* Mobile glassmorphic sidebar navigation drawer */
+  /* Mobile sidebar navigation drawer (solid dark background to prevent text collision) */
   header .nav {
-    background: rgba(15, 15, 15, 0.96) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    box-shadow: -10px 0 45px rgba(0, 0, 0, 0.8) !important;
+    background: #0f0f0f !important;
+    box-shadow: -10px 0 45px rgba(0, 0, 0, 0.9) !important;
     border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   
   header .nav ul li a {
     color: var(--color-text-base) !important;
-    transition: all 0.3s ease !important;
+    background: #1a1a1a !important; /* Completely solid dark background (no transparency) */
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    margin: 8px 20px !important;
+    padding: 10px 20px !important;
+    font-size: 22px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
   
   header .nav ul li a:hover,
   header .nav ul li a.active {
-    color: var(--color-primary) !important;
-    background: transparent !important;
-    padding-left: 15px !important;
+    color: var(--color-text-on-accent) !important;
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    padding-left: 28px !important;
+    box-shadow: 0 4px 15px rgba(232, 25, 44, 0.3) !important;
   }
   
   /* Horizontal scrollbar styling for mobile schedule table swipe indicator */
@@ -2901,6 +2936,94 @@ header .logo a span,
   .schedule-table-wrapper::-webkit-scrollbar-thumb {
     background: rgba(232, 25, 44, 0.4) !important;
     border-radius: 3px !important;
+  }
+
+  /* Prevent schedule table from compressing and allow horizontal scroll on mobile */
+  .schedule-table {
+    width: auto !important;
+    min-width: 650px !important;
+  }
+
+  /* GPU-Accelerated Mobile-friendly fade-in reveal animations */
+  .wow {
+    animation-name: mobileFadeIn !important;
+    animation-duration: 0.8s !important;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    animation-fill-mode: both !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+
+  @keyframes mobileFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth drawer slide transition */
+  header .nav {
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  /* Staggered fade-in animations for mobile navigation drawer options */
+  header .nav.open ul li {
+    animation: mobileNavFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  
+  header .nav.open ul li:nth-child(1) { animation-delay: 0.05s; }
+  header .nav.open ul li:nth-child(2) { animation-delay: 0.10s; }
+  header .nav.open ul li:nth-child(3) { animation-delay: 0.15s; }
+  header .nav.open ul li:nth-child(4) { animation-delay: 0.20s; }
+  header .nav.open ul li:nth-child(5) { animation-delay: 0.25s; }
+  header .nav.open ul li:nth-child(6) { animation-delay: 0.30s; }
+  header .nav.open ul li:nth-child(7) { animation-delay: 0.35s; }
+  header .nav.open ul li:nth-child(8) { animation-delay: 0.40s; }
+
+  @keyframes mobileNavFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Press/Touch micro-interactions for mobile */
+  .pricing-card,
+  .class-card,
+  .gallery-item,
+  .btn,
+  .hero-cta,
+  .class-details-btn,
+  #contact-form button {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  }
+
+  .pricing-card:active,
+  .class-card:active,
+  .gallery-item:active {
+    transform: scale(0.98) !important;
+  }
+
+  .btn:active,
+  .hero-cta:active,
+  .pricing-card .select-plan-btn:active,
+  .class-details-btn:active,
+  #contact-form button:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* Add spacing container padding on mobile screens */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
 

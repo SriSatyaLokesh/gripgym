@@ -37,7 +37,8 @@ async function loadContent() {
     if (typeof WOW !== 'undefined') {
       new WOW({
         animateClass: 'animated',
-        offset: 0
+        offset: 0,
+        mobile: false
       }).init();
       console.log('[ContentLoader] WOW.js reinitialized');
     }
@@ -308,10 +309,11 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Dynamic Hero Glow Aura Tracking (60fps LERP)
+// Dynamic Hero Glow Aura Tracking (60fps LERP) - Desktop Only
 document.addEventListener('DOMContentLoaded', function() {
   const heroSection = document.querySelector('.home');
-  if (heroSection) {
+  // Check if device supports hover (desktop mouse) and screen is large
+  if (heroSection && window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
     const glowAura = document.createElement('div');
     glowAura.className = 'hero-glow-aura';
     heroSection.appendChild(glowAura);
