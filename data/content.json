@@ -3,8 +3,22 @@
     "gym_name": "GripGym",
     "version": "1.0",
     "last_updated": "2026-07-21",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111"
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "keywords": "fitness, gym, CrossFit, powerlifting, yoga, boxing, personal training, strength training",
+    "google_analytics_id": "G-XXXXXXXXXX",
+    "og_url": "https://sristayalokesh.is-a.dev/gripgym/",
+    "og_image": "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg"
   },
+  "navigation": [
+    { "label": "Home", "link": "#home" },
+    { "label": "About", "link": "#about" },
+    { "label": "Services", "link": "#service" },
+    { "label": "Classes", "link": "#classes" },
+    { "label": "Schedule", "link": "#schedule" },
+    { "label": "Pricing", "link": "#pricing" },
+    { "label": "Gallery", "link": "#gallery" },
+    { "label": "Contact", "link": "#contact" }
+  ],
   "theme": {
     "primary": "#e8192c",
     "primary_dark": "#b0111f",
@@ -108,6 +122,11 @@
   "schedule_section": {
     "title": "Training Schedule",
     "description": "Our restructured training schedule is designed to optimize your gym experience. We offer dedicated slots for men and women during morning and evening sessions. Morning sessions focus on strength and HIIT, while evening sessions specialize in powerlifting, core work, and mobility training. Review the schedule and secure your slot today.",
+    "headers": {
+      "day": "Day",
+      "morning": "Morning Sessions",
+      "evening": "Evening Sessions"
+    },
     "days": [
       {
         "day": "Monday",
@@ -183,6 +202,7 @@
     ]
   },
   "pricing": {
+    "title": "Membership Plans",
     "intro": "Flexible membership plans for every fitness level at GripGym. Choose the plan that fits your goals and budget.",
     "tiers": [
       {
@@ -251,6 +271,7 @@
     ]
   },
   "contact": {
+    "title": "Get In Touch",
     "phone": "+91-9876543210",
     "email": "info@gripgym.com",
     "address": "Old Market Road, Bhadrachalam, Telangana 507111",
@@ -259,6 +280,13 @@
       "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
     },
     "form_type": "email",
+    "form": {
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email",
+      "message_placeholder": "Your Message",
+      "submit_button_text": "Send Message",
+      "success_message": "Thank you {name}! Your message has been sent. We will contact you shortly."
+    },
     "social_media": {
       "instagram": "https://instagram.com/gripgym",
       "facebook": "https://facebook.com/gripgym"
@@ -323,6 +351,18 @@
     "hours": {
       "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
       "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
+    },
+    "headers": {
+      "location": "Location",
+      "contact": "Contact",
+      "hours": "Hours",
+      "follow_us": "Follow Us"
+    },
+    "labels": {
+      "phone": "Phone:",
+      "email": "Email:",
+      "weekdays": "Weekdays:",
+      "weekends": "Weekends:"
     },
     "social_links": [
       {
