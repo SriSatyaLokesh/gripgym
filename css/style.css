@@ -2404,5 +2404,94 @@ section:not(.home) h2,
   }
 }
 
+/* 9. Restructured Schedule Timetable Styles */
+.schedule-table th {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  padding: 15px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-border);
+}
+
+.schedule-table td {
+  padding: 15px !important;
+  vertical-align: middle;
+}
+
+.schedule-table .day-col {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--color-text-on-accent);
+  background-color: var(--color-bg-surface);
+  font-size: 15px;
+  width: 15%;
+}
+
+.schedule-table .slot {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-family: var(--font-body);
+  line-height: 1.4;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-table .slot:last-child {
+  margin-bottom: 0;
+}
+
+.schedule-table .slot strong {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.schedule-table .men-slot {
+  background: rgba(232, 25, 44, 0.06);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-text-base);
+}
+
+.schedule-table .men-slot strong {
+  color: var(--color-primary);
+}
+
+.schedule-table .women-slot {
+  background: rgba(249, 115, 22, 0.06);
+  border-left: 3px solid #f97316;
+  color: var(--color-text-base);
+}
+
+.schedule-table .women-slot strong {
+  color: #f97316;
+}
+
+@media(max-width: 767px) {
+  .schedule-table th {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .schedule-table td {
+    padding: 10px !important;
+  }
+  .schedule-table .day-col {
+    font-size: 13px;
+  }
+  .schedule-table .slot {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
 
 
