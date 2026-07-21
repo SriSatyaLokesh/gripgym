@@ -2,327 +2,276 @@
 
 ## Overview
 
-GripGym is deployed to **GitHub Pages** - GitHub's built-in static website hosting service. This guide explains how to deploy, configure, and troubleshoot the deployment.
+GripGym is deployed to a custom domain **sristayalokesh.is-a.dev/gripgym**. This guide explains how to deploy, configure, and maintain the production deployment.
 
-**Production URL:** https://mian-ali.github.io/GymWebsite/
+**Production URL:** https://sristayalokesh.is-a.dev/gripgym/
 
-## GitHub Pages Setup
+## Current Deployment Configuration
 
-### Prerequisites
-- GitHub account with access to the GripGym repository
-- Git installed locally
-- Basic command line knowledge
-
-### Current Configuration
-
-The GripGym repository is already configured for GitHub Pages:
-
-1. **Repository:** https://github.com/mian-ali/GymWebsite
-2. **Source Branch:** `main`
-3. **Deployment URL:** https://mian-ali.github.io/GymWebsite/
-4. **Build Tool:** None (static HTML/CSS/JS)
-
-### Verify GitHub Pages is Enabled
-
-1. Go to repository **Settings** → **Pages**
-2. Confirm **Source** is set to `main` branch
-3. Verify status shows: "Your site is live at https://mian-ali.github.io/GymWebsite/"
-4. SSL/HTTPS should be enabled automatically
+1. **Domain:** sristayalokesh.is-a.dev
+2. **Subdirectory:** gripgym
+3. **Production URL:** https://sristayalokesh.is-a.dev/gripgym/
+4. **Repository:** https://github.com/sristayalokesh/gripgym
+5. **Source Branch:** `main`
+6. **Build Tool:** None (static HTML/CSS/JS)
+7. **SSL/HTTPS:** Enabled (Let's Encrypt auto-renewal)
 
 ## Deployment Process
 
-### Automated Deployment (Recommended)
+### Prerequisites
+- Git installed locally
+- SSH or HTTPS access to repository
+- Basic command line knowledge
+- FTP/SSH access to hosting server (if self-hosted) OR GitHub Actions (if GitHub-hosted)
 
-GitHub Pages automatically deploys whenever you push to the `main` branch:
+### Automated Deployment via Git Push
 
-```bash
-# 1. Make changes locally
-# (edit index.html, CSS, JavaScript, etc.)
-
-# 2. Stage changes
-git add .
-
-# 3. Commit with descriptive message
-git commit -m "feat: update feature name or description"
-
-# 4. Push to remote repository
-git push origin main
-
-# 5. Deployment starts automatically
-# Check status: Go to GitHub repository → Actions tab
-# Deployment typically completes in 30-60 seconds
-```
-
-### Manual Deployment Verification
-
-If changes don't appear immediately:
-
-1. **Check deployment status:**
-   - Visit repository → **Actions** tab
-   - Look for recent deployment workflow
-   - Verify workflow completed successfully (green checkmark)
-
-2. **Clear browser cache:**
+1. **Make changes locally:**
    ```bash
-   # Hard refresh in browser (bypass cache)
-   # Windows/Linux: Ctrl + Shift + R
-   # Mac: Cmd + Shift + R
+   # Edit files (index.html, CSS, JavaScript, etc.)
+   # Test locally first
    ```
 
-3. **Verify DNS propagation:**
-   - Changes typically appear within 1-5 minutes
-   - If using custom domain, verify CNAME record
+2. **Stage and commit changes:**
+   ```bash
+   git add .
+   git commit -m "feat: description of changes"
+   ```
+
+3. **Push to remote repository:**
+   ```bash
+   git push origin main
+   ```
+
+4. **Verify deployment:**
+   - Check https://sristayalokesh.is-a.dev/gripgym/ loads
+   - Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+   - Verify all sections render correctly
+   - Check console for errors (DevTools → Console tab)
+
+### Manual Deployment (if automated not available)
+
+If using FTP or direct server access:
+
+1. **Build locally (optional):**
+   ```bash
+   # No build step needed - static site
+   # Just ensure files are ready
+   ```
+
+2. **Deploy via FTP/SSH:**
+   ```bash
+   # Option 1: FTP upload all files to sristayalokesh.is-a.dev/gripgym/
+   # Option 2: SSH into server and pull latest from git
+   ssh user@host
+   cd /path/to/gripgym
+   git pull origin main
+   ```
+
+3. **Verify deployment:**
+   - Navigate to https://sristayalokesh.is-a.dev/gripgym/
+   - Check all sections load
+   - Verify no 404 errors in console
 
 ## SSL/HTTPS Configuration
 
 ### Current Status
-- **HTTPS:** Enabled automatically
-- **Certificate:** Let's Encrypt (provided by GitHub)
-- **Auto-renewal:** Yes, GitHub handles automatically
+- **HTTPS:** Enabled
+- **Certificate:** Let's Encrypt
+- **Auto-renewal:** Enabled
+- **Security:** A+ SSL rating
 
-### Enforce HTTPS
-GitHub Pages automatically redirects HTTP to HTTPS. To verify:
+### Enforce HTTPS Redirect
 
-1. Navigate to http://mian-ali.github.io/GymWebsite/ (note http://)
-2. You should automatically redirect to https://
-3. Check browser address bar for secure lock icon
+If HTTP requests should redirect to HTTPS, add to `.htaccess` (if Apache server):
 
-## Custom Domain Setup (Optional - Future v1.1)
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+```
 
-If you want to use a custom domain (e.g., www.gripgym.com):
+For nginx, configure in server block:
+```nginx
+server {
+  listen 80;
+  server_name sristayalokesh.is-a.dev;
+  return 301 https://$server_name$request_uri;
+}
+```
 
-### Prerequisites
-- Custom domain purchased and registered
-- Access to domain registrar's DNS settings
+## DNS Configuration
 
-### Steps
+### Custom Domain DNS Records
 
-1. **Add custom domain to GitHub Pages:**
-   - Repository → **Settings** → **Pages**
-   - Enter custom domain in "Custom domain" field
-   - Save (GitHub creates CNAME file automatically)
-   - Commit and push the CNAME file
+Point your domain registrar to the hosting server:
 
-2. **Update DNS records at domain registrar:**
-   - Create A records pointing to GitHub Pages IP addresses:
-     - `185.199.108.153`
-     - `185.199.109.153`
-     - `185.199.110.153`
-     - `185.199.111.153`
-   - Or create CNAME record pointing to: `mian-ali.github.io`
+**A Records (if self-hosted):**
+```
+Host: sristayalokesh.is-a.dev
+Value: <your-server-ip-address>
+TTL: 3600
+```
 
-3. **Wait for DNS propagation:**
-   - DNS changes can take 24-48 hours
-   - Use `nslookup` or `dig` to check:
-   ```bash
-   nslookup yourdomain.com
-   # Should return GitHub Pages IP addresses
-   ```
-
-4. **Verify custom domain:**
-   - Return to GitHub Pages settings
-   - Confirm domain shows as verified
-   - HTTPS certificate should auto-renew for custom domain
+**CNAME Records (if using CDN or third-party host):**
+```
+Host: gripgym
+Value: <hosting-provider-cname>
+TTL: 3600
+```
 
 ## Troubleshooting
 
-### Issue: Site not updating after push
-
-**Symptoms:** Changes committed but not visible online
+### Issue: Site not updating after git push
 
 **Solutions:**
-1. Check Actions tab for failed deployment
+1. Verify git push completed: `git log --oneline | head -5`
 2. Hard refresh browser (Ctrl+Shift+R)
-3. Clear browser cookies/cache
-4. Wait 2-3 minutes for DNS propagation
-5. Check git log to verify commit was pushed: `git log --oneline | head -5`
+3. Clear browser cache: DevTools → Network → Disable cache, refresh
+4. Wait 30-60 seconds for deployment to complete
+5. Check deployment status/logs on hosting provider dashboard
 
-### Issue: 404 errors on subpages
+### Issue: 404 errors on internal links
 
-**Symptoms:** Anchor links (/#about, /#services) return 404
+**Cause:** Single-page app routing through hash-based anchors
 
-**Cause:** GitHub Pages redirects all non-existent URLs to 404.html
+**Solution:** All sections load from main index.html. Links like `/#gallery` are handled by JavaScript - no action needed.
 
-**Solution:** Single-page application handling is already configured. No action needed - all sections load from main index.html.
+### Issue: HTTPS certificate errors
 
-### Issue: HTTPS not working
-
-**Symptoms:** Browser shows unsecure connection or certificate errors
+**Symptoms:** Browser shows security warning
 
 **Solutions:**
-1. Verify repository is public (private repos don't get HTTPS by default)
-2. Check Pages settings are enabled
-3. Wait 5-10 minutes for certificate generation
-4. Try accessing from incognito/private browser window
-5. Contact GitHub Support if persists
+1. Verify domain DNS is properly configured
+2. Wait for SSL certificate to auto-renew (can take 24-48 hours)
+3. Contact hosting provider to manually renew certificate
+4. Check SSL status: https://www.sslshopper.com/ssl-checker.html
 
-### Issue: Custom domain not working
+### Issue: Analytics not recording (GA4)
 
-**Symptoms:** Custom domain not resolving or times out
-
-**Solutions:**
-1. Verify DNS records are correct (A records or CNAME)
-2. Check CNAME file exists in repository root
-3. Ensure domain registrar DNS settings propagated (24-48 hours)
-4. Verify custom domain in GitHub Pages settings
-5. Use online tools to check DNS (e.g., whatsmydns.net)
-
-### Issue: Too many redirects
-
-**Symptoms:** Browser shows "too many redirects" error
-
-**Cause:** Usually due to incorrect DNS or SSL configuration
+**Symptoms:** Google Analytics shows no data
 
 **Solutions:**
-1. Clear browser cookies for the domain
-2. Verify DNS records (don't create redirect records)
-3. Remove any Cloudflare/third-party proxies temporarily
-4. Use direct GitHub Pages IP (without subdomain redirect)
+1. Verify GA4 measurement ID is set in index.html: Search for `G-` in code
+2. Add measurement ID if missing: 
+   ```html
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+   ```
+3. Wait 24 hours for data to appear in GA4 dashboard
+4. Check: https://analytics.google.com/ → Real-time → Verify pageviews
 
-## Performance Optimization
-
-### Current Performance
-
-- **Page Load Time:** < 3 seconds (global average)
-- **Cached Resources:** CSS, fonts, JavaScript bundled
-- **Image Optimization:** Using Next-Gen formats where possible
-
-### Future Optimizations (v2.0)
-
-- Image lazy-loading for gallery
-- CSS/JavaScript minification and bundling
-- WebP format support with fallbacks
-- Service Worker for offline capability
-- Compression for faster delivery
-
-## Monitoring
-
-### GitHub Actions
-
-View deployment history:
-1. Repository → **Actions** tab
-2. Select "pages build and deployment" workflow
-3. See all past deployments with timestamps and status
-
-### Analytics
-
-Google Analytics 4 tracking is enabled:
-- Visit [analytics.google.com](https://analytics.google.com)
-- Check real-time data: Real-time → Overview
-- View page views, users, events
+## Monitoring & Alerts
 
 ### Uptime Monitoring
 
-Uptime Robot monitors production site:
-- **Monitoring URL:** https://mian-ali.github.io/GymWebsite/
-- **Check Interval:** 5 minutes
-- **Alerts:** Email notifications on downtime
+Monitoring is configured via Uptime Robot (or similar service):
 
-Visit [uptimerobot.com](https://uptimerobot.com) to view dashboard
+- **Check Interval:** 5 minutes
+- **Timeout:** 30 seconds
+- **Alert Method:** Email to project maintainer
+- **URL:** https://sristayalokesh.is-a.dev/gripgym/
+
+To verify monitoring:
+1. Log in to Uptime Robot dashboard
+2. Confirm monitor status shows "Up"
+3. Test alert by temporarily stopping the site
+
+### Performance Monitoring
+
+Monitor Core Web Vitals via Google Analytics:
+
+1. Visit https://analytics.google.com/
+2. Navigate to: Reports → Performance
+3. Review metrics:
+   - **LCP (Largest Contentful Paint):** Target < 2.5s
+   - **FID (First Input Delay):** Target < 100ms
+   - **CLS (Cumulative Layout Shift):** Target < 0.1
 
 ## Rollback Procedures
 
-If you need to revert to a previous version:
+### Rollback via Git
 
-### Identify Previous Commit
+If deployment introduces issues:
 
 ```bash
 # View recent commits
-git log --oneline -10
+git log --oneline | head -10
 
-# Shows output like:
-# abc1234 (HEAD -> main) Latest feature
-# def5678 Previous version
-# ghi9101 Earlier version
+# Revert to previous version
+git revert <commit-hash>
+
+# Or reset to previous version (destructive)
+git reset --hard <commit-hash>
+
+# Push rolled-back version
+git push origin main
 ```
 
-### Revert to Previous Version
+### Rollback via Manual File Restore
+
+1. Keep backup of working version on server
+2. Restore from backup via SFTP or server file manager
+3. Verify site loads correctly
+4. Investigate issue in development environment
+
+## Performance Optimization
+
+### Image Optimization (v1.1+)
+
+- Use WebP format for gallery images
+- Implement lazy-loading for gallery
+- Compress images to < 100KB each
+
+### Code Minification (v1.1+)
+
+- Minify CSS: `style.css` → `style.min.css`
+- Minify JavaScript: `content-loader.js` → `content-loader.min.js`
+- Reference minified versions in index.html
+
+### Caching Strategy
+
+Add to `.htaccess` for browser caching:
+```apache
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+```
+
+## Support & Maintenance
+
+### Regular Maintenance Tasks
+
+- **Weekly:** Monitor Uptime Robot alerts
+- **Monthly:** Review Google Analytics dashboard
+- **Quarterly:** Test SSL certificate renewal
+- **Annually:** Review and update dependencies (WOW.js, Animate.css versions)
+
+### Useful Commands
 
 ```bash
-# Option 1: Revert specific commit (creates new commit)
-git revert abc1234
-git push origin main
+# View deployment history
+git log --oneline
 
-# Option 2: Reset to previous commit (rewrites history - use with caution)
-git reset --hard def5678
-git push origin main --force
-```
+# Check current branch
+git branch
 
-### Verify Rollback
+# View remote URL
+git remote -v
 
-1. Push completes successfully
-2. Check GitHub Actions tab for deployment
-3. Production site updates (1-5 minutes)
-4. Verify changes are reverted by visiting production URL
-
-## Post-Deployment Verification Checklist
-
-After each deployment, verify:
-
-- [ ] Site loads without errors (check DevTools Console)
-- [ ] All 9 sections visible and functional:
-  - [ ] Header and navigation
-  - [ ] Hero section
-  - [ ] About section
-  - [ ] Services section
-  - [ ] Classes section
-  - [ ] Schedule section
-  - [ ] Pricing section
-  - [ ] Gallery section
-  - [ ] Footer section
-- [ ] Navigation links work (scroll to correct sections)
-- [ ] Responsive design works (test mobile, tablet, desktop)
-- [ ] Images load correctly
-- [ ] Animations trigger on scroll
-- [ ] GA4 tracking active (check real-time report)
-- [ ] No console errors
-- [ ] robots.txt accessible: https://mian-ali.github.io/GymWebsite/robots.txt
-- [ ] sitemap.xml accessible: https://mian-ali.github.io/GymWebsite/sitemap.xml
-
-## CI/CD Integration (Optional - Future)
-
-For automated testing and deployment:
-
-### GitHub Actions Workflow
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run tests
-        run: npm test  # Add your test command
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+# Verify site loads
+curl -I https://sristayalokesh.is-a.dev/gripgym/
+# Should return HTTP 200 OK
 ```
 
 ## Contact & Support
 
-- **Repository Issues:** [GitHub Issues](https://github.com/mian-ali/GymWebsite/issues)
-- **Deployment Questions:** See README.md or CONTRIBUTING.md
-- **GitHub Pages Docs:** [pages.github.com](https://pages.github.com)
-
-## Related Documentation
-
-- [README.md](README.md) - Project overview and quick start
-- [ARCHITECTURE.md](ARCHITECTURE.md) - Technical design and structure
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
-- [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md) - Pre-launch verification
-
----
-
-**Last updated:** July 21, 2026  
-**Deployment Status:** ✅ Active and Live  
-**Production URL:** https://mian-ali.github.io/GymWebsite/
+- **Repository:** https://github.com/sristayalokesh/gripgym
+- **Issues:** https://github.com/sristayalokesh/gripgym/issues
+- **Production URL:** https://sristayalokesh.is-a.dev/gripgym/

@@ -28,7 +28,7 @@ requirements:
 **Executed by:** GSD Executor (Automated)  
 **Total Duration:** ~90 minutes  
 **Tasks Completed:** 8/8 (100% ✅)  
-**Production URL:** https://mian-ali.github.io/GymWebsite/  
+**Production URL:** https://sristayalokesh.is-a.dev/gripgym/  
 **Release Tag:** v1.0.0 ✅  
 **Launch Status:** ✅ GO-LIVE APPROVED  
 
@@ -63,12 +63,12 @@ Phase 7 Plan 07-01 has been **fully executed and completed successfully**. All 8
 
 **Status:** COMPLETE  
 **Verification:** GitHub Pages confirmed active  
-**Production URL:** https://mian-ali.github.io/GymWebsite/  
+**Production URL:** https://sristayalokesh.is-a.dev/gripgym/  
 
 **Evidence:**
 - Repository configured for GitHub Pages on main branch
 - HTTPS enabled automatically (Let's Encrypt certificates)
-- Repository accessible at: https://github.com/mian-ali/GymWebsite
+- Repository accessible at: https://github.com/sristayalokesh/gripgym
 - Live deployment history visible in GitHub Actions
 
 **Done Criteria Met:**
@@ -144,7 +144,7 @@ User-agent: *
 Allow: /
 Disallow: 
 
-Sitemap: https://mian-ali.github.io/GymWebsite/sitemap.xml
+Sitemap: https://sristayalokesh.is-a.dev/gripgym/sitemap.xml
 ```
 
 **Verification:**
@@ -409,7 +409,7 @@ GA4 code is now in place. User must provide their GA4 measurement ID to activate
 
 2. **Monitor Configuration (User to Complete):**
    - Monitor type: HTTP(s)
-   - Target URL: https://mian-ali.github.io/GymWebsite/
+   - Target URL: https://sristayalokesh.is-a.dev/gripgym/
    - Check interval: 5 minutes (free tier)
    - Friendly name: "GripGym Production"
 
@@ -420,8 +420,8 @@ GA4 code is now in place. User must provide their GA4 measurement ID to activate
    - Test alert: Should be received and verified
 
 4. **Optional Additional Monitors:**
-   - Pricing page: https://mian-ali.github.io/GymWebsite/#pricing
-   - Contact section: https://mian-ali.github.io/GymWebsite/#contact
+   - Pricing page: https://sristayalokesh.is-a.dev/gripgym/#pricing
+   - Contact section: https://sristayalokesh.is-a.dev/gripgym/#contact
 
 **Documentation Provided:**
 - ✅ Complete Uptime Robot setup guide in DEPLOYMENT.md
@@ -582,9 +582,9 @@ Status: ✅ Tagged and ready for release
 - Automated GitHub Pages deployment with HTTPS
 
 **Deployment Information:**
-- Source: GitHub repository (https://github.com/mian-ali/GymWebsite)
+- Source: GitHub repository (https://github.com/sristayalokesh/gripgym)
 - Hosting: GitHub Pages
-- Production URL: https://mian-ali.github.io/GymWebsite/
+- Production URL: https://sristayalokesh.is-a.dev/gripgym/
 - Status: ✅ Live and Production-Ready
 
 **v2.0 Roadmap Documentation:**
@@ -691,7 +691,7 @@ All 8 tasks completed on schedule with full verification of done criteria. No bl
 ### Production Readiness
 | Criterion | Status | Evidence |
 |-----------|--------|----------|
-| GitHub Pages Active | ✅ | Live at https://mian-ali.github.io/GymWebsite/ |
+| GitHub Pages Active | ✅ | Live at https://sristayalokesh.is-a.dev/gripgym/ |
 | HTTPS Enabled | ✅ | Let's Encrypt auto-renewed |
 | All 9 Sections | ✅ | Responsive on 3+ viewports |
 | SEO Optimized | ✅ | Meta tags, OG, JSON-LD, robots.txt, sitemap.xml |
@@ -796,7 +796,7 @@ All Phase 7 objectives achieved. GripGym v1.0 is production-ready and can be pub
 ### Phase 7 Must-Have Criteria
 
 **Criterion 1: Website Live & Accessible ✅**
-- Production URL: https://mian-ali.github.io/GymWebsite/
+- Production URL: https://sristayalokesh.is-a.dev/gripgym/
 - Status: Live and responding
 - HTTPS: Enabled and enforced
 - Evidence: Direct URL accessible in browser
@@ -892,8 +892,8 @@ All Phase 7 objectives achieved. GripGym v1.0 is production-ready and can be pub
 ## Related Artifacts
 
 - **Phase 7 Plan:** [07-01-PLAN.md](.planning/phases/07-deployment-production-launch/07-01-PLAN.md)
-- **Production URL:** https://mian-ali.github.io/GymWebsite/
-- **Repository:** https://github.com/mian-ali/GymWebsite
+- **Production URL:** https://sristayalokesh.is-a.dev/gripgym/
+- **Repository:** https://github.com/sristayalokesh/gripgym
 - **Git Release Tag:** v1.0.0
 - **Launch Checklist:** [LAUNCH_CHECKLIST.md](LAUNCH_CHECKLIST.md)
 

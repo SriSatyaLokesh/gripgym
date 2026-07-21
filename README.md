@@ -6,7 +6,7 @@
 
 GripGym is a modern, responsive fitness gym website showcasing premium fitness classes and services. Built with clean HTML5, CSS3, and vanilla JavaScript, the site delivers an exceptional user experience across all devices. Whether you're looking for powerlifting, CrossFit, yoga, boxing, or personalized training, GripGym has something for everyone.
 
-**Live Demo:** [https://mian-ali.github.io/GymWebsite/](https://mian-ali.github.io/GymWebsite/)
+**Live Demo:** [https://sristayalokesh.is-a.dev/gripgym/](https://sristayalokesh.is-a.dev/gripgym/)
 
 ## Features
 
@@ -45,8 +45,8 @@ GripGym is a modern, responsive fitness gym website showcasing premium fitness c
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mian-ali/GymWebsite.git
-cd GymWebsite
+git clone https://github.com/sristayalokesh/gripgym.git
+cd gripgym
 ```
 
 2. Open in browser:
@@ -217,9 +217,10 @@ To configure GA4:
 
 ## Deployment
 
-The site is deployed to **GitHub Pages** at: https://mian-ali.github.io/GymWebsite/
+The site is deployed to **GitHub Pages** at: https://sristayalokesh.is-a.dev/gripgym/
 
 For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
+
 
 ## Contributing
 
@@ -228,6 +229,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 - Code style and standards
 - Testing requirements
 - Pull request process
+
 
 ## Architecture
 
@@ -260,9 +262,10 @@ This project is licensed under the MIT License - see [LICENCE.md](LICENCE.md) fo
 
 ## Support & Contact
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/mian-ali/GymWebsite/issues)
-- **Discussions:** [Ask questions or share ideas](https://github.com/mian-ali/GymWebsite/discussions)
+- **GitHub Issues:** [Report bugs or request features](https://github.com/sristayalokesh/gripgym/issues)
+- **Discussions:** [Ask questions or share ideas](https://github.com/sristayalokesh/gripgym/discussions)
 - **Email:** Project maintainer contact (see CONTRIBUTING.md)
+
 
 ## Changelog
 
@@ -280,7 +283,8 @@ This project is licensed under the MIT License - see [LICENCE.md](LICENCE.md) fo
 
 *Last updated: July 21, 2026*
 
-### Project Live URI:  [Live Demo](https://mian-ali.github.io/GymWebsite/)
+### Project Live URI:  [Live Demo](https://sristayalokesh.is-a.dev/gripgym/)
+
 
 ## ScreenShoot
 

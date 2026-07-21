@@ -18,7 +18,8 @@ Complete all items below before marking v1.0 as launch-ready.
 - [x] Custom domain configured (if applicable) - Optional for v1.0
 - [x] HTTPS enabled (automatic with GitHub Pages)
 - [x] Deployment status shows "Your site is live at..."
-- [x] Production URL accessible: https://mian-ali.github.io/GymWebsite/
+- [x] Production URL accessible: https://sristayalokesh.is-a.dev/gripgym/
+
 
 ### 2. All 9 Sections Functional & Responsive ✅
 
@@ -151,9 +152,10 @@ Lighthouse Audit Results:
 - [x] **Open Graph Tags:**
   - [x] og:title: "GripGym - Your Premium Fitness Destination"
   - [x] og:description: "Expert-led fitness classes..."
-  - [x] og:image: "https://mian-ali.github.io/GymWebsite/images/hero-image.jpg"
-  - [x] og:url: "https://mian-ali.github.io/GymWebsite/"
+  - [x] og:image: "https://sristayalokesh.is-a.dev/gripgym/images/hero-image.jpg"
+  - [x] og:url: "https://sristayalokesh.is-a.dev/gripgym/"
   - [x] og:type: "website"
+
 
 - [x] **Twitter Card Tags:**
   - [x] twitter:card: "summary_large_image"
@@ -213,11 +215,12 @@ Lighthouse Audit Results:
   - [x] Account dashboard accessible
 
 - [x] **Monitoring Configured:**
-  - [x] Monitor created for: https://mian-ali.github.io/GymWebsite/
+  - [x] Monitor created for: https://sristayalokesh.is-a.dev/gripgym/
   - [x] Monitor type: HTTP(S)
   - [x] Check interval: 5 minutes
   - [x] Friendly name: "GripGym Production"
   - [x] Status: Active and checking
+
 
 - [x] **Email Alerts Configured:**
   - [x] Alert email address set: maintainer@example.com
@@ -358,13 +361,14 @@ Lighthouse Audit Results:
 
 ### Production Deployment Confirmed
 
-- **Production URL:** https://mian-ali.github.io/GymWebsite/
+- **Production URL:** https://sristayalokesh.is-a.dev/gripgym/
 - **Deployment Time:** 12:00 UTC on July 21, 2026
 - **Git Tag:** v1.0.0
 - **Deployment Method:** GitHub Pages (automatic from main branch)
 - **HTTPS Status:** Active and enforced
 - **Analytics Status:** GA4 tracking active
 - **Monitoring Status:** Uptime Robot active
+
 
 ### Next Steps
 
@@ -382,9 +386,10 @@ Ready to announce v1.0 publicly:
 > 
 > 💪 Premium fitness classes including powerlifting, CrossFit, yoga, boxing, and personal training.
 > 
-> 🌐 Visit: https://mian-ali.github.io/GymWebsite/
+> 🌐 Visit: https://sristayalokesh.is-a.dev/gripgym/
 > 
 > Built with HTML5, CSS3, and vanilla JavaScript. Fully responsive. SEO optimized. Analytics enabled.
+
 
 ---
 
@@ -413,10 +418,11 @@ Ready to announce v1.0 publicly:
 ## Contact & Support
 
 For deployment issues, questions, or escalations:
-- **Repository Issues:** [GitHub Issues](https://github.com/mian-ali/GymWebsite/issues)
+- **Repository Issues:** [GitHub Issues](https://github.com/sristayalokesh/gripgym/issues)
 - **Deployment Guide:** [DEPLOYMENT.md](DEPLOYMENT.md)
 - **Architecture Details:** [ARCHITECTURE.md](ARCHITECTURE.md)
 - **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+
 
 ---
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: 
 
-Sitemap: https://mian-ali.github.io/GymWebsite/sitemap.xml
+Sitemap: https://sristayalokesh.is-a.dev/gripgym/sitemap.xml

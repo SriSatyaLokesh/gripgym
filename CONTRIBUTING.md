@@ -44,7 +44,7 @@ We are committed to providing a welcoming and inclusive environment for all cont
 
 2. **Add upstream remote:**
    ```bash
-   git remote add upstream https://github.com/mian-ali/GymWebsite.git
+   git remote add upstream https://github.com/sristayalokesh/gripgym.git
    ```
 
 3. **Create a feature branch:**
@@ -437,8 +437,8 @@ For technical details and design decisions:
 - **Documentation:** See [README.md](README.md), [ARCHITECTURE.md](ARCHITECTURE.md)
 - **Deployment:** See [DEPLOYMENT.md](DEPLOYMENT.md)
 - **Roadmap:** See [ROADMAP-v2.0.md](ROADMAP-v2.0.md)
-- **Issues:** [GitHub Issues](https://github.com/mian-ali/GymWebsite/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/mian-ali/GymWebsite/discussions)
+- **Issues:** [GitHub Issues](https://github.com/sristayalokesh/gripgym/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/sristayalokesh/gripgym/discussions)
 
 ---
 

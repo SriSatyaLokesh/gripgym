@@ -26,7 +26,7 @@ GripGym is a **static single-page application (SPA)** built with vanilla HTML5, 
 └─────────────────────────────────────────────────────┘
               ⬇️ (HTTPS Request)
 ┌─────────────────────────────────────────────────────┐
-│    Production: https://mian-ali.github.io/GymWebsite/
+│    Production: https://sristayalokesh.is-a.dev/gripgym/
 │    (Live for all users worldwide)                   │
 └─────────────────────────────────────────────────────┘
 ```
