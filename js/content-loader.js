@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadContent() {
   try {
-    const response = await fetch('data/content.json');
+    const contentSrc = document.body.getAttribute('data-content-src') || 'data/content.json';
+    const response = await fetch(contentSrc);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
