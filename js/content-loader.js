@@ -1,5 +1,15 @@
 // Content Loader — Fetch and render pricing, gallery, contact & footer sections from data/content.json
 
+let assetPrefix = '';
+
+function resolveUrl(url) {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
+    return url;
+  }
+  return assetPrefix + url;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   loadContent();
 });
@@ -7,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadContent() {
   try {
     const contentSrc = document.body.getAttribute('data-content-src') || 'data/content.json';
+    assetPrefix = document.body.getAttribute('data-asset-prefix') || '';
     const response = await fetch(contentSrc);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -293,7 +304,7 @@ function renderAbout(aboutData) {
     const imgDiv = document.createElement('div');
     imgDiv.className = 'img';
     const img = document.createElement('img');
-    img.src = card.image;
+    img.src = resolveUrl(card.image);
     img.alt = card.title;
     imgDiv.appendChild(img);
     
@@ -427,7 +438,7 @@ function renderStartToday(startTodayData) {
   imgDiv.className = 'box img wow slideInRight';
   
   const img = document.createElement('img');
-  img.src = startTodayData.image || 'images/gallery4.jpg';
+  img.src = resolveUrl(startTodayData.image || 'images/gallery4.jpg');
   img.alt = 'start today';
   
   imgDiv.appendChild(img);
@@ -463,7 +474,7 @@ function renderClasses(classesData) {
       const imgDiv = document.createElement('div');
       imgDiv.className = 'class-card-img';
       const img = document.createElement('img');
-      img.src = item.image;
+      img.src = resolveUrl(item.image);
       img.alt = item.title;
       const price = document.createElement('div');
       price.className = 'class-card-price';
@@ -686,7 +697,7 @@ function renderGallery(galleryData) {
     item.setAttribute('data-caption', image.caption);
     
     const img = document.createElement('img');
-    img.src = image.src;
+    img.src = resolveUrl(image.src);
     img.alt = image.alt;
     img.title = image.caption;
     
