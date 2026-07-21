@@ -5,6 +5,183 @@
     "last_updated": "2026-07-21",
     "address": "Old Market Road, Bhadrachalam, Telangana 507111"
   },
+  "theme": {
+    "primary": "#e8192c",
+    "primary_dark": "#b0111f",
+    "bg_primary": "#0f0f0f",
+    "bg_secondary": "#1a1a1a",
+    "bg_surface": "#242424",
+    "text_base": "#f0f0f0",
+    "text_muted": "#8a8a8a",
+    "text_on_accent": "#ffffff",
+    "border": "#2e2e2e",
+    "border_light": "#444444"
+  },
+  "hero": {
+    "tagline": "Train Harder. Grip Stronger.",
+    "title_main": "Grip",
+    "title_span": "Gym",
+    "subtitle": "Grip on Self",
+    "description": "Bhadrachalam's premier strength destination. Master powerlifting, CrossFit, and personal conditioning with professional coaching.",
+    "cta_primary_text": "Join Now",
+    "cta_primary_link": "#pricing",
+    "cta_outline_text": "Explore Classes",
+    "cta_outline_link": "#classes"
+  },
+  "about": {
+    "cards": [
+      {
+        "title": "Free Consultation",
+        "image": "images/about1.jpg",
+        "text": "At Grip Gym, we understand that every fitness journey is unique. Our certified fitness professionals offer personalized consultations to assess your current fitness level, understand your goals, and create a tailored workout plan designed specifically for you. We believe that the right guidance at the start sets the foundation for long-term success. Whether you're a complete beginner or returning to fitness, our team takes the time to learn about your needs and aspirations."
+      },
+      {
+        "title": "Best Training",
+        "image": "images/about2.jpg",
+        "text": "Our expert trainers bring years of experience and proven methodologies to every session. We combine functional training, strength conditioning, and cardiovascular excellence to help you achieve results faster. Each trainer at Grip Gym is certified and continuously updated with the latest fitness science. We focus on proper form, progressive overload, and sustainable training principles to keep you engaged and injury-free. Your success is our success."
+      },
+      {
+        "title": "Build Perfect Body",
+        "image": "images/about3.jpg",
+        "text": "Building your ideal physique requires more than just showing up to the gym. Our comprehensive programming covers strength training, cardiovascular conditioning, flexibility work, and recovery strategies. We offer programs for muscle building, fat loss, athletic performance, and general fitness. With access to premium equipment and expert guidance, you'll have everything needed to transform your body and build lasting confidence in who you are."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "description": "Discover the complete range of premium services at Grip Gym designed to support every aspect of your fitness journey. From state-of-the-art equipment to expert coaching and community support, we provide everything you need to achieve your goals and build the strength you deserve.",
+    "cta_text": "Start Now",
+    "cta_link": "#classes",
+    "accordion": [
+      {
+        "title": "Cardiovascular Equipment",
+        "description": "Our modern cardio suite features the latest treadmills, ellipticals, stationary bikes, and rowing machines equipped with advanced tracking technology. Each machine is maintained to peak performance and positioned to maximize your comfort and results. Whether you prefer steady-state training or high-intensity intervals, our cardio equipment supports every workout style."
+      },
+      {
+        "title": "Strength Training Equipment",
+        "description": "Experience premium strength training with our comprehensive selection of dumbbells, barbells, kettlebells, and weight machines. From functional training rigs to cable systems and plate-loaded equipment, every tool is selected for durability, safety, and effectiveness. Our strength training area is designed for both beginners and advanced lifters to achieve maximum performance."
+      },
+      {
+        "title": "Group Fitness Classes",
+        "description": "Join our community-driven group fitness classes led by certified instructors passionate about helping you succeed. Our class schedule includes strength training, high-intensity interval training, yoga, and specialized conditioning. Group fitness provides motivation, accountability, and the energy of a supportive community—all proven to enhance your commitment and results."
+      },
+      {
+        "title": "Other Services",
+        "description": "Beyond equipment and classes, Grip Gym offers additional services to support your complete fitness journey. Access to recovery facilities, nutrition guidance consultations, and personalized program adjustments ensure you get comprehensive support. Our goal is to provide everything needed for success under one roof, making your fitness journey seamless and effective."
+      }
+    ]
+  },
+  "classes_section": {
+    "title": "Our Classes",
+    "description": "Our classes combine expert coaching with motivational group energy to accelerate your strength and fitness journey. Learn proper technique, progression strategies, and injury prevention under certified instructors.",
+    "cards": [
+      {
+        "title": "Grip Strength Mastery",
+        "coach": "Coach Rahul • Certified Strength Coach",
+        "price": "₹1,999/mo",
+        "image": "images/class1.jpg",
+        "description": "Build crushing hand strength and forearm endurance through grip-focused conditioning. Learn proper technique, progression strategies, and injury prevention with personalized form feedback. 60 minutes, 4x per week."
+      },
+      {
+        "title": "Power Lifting & Strength",
+        "coach": "Coach Vikram • ISSA Personal Trainer",
+        "price": "₹2,499/mo",
+        "image": "images/class1.jpg",
+        "description": "Master the big three lifts—squat, bench, deadlift—with emphasis on explosive power and perfect form. Build muscle and increase your one-rep max while learning how grip strength amplifies lifting. 75 minutes, 3x per week."
+      },
+      {
+        "title": "HIIT Conditioning & Cardio",
+        "coach": "Coach Priya • ACE Fitness Trainer",
+        "price": "₹1,499/mo",
+        "image": "images/class1.jpg",
+        "description": "High-intensity interval training combining cardio bursts with grip circuits for total-body fitness. Alternates farmer carries, dead hangs, and plate pinches with calorie-burning exercises. 45 minutes, 5x per week."
+      },
+      {
+        "title": "Mobility & Recovery",
+        "coach": "Trainer Anjali • Yoga Instructor",
+        "price": "₹1,299/mo",
+        "image": "images/class1.jpg",
+        "description": "Restore and rebuild your body through guided stretching, mobility work, and joint health training. Focus on improving range of motion, reducing soreness, and preventing injury. Perfect recovery tool. 50 minutes, 3x per week."
+      }
+    ]
+  },
+  "schedule_section": {
+    "title": "Training Schedule",
+    "description": "Our restructured training schedule is designed to optimize your gym experience. We offer dedicated slots for men and women during morning and evening sessions. Morning sessions focus on strength and HIIT, while evening sessions specialize in powerlifting, core work, and mobility training. Review the schedule and secure your slot today.",
+    "days": [
+      {
+        "day": "Monday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Friday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "morning": [
+          { "time": "5:00 AM - 8:30 AM", "text": "Men's Strength & Conditioning", "type": "men" },
+          { "time": "8:30 AM - 9:30 AM", "text": "Women's HIIT & Cardio", "type": "women" }
+        ],
+        "evening": [
+          { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
+          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "holiday": true,
+        "holiday_label": "HOLIDAY - GYM CLOSED"
+      }
+    ]
+  },
   "pricing": {
     "intro": "Flexible membership plans for every fitness level at GripGym. Choose the plan that fits your goals and budget.",
     "tiers": [
@@ -155,4 +332,3 @@
     "copyright_text": "All rights reserved."
   }
 }
-

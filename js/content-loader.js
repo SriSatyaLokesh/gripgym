@@ -14,6 +14,36 @@ async function loadContent() {
     
     console.log('[ContentLoader] Data loaded, starting renders...');
     
+    // Apply dynamic theme colors if present
+    if (data.theme) {
+      applyTheme(data.theme);
+      console.log('[ContentLoader] Theme colors applied');
+    }
+    
+    // Render Header branding
+    renderHeader(data.metadata, data.hero ? data.hero.tagline : '');
+    console.log('[ContentLoader] Header rendered');
+    
+    // Render Hero section
+    renderHero(data.hero);
+    console.log('[ContentLoader] Hero rendered');
+    
+    // Render About section
+    renderAbout(data.about);
+    console.log('[ContentLoader] About rendered');
+    
+    // Render Services section
+    renderServices(data.services);
+    console.log('[ContentLoader] Services rendered');
+    
+    // Render Classes section
+    renderClasses(data.classes_section);
+    console.log('[ContentLoader] Classes rendered');
+    
+    // Render Schedule section
+    renderSchedule(data.schedule_section);
+    console.log('[ContentLoader] Schedule rendered');
+    
     // Render pricing section
     renderPricing(data.pricing);
     console.log('[ContentLoader] Pricing rendered');
@@ -62,6 +92,338 @@ async function loadContent() {
   }
 }
 
+function applyTheme(themeData) {
+  const root = document.documentElement;
+  const colorMap = {
+    'primary': '--color-primary',
+    'primary_dark': '--color-primary-dark',
+    'bg_primary': '--color-bg-primary',
+    'bg_secondary': '--color-bg-secondary',
+    'bg_surface': '--color-bg-surface',
+    'text_base': '--color-text-base',
+    'text_muted': '--color-text-muted',
+    'text_on_accent': '--color-text-on-accent',
+    'border': '--color-border',
+    'border_light': '--color-border-light'
+  };
+  
+  for (const [key, cssVar] of Object.entries(colorMap)) {
+    if (themeData[key]) {
+      root.style.setProperty(cssVar, themeData[key]);
+    }
+  }
+}
+
+function renderHeader(metadata, tagline) {
+  if (!metadata) return;
+  const logoLink = document.getElementById('logo-link');
+  if (logoLink) {
+    const name = metadata.gym_name || "GripGym";
+    if (name.toLowerCase().startsWith("grip")) {
+      logoLink.innerHTML = 'Grip<span>' + name.substring(4) + '</span>';
+    } else {
+      logoLink.innerHTML = name;
+    }
+  }
+  
+  if (metadata.gym_name) {
+    document.title = metadata.gym_name + (tagline ? " — " + tagline : "");
+  }
+}
+
+function renderHero(heroData) {
+  if (!heroData) return;
+  
+  const tagline = document.getElementById('hero-tagline');
+  if (tagline) tagline.textContent = heroData.tagline;
+  
+  const title = document.getElementById('hero-title');
+  if (title) {
+    title.innerHTML = (heroData.title_main || "Grip") + '<span>' + (heroData.title_span || "Gym") + '</span>';
+  }
+  
+  const subtitle = document.getElementById('hero-subtitle');
+  if (subtitle) subtitle.textContent = heroData.subtitle;
+  
+  const desc = document.getElementById('hero-desc');
+  if (desc) desc.textContent = heroData.description;
+  
+  const btnGroup = document.getElementById('hero-buttons');
+  if (btnGroup) {
+    btnGroup.innerHTML = '';
+    
+    if (heroData.cta_primary_text) {
+      const btn1 = document.createElement('a');
+      btn1.href = heroData.cta_primary_link || '#pricing';
+      btn1.className = 'hero-cta main-btn';
+      btn1.textContent = heroData.cta_primary_text;
+      btnGroup.appendChild(btn1);
+    }
+    
+    if (heroData.cta_outline_text) {
+      const btn2 = document.createElement('a');
+      btn2.href = heroData.cta_outline_link || '#classes';
+      btn2.className = 'hero-cta outline-btn';
+      btn2.textContent = heroData.cta_outline_text;
+      btnGroup.appendChild(btn2);
+    }
+  }
+}
+
+function renderAbout(aboutData) {
+  const grid = document.getElementById('about-grid');
+  if (!grid || !aboutData || !aboutData.cards) return;
+  
+  grid.innerHTML = '';
+  
+  aboutData.cards.forEach((card, index) => {
+    const box = document.createElement('div');
+    box.className = 'box wow bounceInUp';
+    if (index > 0) {
+      box.setAttribute('data-wow-delay', (index * 0.2) + 's');
+    }
+    
+    const inner = document.createElement('div');
+    inner.className = 'inner';
+    
+    const imgDiv = document.createElement('div');
+    imgDiv.className = 'img';
+    const img = document.createElement('img');
+    img.src = card.image;
+    img.alt = card.title;
+    imgDiv.appendChild(img);
+    
+    const textDiv = document.createElement('div');
+    textDiv.className = 'text';
+    const h4 = document.createElement('h4');
+    h4.textContent = card.title;
+    const p = document.createElement('p');
+    p.textContent = card.text;
+    
+    textDiv.appendChild(h4);
+    textDiv.appendChild(p);
+    
+    inner.appendChild(imgDiv);
+    inner.appendChild(textDiv);
+    box.appendChild(inner);
+    grid.appendChild(box);
+  });
+}
+
+function renderServices(servicesData) {
+  const textDiv = document.getElementById('services-text');
+  const accordionDiv = document.getElementById('services-accordion');
+  if (!servicesData) return;
+  
+  if (textDiv) {
+    textDiv.innerHTML = '';
+    const h2 = document.createElement('h2');
+    h2.textContent = servicesData.title || "Services";
+    const p = document.createElement('p');
+    p.textContent = servicesData.description;
+    const a = document.createElement('a');
+    a.href = servicesData.cta_link || '#classes';
+    a.className = 'btn';
+    a.textContent = servicesData.cta_text || 'Start Now';
+    
+    textDiv.appendChild(h2);
+    textDiv.appendChild(p);
+    textDiv.appendChild(a);
+  }
+  
+  if (accordionDiv && servicesData.accordion) {
+    accordionDiv.innerHTML = '';
+    
+    servicesData.accordion.forEach((item, index) => {
+      const container = document.createElement('div');
+      container.className = 'accordian-container';
+      if (index === 0) {
+        container.classList.add('active');
+      }
+      
+      const head = document.createElement('div');
+      head.className = 'head';
+      const h4 = document.createElement('h4');
+      h4.textContent = item.title;
+      const span = document.createElement('span');
+      span.className = index === 0 ? 'fa fa-angle-down' : 'fa fa-angle-up';
+      
+      head.appendChild(h4);
+      head.appendChild(span);
+      
+      const body = document.createElement('div');
+      body.className = 'body';
+      if (index > 0) {
+        body.style.display = 'none';
+      }
+      const p = document.createElement('p');
+      p.textContent = item.description;
+      body.appendChild(p);
+      
+      container.appendChild(head);
+      container.appendChild(body);
+      accordionDiv.appendChild(container);
+      
+      // Bind click handler dynamically
+      container.addEventListener('click', function() {
+        const allContainers = accordionDiv.querySelectorAll('.accordian-container');
+        allContainers.forEach(c => {
+          if (c !== container) {
+            c.classList.remove('active');
+            const b = c.querySelector('.body');
+            if (b) $(b).slideUp();
+            const s = c.querySelector('.head span');
+            if (s) {
+              s.className = 'fa fa-angle-up';
+            }
+          }
+        });
+        
+        const myBody = container.querySelector('.body');
+        const mySpan = container.querySelector('.head span');
+        if (container.classList.contains('active')) {
+          container.classList.remove('active');
+          if (myBody) $(myBody).slideUp();
+          if (mySpan) mySpan.className = 'fa fa-angle-up';
+        } else {
+          container.classList.add('active');
+          if (myBody) $(myBody).slideDown();
+          if (mySpan) mySpan.className = 'fa fa-angle-down';
+        }
+      });
+    });
+  }
+}
+
+function renderClasses(classesData) {
+  const header = document.getElementById('classes-header');
+  const grid = document.getElementById('classes-grid');
+  if (!classesData) return;
+  
+  if (header) {
+    header.innerHTML = '';
+    const h2 = document.createElement('h2');
+    h2.textContent = classesData.title || "Our Classes";
+    const p = document.createElement('p');
+    p.className = 'section-desc';
+    p.textContent = classesData.description;
+    header.appendChild(h2);
+    header.appendChild(p);
+  }
+  
+  if (grid && classesData.cards) {
+    grid.innerHTML = '';
+    
+    classesData.cards.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'class-card wow fadeInUp';
+      card.setAttribute('data-wow-delay', ((index + 1) * 0.1) + 's');
+      
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'class-card-img';
+      const img = document.createElement('img');
+      img.src = item.image;
+      img.alt = item.title;
+      const price = document.createElement('div');
+      price.className = 'class-card-price';
+      price.textContent = item.price;
+      
+      imgDiv.appendChild(img);
+      imgDiv.appendChild(price);
+      
+      const bodyDiv = document.createElement('div');
+      bodyDiv.className = 'class-card-body';
+      const h3 = document.createElement('h3');
+      h3.textContent = item.title;
+      const coach = document.createElement('p');
+      coach.className = 'coach-tag';
+      coach.textContent = item.coach;
+      const desc = document.createElement('p');
+      desc.className = 'class-card-text';
+      desc.textContent = item.description;
+      const a = document.createElement('a');
+      a.href = '#contact';
+      a.className = 'class-details-btn';
+      a.textContent = 'Get Details';
+      
+      bodyDiv.appendChild(h3);
+      bodyDiv.appendChild(coach);
+      bodyDiv.appendChild(desc);
+      bodyDiv.appendChild(a);
+      
+      card.appendChild(imgDiv);
+      card.appendChild(bodyDiv);
+      grid.appendChild(card);
+    });
+  }
+}
+
+function renderSchedule(scheduleData) {
+  const header = document.getElementById('schedule-header');
+  const tbody = document.getElementById('schedule-table-body');
+  if (!scheduleData) return;
+  
+  if (header) {
+    header.innerHTML = '';
+    const h2 = document.createElement('h2');
+    h2.textContent = scheduleData.title || "Training Schedule";
+    const p = document.createElement('p');
+    p.className = 'section-desc';
+    p.textContent = scheduleData.description;
+    header.appendChild(h2);
+    header.appendChild(p);
+  }
+  
+  if (tbody && scheduleData.days) {
+    tbody.innerHTML = '';
+    
+    scheduleData.days.forEach(dayInfo => {
+      const tr = document.createElement('tr');
+      const dayCol = document.createElement('td');
+      dayCol.className = 'day-col';
+      dayCol.textContent = dayInfo.day;
+      tr.appendChild(dayCol);
+      
+      if (dayInfo.holiday) {
+        const holidayCol = document.createElement('td');
+        holidayCol.colSpan = 2;
+        holidayCol.className = 'holiday-col';
+        const badge = document.createElement('span');
+        badge.className = 'holiday-badge';
+        badge.textContent = dayInfo.holiday_label || "HOLIDAY - GYM CLOSED";
+        holidayCol.appendChild(badge);
+        tr.appendChild(holidayCol);
+      } else {
+        // Morning slots
+        const morningCol = document.createElement('td');
+        if (dayInfo.morning) {
+          dayInfo.morning.forEach(slot => {
+            const span = document.createElement('span');
+            span.className = 'slot ' + (slot.type === 'women' ? 'women-slot' : 'men-slot');
+            span.innerHTML = '<strong>' + slot.time + '</strong><br>' + slot.text;
+            morningCol.appendChild(span);
+          });
+        }
+        tr.appendChild(morningCol);
+        
+        // Evening slots
+        const eveningCol = document.createElement('td');
+        if (dayInfo.evening) {
+          dayInfo.evening.forEach(slot => {
+            const span = document.createElement('span');
+            span.className = 'slot ' + (slot.type === 'women' ? 'women-slot' : 'men-slot');
+            span.innerHTML = '<strong>' + slot.time + '</strong><br>' + slot.text;
+            eveningCol.appendChild(span);
+          });
+        }
+        tr.appendChild(eveningCol);
+      }
+      
+      tbody.appendChild(tr);
+    });
+  }
+}
+
 function renderPricing(pricingData) {
   const intro = document.querySelector('.intro-text');
   if (intro) {
@@ -71,7 +433,7 @@ function renderPricing(pricingData) {
   const grid = document.getElementById('pricing-grid');
   if (!grid) return;
   
-  grid.innerHTML = ''; // Clear placeholder
+  grid.innerHTML = '';
   
   pricingData.tiers.forEach((tier, index) => {
     const card = document.createElement('div');
@@ -80,21 +442,17 @@ function renderPricing(pricingData) {
       card.classList.add('featured');
     }
     
-    // Price display
     const priceText = document.createElement('div');
     priceText.className = 'price';
     priceText.textContent = '₹' + tier.price.toLocaleString('en-IN');
     
-    // Duration
     const duration = document.createElement('div');
     duration.className = 'duration';
     duration.textContent = tier.duration;
     
-    // Name
     const name = document.createElement('h3');
     name.textContent = tier.name;
     
-    // Discount label (if present)
     if (tier.discount_label) {
       const discount = document.createElement('div');
       discount.className = 'discount-label';
@@ -102,7 +460,6 @@ function renderPricing(pricingData) {
       card.appendChild(discount);
     }
     
-    // Features list
     const features = document.createElement('ul');
     features.className = 'features';
     tier.features.forEach(feature => {
@@ -111,7 +468,6 @@ function renderPricing(pricingData) {
       features.appendChild(li);
     });
     
-    // Select button
     const button = document.createElement('button');
     button.className = 'select-plan-btn';
     button.textContent = 'Select Plan';
@@ -119,7 +475,6 @@ function renderPricing(pricingData) {
       document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
     };
     
-    // Assemble card (order: name, price, duration, features, button)
     card.appendChild(name);
     card.appendChild(priceText);
     card.appendChild(duration);
@@ -132,17 +487,11 @@ function renderPricing(pricingData) {
 
 function renderGallery(galleryData) {
   const grid = document.getElementById('gallery-grid');
-  if (!grid) {
-    console.warn('[ContentLoader] Gallery grid container not found');
-    return;
-  }
+  if (!grid) return;
   
-  grid.innerHTML = ''; // Clear placeholder
+  grid.innerHTML = '';
   
-  if (!galleryData.images || galleryData.images.length === 0) {
-    console.warn('[ContentLoader] No gallery images found in data');
-    return;
-  }
+  if (!galleryData.images || galleryData.images.length === 0) return;
   
   galleryData.images.forEach((image, index) => {
     const item = document.createElement('div');
@@ -164,8 +513,6 @@ function renderGallery(galleryData) {
     item.appendChild(caption);
     
     grid.appendChild(item);
-    
-    console.log('[ContentLoader] Gallery item added:', image.caption);
   });
 }
 
@@ -173,9 +520,8 @@ function renderContact(contactData) {
   const contactInfo = document.getElementById('contact-info');
   if (!contactInfo) return;
   
-  contactInfo.innerHTML = ''; // Clear placeholder
+  contactInfo.innerHTML = '';
   
-  // Phone
   const phone = document.createElement('div');
   phone.className = 'contact-item';
   const phoneLabel = document.createElement('strong');
@@ -185,7 +531,6 @@ function renderContact(contactData) {
   phone.appendChild(phoneLabel);
   phone.appendChild(phoneValue);
   
-  // Email
   const email = document.createElement('div');
   email.className = 'contact-item';
   const emailLabel = document.createElement('strong');
@@ -195,7 +540,6 @@ function renderContact(contactData) {
   email.appendChild(emailLabel);
   email.appendChild(emailValue);
   
-  // Address
   const address = document.createElement('div');
   address.className = 'contact-item';
   const addressLabel = document.createElement('strong');
@@ -205,7 +549,6 @@ function renderContact(contactData) {
   address.appendChild(addressLabel);
   address.appendChild(addressValue);
   
-  // Hours
   const hours = document.createElement('div');
   hours.className = 'contact-item';
   const hoursLabel = document.createElement('strong');
@@ -223,19 +566,33 @@ function renderContact(contactData) {
 }
 
 function renderFooter(footerData) {
-  // Update footer phone
+  const footerBranding = document.getElementById('footer-branding');
+  if (footerBranding) {
+    footerBranding.innerHTML = '';
+    const h3 = document.createElement('h3');
+    const name = footerData.company_name || "GripGym";
+    if (name.toLowerCase().startsWith("grip")) {
+      h3.innerHTML = 'Grip<span>' + name.substring(4) + '</span>';
+    } else {
+      h3.innerHTML = name;
+    }
+    const taglineP = document.createElement('p');
+    taglineP.className = 'footer-tagline';
+    taglineP.textContent = footerData.tagline;
+    footerBranding.appendChild(h3);
+    footerBranding.appendChild(taglineP);
+  }
+
   const footerPhone = document.getElementById('footer-phone');
   if (footerPhone) {
     footerPhone.textContent = footerData.phone;
   }
   
-  // Update footer email
   const footerEmail = document.getElementById('footer-email');
   if (footerEmail) {
     footerEmail.textContent = footerData.email;
   }
   
-  // Update footer hours
   const footerHours = document.getElementById('footer-hours');
   if (footerHours) {
     footerHours.innerHTML = '';
@@ -247,7 +604,6 @@ function renderFooter(footerData) {
     footerHours.appendChild(weekendP);
   }
   
-  // Update footer social links
   const footerSocial = document.getElementById('footer-social');
   if (footerSocial && footerData.social_links) {
     footerSocial.innerHTML = '';
@@ -262,7 +618,6 @@ function renderFooter(footerData) {
     });
   }
   
-  // Update footer year
   const footerYear = document.getElementById('footer-year');
   if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
@@ -276,21 +631,17 @@ function attachFormHandler() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form data
     const name = document.querySelector('input[name="name"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const message = document.querySelector('textarea[name="message"]').value;
     
-    // Show success message
     const msgDiv = document.getElementById('form-message');
     msgDiv.textContent = 'Thank you ' + name + '! Your message has been sent. We will contact you shortly.';
     msgDiv.className = 'success';
     msgDiv.style.display = 'block';
     
-    // Reset form
     form.reset();
     
-    // Hide message after 5 seconds
     setTimeout(function() {
       msgDiv.style.display = 'none';
     }, 5000);
@@ -312,7 +663,6 @@ window.addEventListener('scroll', function() {
 // Dynamic Hero Glow Aura Tracking (60fps LERP) - Desktop Only
 document.addEventListener('DOMContentLoaded', function() {
   const heroSection = document.querySelector('.home');
-  // Check if device supports hover (desktop mouse) and screen is large
   if (heroSection && window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
     const glowAura = document.createElement('div');
     glowAura.className = 'hero-glow-aura';
@@ -331,7 +681,6 @@ document.addEventListener('DOMContentLoaded', function() {
       isTracking = true;
     });
 
-    // Reset position if mouse leaves hero section to prevent trailing glow
     heroSection.addEventListener('mouseleave', () => {
       mouseX = -1000;
       mouseY = -1000;
@@ -351,4 +700,3 @@ document.addEventListener('DOMContentLoaded', function() {
     animateGlow();
   }
 });
-

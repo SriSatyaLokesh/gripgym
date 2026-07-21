@@ -73,8 +73,8 @@
  <!-- Start Header  -->
  <header>
  	 <div class="container">
- 	 	<div class="logo">
-					 <a href="">Grip<span>Gym</span></a>
+ 	 	<div class="logo" id="logo-container">
+					 <a href="" id="logo-link">Grip<span>Gym</span></a>
  	 	</div>
  	 	<a href="javascript:void(0)" class="ham-burger">
  	       <span></span>	
@@ -99,14 +99,11 @@
   <!-- Start Home -->
   <section class="home" id="home">
   	 <div class="container">
-  	 	  <span class="hero-tagline wow fadeInUp" data-wow-delay="0.4s">Train Harder. Grip Stronger.</span>
-  	 	  <h1 class="wow fadeInUp" data-wow-delay="0.6s">Grip<span>Gym</span></h1>
-  	 	  <h2 class="hero-subtitle wow fadeInUp" data-wow-delay="0.7s">Grip on Self</h2>
-  	 	  <p class="hero-description wow fadeInUp" data-wow-delay="0.8s">Bhadrachalam's premier strength destination. Master powerlifting, CrossFit, and personal conditioning with professional coaching.</p>
-  	 	  <div class="hero-btn-group wow fadeInUp" data-wow-delay="1.0s">
-  	 	 	  <a href="#pricing" class="hero-cta main-btn">Join Now</a>
-  	 	 	  <a href="#classes" class="hero-cta outline-btn">Explore Classes</a>
-  	 	  </div>
+  	 	  <span class="hero-tagline wow fadeInUp" data-wow-delay="0.4s" id="hero-tagline"></span>
+  	 	  <h1 class="wow fadeInUp" data-wow-delay="0.6s" id="hero-title"></h1>
+  	 	  <h2 class="hero-subtitle wow fadeInUp" data-wow-delay="0.7s" id="hero-subtitle"></h2>
+  	 	  <p class="hero-description wow fadeInUp" data-wow-delay="0.8s" id="hero-desc"></p>
+  	 	  <div class="hero-btn-group wow fadeInUp" data-wow-delay="1.0s" id="hero-buttons"></div>
   	 </div>
   	  <!-- go down -->
   	      <a href="#about" class="go-down wow fadeIn" data-wow-delay="1.4s">
@@ -120,155 +117,28 @@
  <!-- Start About -->
   <section class="about" id="about">
   	  <div class="container">
-  	  	  <div class="content">
-  	  	  	   <div class="box wow bounceInUp">
-  	  	  	   	   <div class="inner">
-  	  	  	   	   	   <div class="img">
-  	  	  	   	   	   	  <img src="images/about1.jpg" alt="about" />
-  	  	  	   	   	   </div>
-                       <div class="text">
-                       	   <h4>Free Consultation</h4>
-                       	   <p>At Grip Gym, we understand that every fitness journey is unique. Our certified fitness professionals offer personalized consultations to assess your current fitness level, understand your goals, and create a tailored workout plan designed specifically for you. We believe that the right guidance at the start sets the foundation for long-term success. Whether you're a complete beginner or returning to fitness, our team takes the time to learn about your needs and aspirations.</p>
-                       </div>
-  	  	  	   	   </div>
-  	  	  	   </div>
-  	  	  	   	<div class="box wow bounceInUp" data-wow-delay="0.2s">
-  	  	  	   	   <div class="inner">
-  	  	  	   	   	   <div class="img">
-  	  	  	   	   	   	  <img src="images/about2.jpg" alt="about" />
-  	  	  	   	   	   </div>
-                       <div class="text">
-                       	   <h4>Best Training</h4>
-                       	   <p>Our expert trainers bring years of experience and proven methodologies to every session. We combine functional training, strength conditioning, and cardiovascular excellence to help you achieve results faster. Each trainer at Grip Gym is certified and continuously updated with the latest fitness science. We focus on proper form, progressive overload, and sustainable training principles to keep you engaged and injury-free. Your success is our success.</p>
-                       </div>
-  	  	  	   	   </div>
-  	  	  	   </div>
-  	  	  	   <div class="box wow bounceInUp" data-wow-delay="0.4s">
-  	  	  	   	   <div class="inner">
-  	  	  	   	   	   <div class="img">
-  	  	  	   	   	   	  <img src="images/about3.jpg" alt="about" />
-  	  	  	   	   	   </div>
-                       <div class="text">
-                       	   <h4>Build Perfect Body</h4>
-                       	   <p>Building your ideal physique requires more than just showing up to the gym. Our comprehensive programming covers strength training, cardiovascular conditioning, flexibility work, and recovery strategies. We offer programs for muscle building, fat loss, athletic performance, and general fitness. With access to premium equipment and expert guidance, you'll have everything needed to transform your body and build lasting confidence in who you are.</p>
-                       </div>
-  	  	  	   	   </div>
-  	  	  	   </div>
-  	  	  </div>
+  	  	  <div class="content" id="about-grid"></div>
   	  </div>
   </section>
  <!-- End About -->
 
 
  <!-- Start Service -->
- <section class="service" id="service">
- 	<div class="container">
- 		 <div class="content">
- 		 	  <div class="text box wow slideInLeft">
-                  <h2>Services</h2>
-                  <p>Discover the complete range of premium services at Grip Gym designed to support every aspect of your fitness journey. From state-of-the-art equipment to expert coaching and community support, we provide everything you need to achieve your goals and build the strength you deserve.</p>
-                  <a href="#classes" class="btn">Start Now</a>
- 		 	  </div>
- 		 	  <div class="accordian box wow slideInRight">
- 		 	  	    <div class="accordian-container active">
- 		 	  	    	<div class="head">
- 		 	  	    		<h4>Cardiovascular Equipment</h4>
- 		 	  	    		<span class="fa fa-angle-down"></span>
- 		 	  	    	</div>
- 		 	  	    	<div class="body">
- 		 	  	    		<p>Our modern cardio suite features the latest treadmills, ellipticals, stationary bikes, and rowing machines equipped with advanced tracking technology. Each machine is maintained to peak performance and positioned to maximize your comfort and results. Whether you prefer steady-state training or high-intensity intervals, our cardio equipment supports every workout style.</p>
- 		 	  	    	</div>
- 		 	  	    </div>
- 		 	  	    <div class="accordian-container">
- 		 	  	    	<div class="head">
- 		 	  	    		<h4>Strength Training Equipment</h4>
- 		 	  	    		<span class="fa fa-angle-up"></span>
- 		 	  	    	</div>
- 		 	  	    	<div class="body">
- 		 	  	    		<p>Experience premium strength training with our comprehensive selection of dumbbells, barbells, kettlebells, and weight machines. From functional training rigs to cable systems and plate-loaded equipment, every tool is selected for durability, safety, and effectiveness. Our strength training area is designed for both beginners and advanced lifters to achieve maximum performance.</p>
- 		 	  	    	</div>
- 		 	  	    </div>
- 		 	  	    <div class="accordian-container">
- 		 	  	    	<div class="head">
- 		 	  	    		<h4>Group Fitness Classes</h4>
- 		 	  	    		<span class="fa fa-angle-up"></span>
- 		 	  	    	</div>
- 		 	  	    	<div class="body">
- 		 	  	    		<p>Join our community-driven group fitness classes led by certified instructors passionate about helping you succeed. Our class schedule includes strength training, high-intensity interval training, yoga, and specialized conditioning. Group fitness provides motivation, accountability, and the energy of a supportive community—all proven to enhance your commitment and results.</p>
- 		 	  	    	</div>
- 		 	  	    </div>
- 		 	  	    <div class="accordian-container">
- 		 	  	    	<div class="head">
- 		 	  	    		<h4>Other Services</h4>
- 		 	  	    		<span class="fa fa-angle-up"></span>
- 		 	  	    	</div>
- 		 	  	    	<div class="body">
- 		 	  	    		<p>Beyond equipment and classes, Grip Gym offers additional services to support your complete fitness journey. Access to recovery facilities, nutrition guidance consultations, and personalized program adjustments ensure you get comprehensive support. Our goal is to provide everything needed for success under one roof, making your fitness journey seamless and effective.</p>
- 		 	  	    	</div>
- 		 	  	    </div>
- 		 	  </div>
- 		 </div>
- 	</div>
- </section>
+  <section class="service" id="service">
+  	<div class="container">
+  		 <div class="content">
+  		 	  <div class="text box wow slideInLeft" id="services-text"></div>
+  		 	  <div class="accordian box wow slideInRight" id="services-accordion"></div>
+  		 </div>
+  	</div>
+  </section>
  <!-- End Service -->
 
 <!-- Start Classes -->
 <section class="classes" id="classes">
 	<div class="container">
-      <div class="section-header wow fadeInUp">
-         <h2>Our Classes</h2>
-         <p class="section-desc">Our classes combine expert coaching with motivational group energy to accelerate your strength and fitness journey. Learn proper technique, progression strategies, and injury prevention under certified instructors.</p>
-      </div>
-      <div class="classes-grid">
-         <div class="class-card wow fadeInUp" data-wow-delay="0.1s">
-            <div class="class-card-img">
-               <img src="images/class1.jpg" alt="Grip Strength Mastery" />
-               <div class="class-card-price">₹1,999/mo</div>
-            </div>
-            <div class="class-card-body">
-               <h3>Grip Strength Mastery</h3>
-               <p class="coach-tag">Coach Rahul • Certified Strength Coach</p>
-               <p class="class-card-text">Build crushing hand strength and forearm endurance through grip-focused conditioning. Learn proper technique, progression strategies, and injury prevention with personalized form feedback. 60 minutes, 4x per week.</p>
-               <a href="#contact" class="class-details-btn">Get Details</a>
-            </div>
-         </div>
-         <div class="class-card wow fadeInUp" data-wow-delay="0.2s">
-            <div class="class-card-img">
-               <img src="images/class1.jpg" alt="Power Lifting & Functional Strength" />
-               <div class="class-card-price">₹2,499/mo</div>
-            </div>
-            <div class="class-card-body">
-               <h3>Power Lifting & Strength</h3>
-               <p class="coach-tag">Coach Vikram • ISSA Personal Trainer</p>
-               <p class="class-card-text">Master the big three lifts—squat, bench, deadlift—with emphasis on explosive power and perfect form. Build muscle and increase your one-rep max while learning how grip strength amplifies lifting. 75 minutes, 3x per week.</p>
-               <a href="#contact" class="class-details-btn">Get Details</a>
-            </div>
-         </div>
-         <div class="class-card wow fadeInUp" data-wow-delay="0.3s">
-            <div class="class-card-img">
-               <img src="images/class1.jpg" alt="HIIT Conditioning & Cardio" />
-               <div class="class-card-price">₹1,499/mo</div>
-            </div>
-            <div class="class-card-body">
-               <h3>HIIT Conditioning & Cardio</h3>
-               <p class="coach-tag">Coach Priya • ACE Fitness Trainer</p>
-               <p class="class-card-text">High-intensity interval training combining cardio bursts with grip circuits for total-body fitness. Alternates farmer carries, dead hangs, and plate pinches with calorie-burning exercises. 45 minutes, 5x per week.</p>
-               <a href="#contact" class="class-details-btn">Get Details</a>
-            </div>
-         </div>
-         <div class="class-card wow fadeInUp" data-wow-delay="0.4s">
-            <div class="class-card-img">
-               <img src="images/class1.jpg" alt="Mobility, Flexibility & Recovery" />
-               <div class="class-card-price">₹1,299/mo</div>
-            </div>
-            <div class="class-card-body">
-               <h3>Mobility & Recovery</h3>
-               <p class="coach-tag">Trainer Anjali • Yoga Instructor</p>
-               <p class="class-card-text">Restore and rebuild your body through guided stretching, mobility work, and joint health training. Focus on improving range of motion, reducing soreness, and preventing injury. Perfect recovery tool. 50 minutes, 3x per week.</p>
-               <a href="#contact" class="class-details-btn">Get Details</a>
-            </div>
-         </div>
-      </div>
+      <div class="section-header wow fadeInUp" id="classes-header"></div>
+      <div class="classes-grid" id="classes-grid"></div>
 	</div>
 </section>
 <!-- End Classes -->
@@ -293,11 +163,8 @@
 
 <!-- Start Schedule -->
   <section class="schedule" id="schedule">
-  	 <div class="container">
-        <div class="section-header wow fadeInUp">
-           <h2>Training Schedule</h2>
-           <p class="section-desc">Our restructured training schedule is designed to optimize your gym experience. We offer dedicated slots for men and women during morning and evening sessions. Morning sessions focus on strength and HIIT, while evening sessions specialize in powerlifting, core work, and mobility training. Review the schedule and secure your slot today.</p>
-        </div>
+   	 <div class="container">
+        <div class="section-header wow fadeInUp" id="schedule-header"></div>
         <div class="schedule-table-wrapper wow fadeInUp" data-wow-delay="0.2s">
             <table class="table schedule-table">
               <thead>
@@ -307,83 +174,10 @@
                   <th>Evening Sessions</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="day-col">Monday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Tuesday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Wednesday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Thursday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Friday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Saturday</td>
-                  <td>
-                    <span class="slot men-slot"><strong>5:00 AM - 8:30 AM</strong><br>Men's Strength & Conditioning</span>
-                    <span class="slot women-slot"><strong>8:30 AM - 9:30 AM</strong><br>Women's HIIT & Cardio</span>
-                  </td>
-                  <td>
-                    <span class="slot women-slot"><strong>4:00 PM - 5:00 PM</strong><br>Women's Mobility & Core</span>
-                    <span class="slot men-slot"><strong>5:00 PM - 8:30 PM</strong><br>Men's Powerlifting & Grip</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="day-col">Sunday</td>
-                  <td colspan="2" class="holiday-col">
-                    <span class="holiday-badge">HOLIDAY - GYM CLOSED</span>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody id="schedule-table-body"></tbody>
             </table>
         </div>
-  	 </div>
+   	 </div>
   </section>
 <!-- End Schedule -->
 
@@ -435,10 +229,7 @@
 <footer class="footer" id="footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-branding wow fadeIn">
-        <h3>Grip<span>Gym</span></h3>
-        <p class="footer-tagline">Train Harder. Grip Stronger.</p>
-      </div>
+      <div class="footer-branding wow fadeIn" id="footer-branding"></div>
       <div class="footer-info wow fadeIn" data-wow-delay="0.2s">
         <div class="info-section">
           <h4>Location</h4>
