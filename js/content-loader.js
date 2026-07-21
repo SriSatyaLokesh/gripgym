@@ -128,7 +128,8 @@ function applyTheme(themeData) {
     'text_muted': '--color-text-muted',
     'text_on_accent': '--color-text-on-accent',
     'border': '--color-border',
-    'border_light': '--color-border-light'
+    'border_light': '--color-border-light',
+    'primary_alpha': '--color-primary-alpha'
   };
   
   for (const [key, cssVar] of Object.entries(colorMap)) {

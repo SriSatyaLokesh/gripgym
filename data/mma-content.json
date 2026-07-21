@@ -29,7 +29,8 @@
     "text_muted": "#8e8e93",
     "text_on_accent": "#ffffff",
     "border": "#2a2a30",
-    "border_light": "#3d3d47"
+    "border_light": "#3d3d47",
+    "primary_alpha": "rgba(255, 107, 0, 0.06)"
   },
   "hero": {
     "tagline": "Train Combat. Fight Smarter.",
@@ -94,28 +95,28 @@
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,499/mo",
         "image": "images/class1.jpg",
-        "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound. 75 minutes."
+        "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound."
       },
       {
         "title": "Brazilian Jiu-Jitsu (BJJ)",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,199/mo",
         "image": "images/class1.jpg",
-        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense. 60 minutes."
+        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense."
       },
       {
         "title": "Boxing & Kickboxing",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,799/mo",
         "image": "images/class1.jpg",
-        "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring. 60 minutes."
+        "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring."
       },
       {
         "title": "Self-Defense & Karate",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,499/mo",
         "image": "images/class1.jpg",
-        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers. 60 minutes."
+        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers."
       }
     ]
   },
