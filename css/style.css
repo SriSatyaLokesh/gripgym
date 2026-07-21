@@ -2811,5 +2811,56 @@ header .logo a span,
   margin-bottom: 8px !important;
 }
 
+/* 16. Mobile UI/UX Optimizations */
+@media(max-width: 767px) {
+  /* Section Padding Reductions */
+  section {
+    padding: 50px 0px !important;
+  }
+  
+  /* Compact 2-column mobile gallery grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 25px !important;
+  }
+  
+  /* Mobile glassmorphic sidebar navigation drawer */
+  header .nav {
+    background: rgba(15, 15, 15, 0.96) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: -10px 0 45px rgba(0, 0, 0, 0.8) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  
+  header .nav ul li a {
+    color: var(--color-text-base) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  header .nav ul li a:hover,
+  header .nav ul li a.active {
+    color: var(--color-primary) !important;
+    background: transparent !important;
+    padding-left: 15px !important;
+  }
+  
+  /* Horizontal scrollbar styling for mobile schedule table swipe indicator */
+  .schedule-table-wrapper::-webkit-scrollbar {
+    height: 5px !important;
+    display: block !important;
+  }
+  
+  .schedule-table-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+  
+  .schedule-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(232, 25, 44, 0.4) !important;
+    border-radius: 3px !important;
+  }
+}
+
 
 
