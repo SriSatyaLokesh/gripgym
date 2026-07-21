@@ -2105,5 +2105,105 @@ section[id] {
   scroll-margin-top: 90px;
 }
 
+/* 8. Hero Section Upgrades */
+.home .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 5px;
+}
+
+.home h1 {
+  font-size: 80px;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: var(--fw-black);
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-cta {
+  padding: 14px 36px;
+  font-size: 16px;
+  border-radius: 8px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--fw-bold);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0;
+}
+
+.hero-cta.main-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border: 1px solid var(--color-primary);
+  color: var(--color-text-on-accent);
+}
+
+.hero-cta.main-btn:hover {
+  background: transparent;
+  border-color: var(--color-text-on-accent);
+  box-shadow: 0 0 20px rgba(232, 25, 44, 0.5);
+}
+
+.hero-cta.outline-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-text-on-accent);
+}
+
+.hero-cta.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-text-on-accent);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+@media(max-width: 767px) {
+  .home h1 {
+    font-size: 48px;
+  }
+  .hero-description {
+    font-size: 15px;
+  }
+  .hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .home .hero-btn-group .hero-cta {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
 
 
