@@ -81,12 +81,17 @@ Plans:
 **Depends on**: Phase 4
 **Requirements**: PRICING-01, PRICING-02, PRICING-03, CONTACT-01, CONTACT-02
 **Success Criteria** (what must be TRUE):
-  1. Pricing section shows 2–4 real membership tiers with real prices
+  1. Pricing section shows 4 real membership tiers with real prices
   2. No Lorem Ipsum in any pricing feature list
   3. Pricing CTA buttons link to `#contact`
   4. Contact section shows real GripGym address, phone, and email
   5. Contact form is styled correctly (static, no backend required)
-**Plans**: TBD
+**Plans**: 3 plans (05-01, 05-02, 05-03)
+
+Plans:
+- [ ] 05-01-PLAN.md — Create data/content.json with pricing tiers and contact data
+- [ ] 05-02-PLAN.md — Add Pricing & Contact sections with JSON-driven rendering
+- [ ] 05-03-PLAN.md — Style sections and verification
 
 ### Phase 6: Gallery, Footer & Final Polish
 **Goal**: Add the new Gallery section, finalize the footer, and ensure the full site is polished, consistent, and content-complete.
@@ -111,7 +116,7 @@ Plans:
 | 2. Header, Navigation & Hero | 5/5 | Executed | 2026-07-20 |
 | 3. About & Services | 4/4 | Executed | 2026-07-20 |
 | 4. Classes & Schedule | 5/5 | Executed | 2026-07-20 |
-| 5. Pricing & Contact | 0/TBD | Not started | - |
+| 5. Pricing & Contact | 0/3 | Planning complete | - |
 | 6. Gallery, Footer & Final Polish | 0/TBD | Not started | - |
 
 ---
