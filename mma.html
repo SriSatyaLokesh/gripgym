@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>GRIPMMA — Train Combat. Fight Smarter.</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="">
+	<meta name="robots" content="index, follow">
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="">
+	
+	<!-- JSON-LD Structured Data (LocalBusiness Schema) -->
+	<script type="application/ld+json"></script>
+	
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
+  
+</head>
+<body data-content-src="data/mma-content.json">
+ 
+  <!-- Start Header  -->
+  <header>
+  	 <div class="container">
+  	 	<div class="logo" id="logo-container">
+					 <a href="" id="logo-link">Grip<span>MMA</span></a>
+  	 	</div>
+  	 	<a href="javascript:void(0)" class="ham-burger">
+  	       <span></span>	
+  	       <span></span>
+  	 	</a>
+  	 	<div class="nav">
+	 		<ul>
+	 			<!-- Rendered from data/mma-content.json -->
+	 		</ul>
+	 	</div>
+  	 </div>
+  </header>
+  <!-- End Header  -->
+
+  <!-- Start Home -->
+  <section class="home" id="home">
+  	 <div class="container">
+  	 	  <span class="hero-tagline wow fadeInUp" data-wow-delay="0.4s" id="hero-tagline"></span>
+  	 	  <h1 class="wow fadeInUp" data-wow-delay="0.6s" id="hero-title"></h1>
+  	 	  <h2 class="hero-subtitle wow fadeInUp" data-wow-delay="0.7s" id="hero-subtitle"></h2>
+  	 	  <p class="hero-description wow fadeInUp" data-wow-delay="0.8s" id="hero-desc"></p>
+  	 	  <div class="hero-btn-group wow fadeInUp" data-wow-delay="1.0s" id="hero-buttons"></div>
+  	 </div>
+  	  <!-- go down -->
+  	      <a href="#about" class="go-down wow fadeIn" data-wow-delay="1.4s">
+  	      	  <i class="fa fa-angle-down" aria-hidden="true"></i>
+  	      </a>
+  	  <!-- go down -->
+  </section>
+  <!-- End Home -->
+
+
+  <!-- Start About -->
+  <section class="about" id="about">
+  	  <div class="container">
+  	  	  <div class="content" id="about-grid"></div>
+  	  </div>
+  </section>
+  <!-- End About -->
+
+
+  <!-- Start Service -->
+  <section class="service" id="service">
+  	<div class="container">
+  		 <div class="content">
+  		 	  <div class="text box wow slideInLeft" id="services-text"></div>
+  		 	  <div class="accordian box wow slideInRight" id="services-accordion"></div>
+  		 </div>
+  	</div>
+  </section>
+  <!-- End Service -->
+
+  <!-- Start Classes -->
+  <section class="classes" id="classes">
+  	<div class="container">
+        <div class="section-header wow fadeInUp" id="classes-header"></div>
+        <div class="classes-grid" id="classes-grid"></div>
+  	</div>
+  </section>
+  <!-- End Classes -->
+
+  <!-- Start Today -->
+  <section class="start-today">
+  	<div class="container">
+  		 <div class="content" id="start-today-content">
+  		 </div>
+  	</div>
+  </section>
+  <!-- End Start Today -->
+
+  <!-- Start Schedule -->
+  <section class="schedule" id="schedule">
+     <div class="container">
+        <div class="section-header wow fadeInUp" id="schedule-header"></div>
+        <div class="schedule-table-wrapper wow fadeInUp" data-wow-delay="0.2s">
+            <table class="table schedule-table">
+              <thead id="schedule-table-header">
+                <!-- Rendered from data/mma-content.json -->
+              </thead>
+              <tbody id="schedule-table-body"></tbody>
+            </table>
+        </div>
+     </div>
+  </section>
+  <!-- End Schedule -->
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h1 id="pricing-title">Fighter Memberships</h1>
+      <p class="intro-text"></p>
+      <div class="pricing-grid" id="pricing-grid">
+        <!-- Rendered from data/mma-content.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2 id="gallery-title">Fighter Gallery</h2>
+      <p class="gallery-intro" id="gallery-intro"></p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Gallery items rendered from data/mma-content.json -->
+      </div>
+    </div>
+  </section>
+  <!-- End Gallery -->
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h1 id="contact-title">Visit the Cage</h1>
+      <div class="contact-grid">
+        <div class="contact-info" id="contact-info">
+          <!-- Contact details fetched from data/mma-content.json -->
+        </div>
+        <div class="contact-form-wrapper">
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="" required />
+            <input type="email" name="email" placeholder="" required />
+            <textarea name="message" placeholder="" rows="5" required></textarea>
+            <button type="submit" id="contact-submit-btn"></button>
+          </form>
+          <div class="form-message" id="form-message" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-branding wow fadeIn" id="footer-branding"></div>
+        <div class="footer-info wow fadeIn" data-wow-delay="0.2s">
+          <div class="info-section">
+            <h4 id="footer-header-location"></h4>
+            <p id="footer-location"></p>
+          </div>
+          <div class="info-section">
+            <h4 id="footer-header-contact"></h4>
+            <p><strong id="footer-label-phone"></strong> <span id="footer-phone"></span></p>
+            <p><strong id="footer-label-email"></strong> <span id="footer-email"></span></p>
+          </div>
+        </div>
+        <div class="footer-hours wow fadeIn" data-wow-delay="0.4s">
+          <h4 id="footer-header-hours"></h4>
+          <div id="footer-hours">
+            <!-- Rendered from mma-content.json -->
+          </div>
+        </div>
+        <div class="footer-social wow fadeIn" data-wow-delay="0.6s">
+          <h4 id="footer-header-social"></h4>
+          <div class="social-links" id="footer-social">
+            <!-- Rendered from mma-content.json -->
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> <span id="footer-gym-name"></span>. <span id="footer-copyright"></span></p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+<script src="js/wow.min.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/content-loader.js"></script>
+</body>
+</html>

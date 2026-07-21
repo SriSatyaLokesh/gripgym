@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "gym_name": "GRIPMMA",
+    "version": "1.0",
+    "last_updated": "2026-07-21",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "keywords": "MMA, self defense, karate, BJJ, boxing, kickboxing, muay thai, taekwondo, wrestling, martial arts, GRIPMMA",
+    "google_analytics_id": "G-XXXXXXXXXX",
+    "og_url": "https://sristayalokesh.is-a.dev/gripgym/mma.html",
+    "og_image": "https://sristayalokesh.is-a.dev/gripgym/images/gallery3.jpg"
+  },
+  "navigation": [
+    { "label": "Home", "link": "#home" },
+    { "label": "About", "link": "#about" },
+    { "label": "Disciplines", "link": "#service" },
+    { "label": "Classes", "link": "#classes" },
+    { "label": "Schedule", "link": "#schedule" },
+    { "label": "Pricing", "link": "#pricing" },
+    { "label": "Gallery", "link": "#gallery" },
+    { "label": "Contact", "link": "#contact" }
+  ],
+  "theme": {
+    "primary": "#ff6b00",
+    "primary_dark": "#d95a00",
+    "bg_primary": "#0c0c0e",
+    "bg_secondary": "#141417",
+    "bg_surface": "#1f1f24",
+    "text_base": "#f5f5f7",
+    "text_muted": "#8e8e93",
+    "text_on_accent": "#ffffff",
+    "border": "#2a2a30",
+    "border_light": "#3d3d47"
+  },
+  "hero": {
+    "tagline": "Train Combat. Fight Smarter.",
+    "title_main": "Grip",
+    "title_span": "MMA",
+    "subtitle": "Unleash the Fighter Within",
+    "description": "Bhadrachalam's premier combat sports academy. Master Mixed Martial Arts, Brazilian Jiu-Jitsu, Muay Thai, Boxing, and practical Self-Defense with expert coaches.",
+    "cta_primary_text": "Start Training",
+    "cta_primary_link": "#pricing",
+    "cta_outline_text": "Explore Disciplines",
+    "cta_outline_link": "#classes"
+  },
+  "about": {
+    "cards": [
+      {
+        "title": "Professional MMA Coaching",
+        "image": "images/about2.jpg",
+        "text": "At Grip MMA, we offer world-class coaching in Mixed Martial Arts. Our structured programs combine striking, wrestling, and submission grappling to build complete combat readiness. Whether you are training for a competition, looking to learn self-defense, or wanting an intense physical workout, our expert trainers design sessions that push your limits safely and progressively."
+      },
+      {
+        "title": "Elite Grappling & BJJ",
+        "image": "images/about3.jpg",
+        "text": "Master the art of leverage, control, and submission with our dedicated Brazilian Jiu-Jitsu (BJJ) and wrestling programs. Learn how to defend yourself from the ground, execute sweeps, and apply joint locks and chokeholds. BJJ builds incredible core strength, flexibility, mental toughness, and tactical problem-solving under pressure."
+      },
+      {
+        "title": "Striking & Stand-up Arts",
+        "image": "images/about1.jpg",
+        "text": "Develop explosive power, hand-eye coordination, and fluid movement through boxing, kickboxing, Muay Thai, and traditional karate. We focus on perfect striking technique, defense, footwork, and conditioning. Our striking classes are great for building rapid cardiovascular fitness, reflexes, and raw hitting power."
+      }
+    ]
+  },
+  "services": {
+    "title": "Disciplines",
+    "description": "Discover the range of martial arts and combat disciplines we coach at Grip MMA. Our programs are designed to accommodate absolute beginners as well as seasoned fighters, with a primary focus on safety, form, and skill progression.",
+    "cta_text": "Join a Class",
+    "cta_link": "#classes",
+    "accordion": [
+      {
+        "title": "Mixed Martial Arts (MMA)",
+        "description": "Our MMA classes integrate striking, takedowns, wall work, and ground fighting into a cohesive system. You'll learn how to transition seamlessly between stand-up fighting, clinch wrestling, and ground grappling, mimicking the demands of modern combat sports."
+      },
+      {
+        "title": "Brazilian Jiu-Jitsu & Wrestling",
+        "description": "Focusing on the grappling aspect of combat. We train both Gi and No-Gi BJJ along with freestyle wrestling takedowns. Learn to control opponents, defend against submissions, and secure tapouts using technique and leverage over raw size and strength."
+      },
+      {
+        "title": "Striking (Boxing & Kickboxing)",
+        "description": "A high-intensity program covering punches, kicks, knees, and elbow strikes. Our classes combine pad work, heavy bag drills, and controlled sparring to build cardiovascular endurance, punching power, and defensive head movement."
+      },
+      {
+        "title": "Self-Defense & Traditional Arts",
+        "description": "Practical self-defense courses drawing on Karate, Taekwondo, and Krav Maga. Learn situational awareness, threat de-escalation, strike evasion, and escape techniques designed for real-world scenarios to build confidence and personal safety."
+      }
+    ]
+  },
+  "classes_section": {
+    "title": "Combat Classes",
+    "description": "Review our core combat training classes led by certified instructors. Select a program that aligns with your goals and start building your skills today.",
+    "cards": [
+      {
+        "title": "Mixed Martial Arts (MMA)",
+        "coach": "Coach Vikram • MMA Champion & ISSA Trainer",
+        "price": "₹2,499/mo",
+        "image": "images/class1.jpg",
+        "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound. 75 minutes, 4x per week."
+      },
+      {
+        "title": "Brazilian Jiu-Jitsu (BJJ)",
+        "coach": "Coach Rahul • BJJ Purple Belt",
+        "price": "₹2,199/mo",
+        "image": "images/class1.jpg",
+        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense. 60 minutes, 4x per week."
+      },
+      {
+        "title": "Boxing & Kickboxing",
+        "coach": "Coach Priya • Certified Boxing Coach",
+        "price": "₹1,799/mo",
+        "image": "images/class1.jpg",
+        "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring. 60 minutes, 3x per week."
+      },
+      {
+        "title": "Self-Defense & Karate",
+        "coach": "Trainer Anjali • Black Belt Shito-Ryu",
+        "price": "₹1,499/mo",
+        "image": "images/class1.jpg",
+        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers. 60 minutes, 3x per week."
+      }
+    ]
+  },
+  "schedule_section": {
+    "title": "Training Timetable",
+    "description": "Our schedule features dedicated sessions for Men and Women. Morning slots focus on striking conditioning and self-defense, while evening slots specialize in MMA spar work, BJJ, and wrestling drills. Sunday is a rest day.",
+    "headers": {
+      "day": "Day",
+      "morning": "Morning Sessions",
+      "evening": "Evening Sessions"
+    },
+    "days": [
+      {
+        "day": "Monday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Friday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "morning": [
+          { "time": "6:00 AM - 7:30 AM", "text": "Men's MMA & Striking", "type": "men" },
+          { "time": "8:00 AM - 9:00 AM", "text": "Women's Self-Defense", "type": "women" }
+        ],
+        "evening": [
+          { "time": "5:00 PM - 6:30 PM", "text": "Women's Kickboxing", "type": "women" },
+          { "time": "6:30 PM - 8:30 PM", "text": "Men's BJJ & Wrestling", "type": "men" }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "holiday": true,
+        "holiday_label": "CLOSED - REST DAY"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Fighter Memberships",
+    "intro": "Choose a membership tier that supports your training frequency and athletic goals. Sign up today and gain access to elite coaching.",
+    "tiers": [
+      {
+        "id": "basic",
+        "name": "Striking Basic",
+        "price": 1299,
+        "duration": "per month",
+        "features": [
+          "Access to Boxing & Kickboxing classes (3x/week)",
+          "Access to standard striking equipment",
+          "1 welcome combat assessment",
+          "Locker facility",
+          "Changing rooms & shower access"
+        ]
+      },
+      {
+        "id": "premium",
+        "name": "Grappler Premium",
+        "price": 2199,
+        "duration": "per month",
+        "features": [
+          "Access to BJJ & Wrestling classes (4x/week)",
+          "2 Open Mat grappling sessions per month",
+          "1 personal training session per month",
+          "Nutrition & weight-cut consultation",
+          "Premium locker facility",
+          "Towel service included"
+        ]
+      },
+      {
+        "id": "elite",
+        "name": "Elite Fighter (MMA)",
+        "price": 3499,
+        "duration": "per month",
+        "features": [
+          "Unlimited access to all classes (MMA, BJJ, Boxing, Karate)",
+          "Daily supervised sparring access",
+          "4 personal coaching sessions per month",
+          "Custom fight-conditioning plan",
+          "Premium locker & shower amenities",
+          "Recovery cold plunge access"
+        ]
+      },
+      {
+        "id": "annual",
+        "name": "Annual Champion",
+        "price": 34999,
+        "duration": "per year",
+        "discount_label": "Save ₹7,000/year",
+        "features": [
+          "Unlimited 24/7 access (full year)",
+          "Free combat sparring gear kit",
+          "6 personal coaching sessions per month",
+          "Free guest privileges (2x/week)",
+          "Custom nutrition & fight weight planning",
+          "Full recovery room & cold plunge access",
+          "Quarterly skill & performance assessments"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Visit the Cage",
+    "phone": "+91-9876543210",
+    "email": "info@gripmma.com",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "hours": {
+      "weekdays": "6:00 AM - 9:30 PM (Monday to Saturday)",
+      "weekends": "CLOSED (Sunday)"
+    },
+    "form_type": "email",
+    "form": {
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email",
+      "message_placeholder": "Your Message",
+      "submit_button_text": "Send Message",
+      "success_message": "Fighter {name}, we have received your request! Prepare to train."
+    },
+    "social_media": {
+      "instagram": "https://instagram.com/gripmma",
+      "facebook": "https://facebook.com/gripmma"
+    }
+  },
+  "gallery": {
+    "title": "Fighter Gallery",
+    "intro": "See our fighters training, sparring, and mastering BJJ, Muay Thai, and Wrestling in our state-of-the-art combat area.",
+    "images": [
+      {
+        "id": "gallery1",
+        "src": "images/gallery3.jpg",
+        "alt": "MMA clinch training",
+        "caption": "MMA Takedown & Clinch Work"
+      },
+      {
+        "id": "gallery2",
+        "src": "images/gallery2.jpg",
+        "alt": "Grappling and BJJ session",
+        "caption": "BJJ Guard Passing & Submissions"
+      },
+      {
+        "id": "gallery3",
+        "src": "images/gallery1.jpg",
+        "alt": "Heavy bag boxing conditioning",
+        "caption": "Boxing Power & Reflex Drills"
+      },
+      {
+        "id": "gallery4",
+        "src": "images/gallery4.jpg",
+        "alt": "Muay Thai pad kicking",
+        "caption": "Muay Thai Heavy Kick Circuits"
+      },
+      {
+        "id": "gallery5",
+        "src": "images/about2.jpg",
+        "alt": "Coached wrestling session",
+        "caption": "Takedown Timing & Offense"
+      },
+      {
+        "id": "gallery6",
+        "src": "images/about3.jpg",
+        "alt": "Submission grappling sparring",
+        "caption": "No-Gi BJJ Roll & Sparring"
+      }
+    ]
+  },
+  "start_today": {
+    "title": "Enter the Cage Today",
+    "description": "Ready to challenge yourself, build discipline, and learn practical combat skills? Join GRIPMMA today and train under professional coaches who will guide you from the basics to advanced combat readiness. Step onto the mats and transform your strength, agility, and focus.",
+    "cta_text": "Start Training",
+    "cta_link": "#contact",
+    "image": "images/gallery3.jpg"
+  },
+  "footer": {
+    "company_name": "GRIPMMA",
+    "tagline": "Train Combat. Fight Smarter.",
+    "description": "Your premier combat sports academy in Bhadrachalam, specializing in Mixed Martial Arts, BJJ, Wrestling, Striking, and Self-Defense.",
+    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "phone": "+91-9876543210",
+    "email": "info@gripmma.com",
+    "hours": {
+      "weekdays": "6:00 AM - 9:30 PM (Monday to Saturday)",
+      "weekends": "CLOSED (Sunday)"
+    },
+    "headers": {
+      "location": "Location",
+      "contact": "Contact",
+      "hours": "Hours",
+      "follow_us": "Follow Us"
+    },
+    "labels": {
+      "phone": "Phone:",
+      "email": "Email:",
+      "weekdays": "Weekdays:",
+      "weekends": "Weekends:"
+    },
+    "social_links": [
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/gripmma",
+        "icon": "fa fa-instagram"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/gripmma",
+        "icon": "fa fa-facebook"
+      }
+    ],
+    "copyright_text": "All rights reserved."
+  }
+}
