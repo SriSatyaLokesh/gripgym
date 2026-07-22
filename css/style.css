@@ -308,7 +308,7 @@ header .ham-burger.active span:nth-child(2){
   border-radius: 100px;
   padding: 6px 16px 6px 8px;
   margin-bottom: 8px;
-  align-self: flex-start;
+  align-self: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
