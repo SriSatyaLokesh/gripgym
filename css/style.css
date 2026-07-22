@@ -251,31 +251,134 @@ header .ham-burger.active span:nth-child(2){
 	transform: translate3d(-1000px, -1000px, 0); /* Start offscreen */
 }
 
-.home .go-down{
+.home .go-down {
   position: absolute;
-  bottom: 50px;
-  width: 26px;
-  height:40px;
-  border:1px solid #ffffff;
-  display: block;
-  border-radius:4px;
-  text-align: center;
-  left:50%;
-  margin-left: -13px;
-  z-index: 3; /* Ensure it floats above the animated bg */
+  bottom: 40px;
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
-.home .go-down .fa{
-	color:#ffffff;
-	-webkit-animation: goDown 1s ease infinite;
-	animation: goDown 1s ease infinite;
+
+.home .go-down:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px var(--color-primary-alpha, rgba(232, 25, 44, 0.2));
+  transform: translateX(-50%) translateY(-2px);
 }
-@-webkit-keyframes goDown{
-	0%{transform: translateY(0);opacity:.5}
-	100%{transform: translateY(10px);}
+
+.home .go-down .fa {
+  color: var(--color-text-base);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+  -webkit-animation: goDownModern 1.8s ease-in-out infinite;
+  animation: goDownModern 1.8s ease-in-out infinite;
 }
-@keyframes goDown{
-	0%{transform: translateY(0);opacity:.5}
-	100%{transform: translateY(10px);}
+
+.home .go-down:hover .fa {
+  color: var(--color-primary);
+}
+
+@-webkit-keyframes goDownModern {
+  0% { transform: translateY(-3px); opacity: 0.6; }
+  50% { transform: translateY(3px); opacity: 1; }
+  100% { transform: translateY(-3px); opacity: 0.6; }
+}
+
+@keyframes goDownModern {
+  0% { transform: translateY(-3px); opacity: 0.6; }
+  50% { transform: translateY(3px); opacity: 1; }
+  100% { transform: translateY(-3px); opacity: 0.6; }
+}
+
+/* Modern MMA Redirect Badge */
+.mma-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  padding: 6px 16px 6px 8px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mma-badge:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px var(--color-primary-alpha, rgba(232, 25, 44, 0.15));
+  transform: translateY(-1px);
+}
+
+.mma-badge .badge-tag {
+  background: var(--color-primary);
+  color: var(--color-text-on-accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.mma-badge .badge-text {
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.mma-badge .badge-link {
+  color: var(--color-text-base);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.mma-badge .badge-link:hover {
+  color: var(--color-primary);
+}
+
+.mma-badge .badge-link i {
+  font-size: 0.875rem;
+  transition: transform 0.2s ease;
+}
+
+.mma-badge:hover .badge-link i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 575px) {
+  .mma-badge {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    border-radius: 16px;
+    gap: 8px;
+  }
+  .mma-badge .badge-text {
+    width: 100%;
+  }
 }
 .home .container{
   -webkit-display: flex;
