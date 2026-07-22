@@ -47,17 +47,17 @@
     "cards": [
       {
         "title": "Professional MMA Coaching",
-        "image": "images/about2.jpg",
+        "image": "images/mma-about2.png",
         "text": "At Grip MMA, we offer world-class coaching in Mixed Martial Arts. Our structured programs combine striking, wrestling, and submission grappling to build complete combat readiness. Whether you are training for a competition, looking to learn self-defense, or wanting an intense physical workout, our expert trainers design sessions that push your limits safely and progressively."
       },
       {
         "title": "Elite Grappling & BJJ",
-        "image": "images/about3.jpg",
+        "image": "images/mma-about3.png",
         "text": "Master the art of leverage, control, and submission with our dedicated Brazilian Jiu-Jitsu (BJJ) and wrestling programs. Learn how to defend yourself from the ground, execute sweeps, and apply joint locks and chokeholds. BJJ builds incredible core strength, flexibility, mental toughness, and tactical problem-solving under pressure."
       },
       {
         "title": "Striking & Stand-up Arts",
-        "image": "images/about1.jpg",
+        "image": "images/mma-about1.png",
         "text": "Develop explosive power, hand-eye coordination, and fluid movement through boxing, kickboxing, Muay Thai, and traditional karate. We focus on perfect striking technique, defense, footwork, and conditioning. Our striking classes are great for building rapid cardiovascular fitness, reflexes, and raw hitting power."
       }
     ]
@@ -94,28 +94,28 @@
         "title": "Mixed Martial Arts (MMA)",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,499/mo",
-        "image": "images/class1.jpg",
+        "image": "images/mma-class-mma.png",
         "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound."
       },
       {
         "title": "Brazilian Jiu-Jitsu (BJJ)",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹2,199/mo",
-        "image": "images/class1.jpg",
+        "image": "images/mma-class-bjj.png",
         "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense."
       },
       {
         "title": "Boxing & Kickboxing",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,799/mo",
-        "image": "images/class1.jpg",
+        "image": "images/mma-class-boxing.png",
         "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring."
       },
       {
         "title": "Self-Defense & Karate",
         "coach": "Coach Arshad • MMA Coach & Fitness Expert",
         "price": "₹1,499/mo",
-        "image": "images/class1.jpg",
+        "image": "images/mma-class-karate.png",
         "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers."
       }
     ]
@@ -281,37 +281,37 @@
     "images": [
       {
         "id": "gallery1",
-        "src": "images/gallery3.jpg",
+        "src": "images/mma-gallery3.png",
         "alt": "MMA clinch training",
         "caption": "MMA Takedown & Clinch Work"
       },
       {
         "id": "gallery2",
-        "src": "images/gallery2.jpg",
+        "src": "images/mma-gallery2.png",
         "alt": "Grappling and BJJ session",
         "caption": "BJJ Guard Passing & Submissions"
       },
       {
         "id": "gallery3",
-        "src": "images/gallery1.jpg",
+        "src": "images/mma-gallery1.png",
         "alt": "Heavy bag boxing conditioning",
         "caption": "Boxing Power & Reflex Drills"
       },
       {
         "id": "gallery4",
-        "src": "images/gallery4.jpg",
+        "src": "images/mma-gallery4.png",
         "alt": "Muay Thai pad kicking",
         "caption": "Muay Thai Heavy Kick Circuits"
       },
       {
         "id": "gallery5",
-        "src": "images/about2.jpg",
+        "src": "images/mma-about2.png",
         "alt": "Coached wrestling session",
         "caption": "Takedown Timing & Offense"
       },
       {
         "id": "gallery6",
-        "src": "images/about3.jpg",
+        "src": "images/mma-about3.png",
         "alt": "Submission grappling sparring",
         "caption": "No-Gi BJJ Roll & Sparring"
       }
@@ -322,7 +322,7 @@
     "description": "Ready to challenge yourself, build discipline, and learn practical combat skills? Join GRIPMMA today and train under professional coaches who will guide you from the basics to advanced combat readiness. Step onto the mats and transform your strength, agility, and focus.",
     "cta_text": "Start Training",
     "cta_link": "#contact",
-    "image": "images/gallery3.jpg"
+    "image": "images/mma-gallery3.png"
   },
   "footer": {
     "company_name": "GRIPMMA",
