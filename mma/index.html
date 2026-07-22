@@ -37,6 +37,30 @@
     .hero-bg-image {
       background-image: linear-gradient(rgba(15, 15, 15, 0.7), rgba(15, 15, 15, 0.8)), url('../images/mma-hero.jpg?v=2') !important;
     }
+    /* Clean Shimmer/Shine Effect for MMA Hero Title */
+    /* Clean Shimmer/Shine Effect for MMA Hero Title */
+    .mma-page .home h1 {
+      font-family: var(--font-display);
+      color: #ffffff;
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+    .mma-page .home h1 span {
+      background: linear-gradient(120deg, #d01c28 35%, #d01c28 43%, #ff808a 48%, #d01c28 52%, #d01c28 65%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s linear infinite;
+      display: inline-block;
+    }
+    @keyframes textShine {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
   </style>
   
 </head>
@@ -216,7 +240,6 @@
       </div>
     </div>
   </footer>
-  <!-- End Footer -->
 
 <script src="../js/wow.min.js"></script>
 <script src="../js/lightbox.js"></script>

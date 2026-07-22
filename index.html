@@ -34,6 +34,29 @@
     .wow:first-child {
       visibility: hidden;
     }
+    /* Clean Shimmer/Shine Effect for Gym Hero Title */
+    .home h1 {
+      font-family: var(--font-display);
+      color: #ffffff;
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+    .home h1 span {
+      background: linear-gradient(120deg, #e8192c 35%, #e8192c 43%, #ff808d 48%, #e8192c 52%, #e8192c 65%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s linear infinite;
+      display: inline-block;
+    }
+    @keyframes textShine {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
   </style>
   
 </head>
