@@ -914,8 +914,22 @@ function attachFormHandler(contactData) {
   newForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = newForm.querySelector('input[name="name"]').value;
+    const name = newForm.querySelector('input[name="name"]').value.trim();
+    const email = newForm.querySelector('input[name="email"]').value.trim();
+    const message = newForm.querySelector('textarea[name="message"]').value.trim();
     const msgDiv = document.getElementById('form-message');
+    
+    if (contactData && contactData.form_type === 'whatsapp') {
+      const isMMA = window.location.pathname.includes('/mma');
+      const gymName = isMMA ? "GRIPMMA" : "GripGym";
+      const rawPhone = contactData.phone || "+91-9876543210";
+      const cleanPhone = rawPhone.replace(/[^\d]/g, '');
+      
+      const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+      const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
     
     let successPattern = 'Thank you {name}! Your message has been sent. We will contact you shortly.';
     if (contactData && contactData.form && contactData.form.success_message) {
