@@ -254,52 +254,46 @@ header .ham-burger.active span:nth-child(2){
 .home .go-down {
   position: absolute;
   bottom: 40px;
-  width: 46px;
-  height: 46px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .home .go-down:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--color-primary);
-  box-shadow: 0 0 20px var(--color-primary-alpha, rgba(232, 25, 44, 0.2));
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateX(-50%) scale(1.2);
 }
 
 .home .go-down .fa {
-  color: var(--color-text-base);
-  font-size: 1.25rem;
-  transition: color 0.3s ease;
-  -webkit-animation: goDownModern 1.8s ease-in-out infinite;
-  animation: goDownModern 1.8s ease-in-out infinite;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.25rem;
+  transition: all 0.3s ease;
+  -webkit-animation: goDownFuturistic 2s infinite ease-in-out;
+  animation: goDownFuturistic 2s infinite ease-in-out;
 }
 
 .home .go-down:hover .fa {
   color: var(--color-primary);
+  text-shadow: 0 0 20px var(--color-primary);
 }
 
-@-webkit-keyframes goDownModern {
-  0% { transform: translateY(-3px); opacity: 0.6; }
-  50% { transform: translateY(3px); opacity: 1; }
-  100% { transform: translateY(-3px); opacity: 0.6; }
+@-webkit-keyframes goDownFuturistic {
+  0% { transform: translateY(0); opacity: 0.4; text-shadow: none; }
+  50% { transform: translateY(8px); opacity: 1; text-shadow: 0 0 12px var(--color-primary-alpha, rgba(232, 25, 44, 0.5)); }
+  100% { transform: translateY(0); opacity: 0.4; text-shadow: none; }
 }
 
-@keyframes goDownModern {
-  0% { transform: translateY(-3px); opacity: 0.6; }
-  50% { transform: translateY(3px); opacity: 1; }
-  100% { transform: translateY(-3px); opacity: 0.6; }
+@keyframes goDownFuturistic {
+  0% { transform: translateY(0); opacity: 0.4; text-shadow: none; }
+  50% { transform: translateY(8px); opacity: 1; text-shadow: 0 0 12px var(--color-primary-alpha, rgba(232, 25, 44, 0.5)); }
+  100% { transform: translateY(0); opacity: 0.4; text-shadow: none; }
 }
 
 /* Modern MMA Redirect Badge */
@@ -3128,6 +3122,20 @@ header .logo a span,
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+}
+
+/* Page-specific MMA Centering overrides */
+.mma-page .home .container {
+  align-items: center;
+  text-align: center;
+}
+
+.mma-page .home .mma-badge {
+  align-self: center;
+}
+
+.mma-page .home .hero-btn-group {
+  justify-content: center;
 }
 
 
