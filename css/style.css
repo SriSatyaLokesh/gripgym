@@ -309,6 +309,8 @@ header .ham-burger.active span:nth-child(2){
   padding: 6px 16px 6px 8px;
   margin-bottom: 8px;
   align-self: center;
+  text-decoration: none;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -350,7 +352,7 @@ header .ham-burger.active span:nth-child(2){
   transition: color 0.2s ease;
 }
 
-.mma-badge .badge-link:hover {
+.mma-badge:hover .badge-link {
   color: var(--color-primary);
 }
 
