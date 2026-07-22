@@ -94,28 +94,28 @@
         "title": "Grip Strength Mastery",
         "coach": "Coach Rahul • Certified Strength Coach",
         "price": "₹1,999/mo",
-        "image": "images/class1.jpg",
+        "image": "images/class-grip.jpg",
         "description": "Build crushing hand strength and forearm endurance through grip-focused conditioning. Learn proper technique, progression strategies, and injury prevention with personalized form feedback. 60 minutes, 4x per week."
       },
       {
         "title": "Power Lifting & Strength",
         "coach": "Coach Vikram • ISSA Personal Trainer",
         "price": "₹2,499/mo",
-        "image": "images/class1.jpg",
+        "image": "images/class-powerlifting.jpg",
         "description": "Master the big three lifts—squat, bench, deadlift—with emphasis on explosive power and perfect form. Build muscle and increase your one-rep max while learning how grip strength amplifies lifting. 75 minutes, 3x per week."
       },
       {
         "title": "HIIT Conditioning & Cardio",
         "coach": "Coach Priya • ACE Fitness Trainer",
         "price": "₹1,499/mo",
-        "image": "images/class1.jpg",
+        "image": "images/class-hiit.jpg",
         "description": "High-intensity interval training combining cardio bursts with grip circuits for total-body fitness. Alternates farmer carries, dead hangs, and plate pinches with calorie-burning exercises. 45 minutes, 5x per week."
       },
       {
         "title": "Mobility & Recovery",
         "coach": "Trainer Anjali • Yoga Instructor",
         "price": "₹1,299/mo",
-        "image": "images/class1.jpg",
+        "image": "images/class-mobility.jpg",
         "description": "Restore and rebuild your body through guided stretching, mobility work, and joint health training. Focus on improving range of motion, reducing soreness, and preventing injury. Perfect recovery tool. 50 minutes, 3x per week."
       }
     ]
@@ -340,7 +340,7 @@
     "description": "Ready to transform your fitness journey? Join GripGym today and experience the power of expert coaching, state-of-the-art facilities, and a supportive community dedicated to your success. Whether you're building grip strength, power, or overall conditioning, we have a program tailored to your goals. Take the first step toward stronger performance and lasting results.",
     "cta_text": "Start Now",
     "cta_link": "#contact",
-    "image": "images/gallery4.jpg"
+    "image": "images/transformation.jpg"
   },
   "footer": {
     "company_name": "GripGym",
