@@ -20,8 +20,8 @@
     { "label": "Contact", "link": "#contact" }
   ],
   "theme": {
-    "primary": "#ff6b00",
-    "primary_dark": "#d95a00",
+    "primary": "#d01c28",
+    "primary_dark": "#a7141d",
     "bg_primary": "#0c0c0e",
     "bg_secondary": "#141417",
     "bg_surface": "#1f1f24",
@@ -30,7 +30,7 @@
     "text_on_accent": "#ffffff",
     "border": "#2a2a30",
     "border_light": "#3d3d47",
-    "primary_alpha": "rgba(255, 107, 0, 0.06)"
+    "primary_alpha": "rgba(208, 28, 40, 0.08)"
   },
   "hero": {
     "tagline": "Train Combat. Fight Smarter.",
