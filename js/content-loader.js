@@ -960,6 +960,34 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Dynamic Hero background injection and parallax scroll listener for cinematic lift
+function initHeroParallax() {
+  const heroSection = document.querySelector('.home');
+  if (heroSection && !heroSection.querySelector('.hero-bg-container')) {
+    const bgContainer = document.createElement('div');
+    bgContainer.className = 'hero-bg-container';
+    
+    const bgImage = document.createElement('div');
+    bgImage.className = 'hero-bg-image';
+    
+    bgContainer.appendChild(bgImage);
+    heroSection.insertBefore(bgContainer, heroSection.firstChild);
+    
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      if (scrollY <= window.innerHeight) {
+        bgContainer.style.setProperty('--scroll-y', scrollY + 'px');
+      }
+    }, { passive: true });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeroParallax);
+} else {
+  initHeroParallax();
+}
+
 // Dynamic Hero Glow Aura Tracking (60fps LERP) - Desktop Only
 document.addEventListener('DOMContentLoaded', function() {
   const heroSection = document.querySelector('.home');
