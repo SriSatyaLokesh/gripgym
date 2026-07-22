@@ -773,8 +773,8 @@ function renderContact(contactData) {
     const nameInput = form.querySelector('input[name="name"]');
     if (nameInput) nameInput.placeholder = contactData.form.name_placeholder || "Your Name";
     
-    const emailInput = form.querySelector('input[name="email"]');
-    if (emailInput) emailInput.placeholder = contactData.form.email_placeholder || "Your Email";
+    const phoneInput = form.querySelector('input[name="phone"]');
+    if (phoneInput) phoneInput.placeholder = contactData.form.phone_placeholder || "Your Phone Number";
     
     const messageInput = form.querySelector('textarea[name="message"]');
     if (messageInput) messageInput.placeholder = contactData.form.message_placeholder || "Your Message";
@@ -915,7 +915,7 @@ function attachFormHandler(contactData) {
     e.preventDefault();
     
     const name = newForm.querySelector('input[name="name"]').value.trim();
-    const email = newForm.querySelector('input[name="email"]').value.trim();
+    const phone = newForm.querySelector('input[name="phone"]').value.trim();
     const message = newForm.querySelector('textarea[name="message"]').value.trim();
     const msgDiv = document.getElementById('form-message');
     
@@ -925,7 +925,7 @@ function attachFormHandler(contactData) {
       const rawPhone = contactData.phone || "+91-9876543210";
       const cleanPhone = rawPhone.replace(/[^\d]/g, '');
       
-      const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+      const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Message:* ${message}`;
       const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
       
       window.open(whatsappUrl, '_blank');

@@ -265,7 +265,7 @@
     "form_type": "whatsapp",
     "form": {
       "name_placeholder": "Your Name",
-      "email_placeholder": "Your Email",
+      "phone_placeholder": "Your Phone Number",
       "message_placeholder": "Your Message",
       "submit_button_text": "Send Message",
       "success_message": "Fighter {name}, we have received your request! Prepare to train."
