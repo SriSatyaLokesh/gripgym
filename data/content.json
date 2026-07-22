@@ -280,10 +280,10 @@
       "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
       "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
     },
-    "form_type": "email",
+    "form_type": "whatsapp",
     "form": {
       "name_placeholder": "Your Name",
-      "email_placeholder": "Your Email",
+      "phone_placeholder": "Your Phone Number",
       "message_placeholder": "Your Message",
       "submit_button_text": "Send Message",
       "success_message": "Thank you {name}! Your message has been sent. We will contact you shortly."

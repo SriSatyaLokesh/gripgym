@@ -212,28 +212,35 @@ header .ham-burger.active span:nth-child(2){
 	overflow: hidden; /* Prevent animated background from spilling out */
 }
 
-.home::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient(rgba(15,15,15,0.7), rgba(15,15,15,0.8)), url('../images/home.jpg?v=2');
-	background-size: cover;
-	background-position: center;
-	z-index: 1;
-	animation: kenBurns 28s ease-in-out infinite alternate;
-	pointer-events: none;
+.hero-bg-container {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.45));
+  will-change: transform;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(15, 15, 15, 0.7), rgba(15, 15, 15, 0.8)), url('../images/home.jpg?v=2');
+  background-size: cover;
+  background-position: center;
+  animation: kenBurns 28s ease-in-out infinite alternate;
 }
 
 @keyframes kenBurns {
-	0% {
-		transform: scale(1.0) translate(0, 0);
-	}
-	100% {
-		transform: scale(1.12) translate(-1%, 0.5%);
-	}
+  0% {
+    transform: scale(1.0) translateY(0);
+  }
+  100% {
+    transform: scale(1.15) translateY(-25px);
+  }
 }
 
 .hero-glow-aura {

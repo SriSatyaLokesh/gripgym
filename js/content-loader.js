@@ -773,8 +773,8 @@ function renderContact(contactData) {
     const nameInput = form.querySelector('input[name="name"]');
     if (nameInput) nameInput.placeholder = contactData.form.name_placeholder || "Your Name";
     
-    const emailInput = form.querySelector('input[name="email"]');
-    if (emailInput) emailInput.placeholder = contactData.form.email_placeholder || "Your Email";
+    const phoneInput = form.querySelector('input[name="phone"]');
+    if (phoneInput) phoneInput.placeholder = contactData.form.phone_placeholder || "Your Phone Number";
     
     const messageInput = form.querySelector('textarea[name="message"]');
     if (messageInput) messageInput.placeholder = contactData.form.message_placeholder || "Your Message";
@@ -914,8 +914,22 @@ function attachFormHandler(contactData) {
   newForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = newForm.querySelector('input[name="name"]').value;
+    const name = newForm.querySelector('input[name="name"]').value.trim();
+    const phone = newForm.querySelector('input[name="phone"]').value.trim();
+    const message = newForm.querySelector('textarea[name="message"]').value.trim();
     const msgDiv = document.getElementById('form-message');
+    
+    if (contactData && contactData.form_type === 'whatsapp') {
+      const isMMA = window.location.pathname.includes('/mma');
+      const gymName = isMMA ? "GRIPMMA" : "GripGym";
+      const rawPhone = contactData.phone || "+91-9876543210";
+      const cleanPhone = rawPhone.replace(/[^\d]/g, '');
+      
+      const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Message:* ${message}`;
+      const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
     
     let successPattern = 'Thank you {name}! Your message has been sent. We will contact you shortly.';
     if (contactData && contactData.form && contactData.form.success_message) {
@@ -945,6 +959,34 @@ window.addEventListener('scroll', function() {
     }
   }
 });
+
+// Dynamic Hero background injection and parallax scroll listener for cinematic lift
+function initHeroParallax() {
+  const heroSection = document.querySelector('.home');
+  if (heroSection && !heroSection.querySelector('.hero-bg-container')) {
+    const bgContainer = document.createElement('div');
+    bgContainer.className = 'hero-bg-container';
+    
+    const bgImage = document.createElement('div');
+    bgImage.className = 'hero-bg-image';
+    
+    bgContainer.appendChild(bgImage);
+    heroSection.insertBefore(bgContainer, heroSection.firstChild);
+    
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      if (scrollY <= window.innerHeight) {
+        bgContainer.style.setProperty('--scroll-y', scrollY + 'px');
+      }
+    }, { passive: true });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeroParallax);
+} else {
+  initHeroParallax();
+}
 
 // Dynamic Hero Glow Aura Tracking (60fps LERP) - Desktop Only
 document.addEventListener('DOMContentLoaded', function() {
