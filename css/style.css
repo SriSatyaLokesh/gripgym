@@ -3314,5 +3314,125 @@ header .logo a span,
   justify-content: center;
 }
 
+/* Premium Mobile Animation Overrides */
+@media (max-width: 767px) {
+  /* Snappier duration, hardware acceleration, and GPU paint optimizations */
+  .animated {
+    -webkit-animation-duration: 0.5s !important;
+    animation-duration: 0.5s !important;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Looping Shimmer Sweep on Primary CTAs for Mobile */
+  .btn::after, 
+  .hero-cta::after, 
+  #contact-form button::after, 
+  .pricing-card .select-plan-btn::after {
+    -webkit-animation: shimmerSweep 3.5s infinite ease-in-out;
+    animation: shimmerSweep 3.5s infinite ease-in-out;
+  }
+
+  @keyframes shimmerSweep {
+    0% { left: -100%; }
+    30% { left: 100%; }
+    100% { left: 100%; }
+  }
+  @-webkit-keyframes shimmerSweep {
+    0% { left: -100%; }
+    30% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  /* Soften slideInLeft: subtle translate-X + fade-in (avoids horizontal overflow / jitter) */
+  @keyframes slideInLeft {
+    from { transform: translate3d(-20px, 0, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes slideInLeft {
+    from { -webkit-transform: translate3d(-20px, 0, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+
+  /* Soften slideInRight: subtle translate-X + fade-in (avoids horizontal overflow / jitter) */
+  @keyframes slideInRight {
+    from { transform: translate3d(20px, 0, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes slideInRight {
+    from { -webkit-transform: translate3d(20px, 0, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+
+  /* Soften fadeInUp: tight translation-Y + fade-in + soft entrance glow for mobile */
+  @keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 15px, 0);
+      opacity: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+    40% {
+      opacity: 0.8;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 12px 2px var(--color-primary, #e8192c);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+  }
+  @-webkit-keyframes fadeInUp {
+    from {
+      -webkit-transform: translate3d(0, 15px, 0);
+      opacity: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+    40% {
+      opacity: 0.8;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 12px 2px var(--color-primary, #e8192c);
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      opacity: 1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+  }
+
+  /* Replace bounceInUp with a smooth slide-up fade + soft entrance glow (no bouncy overshoot) */
+  @keyframes bounceInUp {
+    from {
+      transform: translate3d(0, 20px, 0);
+      opacity: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+    40% {
+      opacity: 0.8;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 12px 2px var(--color-primary, #e8192c);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+  }
+  @-webkit-keyframes bounceInUp {
+    from {
+      -webkit-transform: translate3d(0, 20px, 0);
+      opacity: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+    40% {
+      opacity: 0.8;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 12px 2px var(--color-primary, #e8192c);
+    }
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      opacity: 1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(232, 25, 44, 0);
+    }
+  }
+}
+
 
 

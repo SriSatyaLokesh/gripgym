@@ -3,7 +3,7 @@
     "gym_name": "GRIPMMA",
     "version": "1.0",
     "last_updated": "2026-07-21",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
     "keywords": "MMA, self defense, karate, BJJ, boxing, kickboxing, muay thai, taekwondo, wrestling, martial arts, GRIPMMA",
     "google_analytics_id": "G-XXXXXXXXXX",
     "og_url": "https://sristayalokesh.is-a.dev/gripgym/mma.html",
@@ -92,31 +92,31 @@
     "cards": [
       {
         "title": "Mixed Martial Arts (MMA)",
-        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
-        "price": "₹2,499/mo",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹1,500/mo",
         "image": "images/mma-class-mma.png",
         "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound."
       },
       {
         "title": "Brazilian Jiu-Jitsu (BJJ)",
-        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
-        "price": "₹2,199/mo",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹1,500/mo",
         "image": "images/mma-class-bjj.png",
         "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense."
       },
       {
         "title": "Boxing & Kickboxing",
-        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
-        "price": "₹1,799/mo",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹1,500/mo",
         "image": "images/mma-class-boxing.png",
         "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring."
       },
       {
         "title": "Self-Defense & Karate",
-        "coach": "Coach Arshad • MMA Coach & Fitness Expert",
-        "price": "₹1,499/mo",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹15,000",
         "image": "images/mma-class-karate.png",
-        "description": "Traditional Karate forms, kata, and modern practical self-defense. Learn hand strikes, blocks, kicks, and escape maneuvers."
+        "description": "Free style defending (street fight). Learn threat handling, escape maneuvers, and situational awareness. 45 days minimum syllabus duration."
       }
     ]
   },
@@ -196,68 +196,64 @@
     "tiers": [
       {
         "id": "basic",
-        "name": "Striking Basic",
-        "price": 1299,
+        "name": "Monthly Fighter",
+        "price": 1500,
         "duration": "per month",
         "features": [
-          "Access to Boxing & Kickboxing classes (3x/week)",
-          "Access to standard striking equipment",
-          "1 welcome combat assessment",
+          "Access to MMA, BJJ, Boxing & Kickboxing classes",
+          "Daily supervised training sessions",
+          "Access to standard striking & grappling gear",
           "Locker facility",
           "Changing rooms & shower access"
         ]
       },
       {
         "id": "premium",
-        "name": "Grappler Premium",
-        "price": 2199,
-        "duration": "per month",
+        "name": "6-Month Package",
+        "price": 7500,
+        "duration": "per 6 months",
         "features": [
-          "Access to BJJ & Wrestling classes (4x/week)",
-          "2 Open Mat grappling sessions per month",
-          "1 personal training session per month",
-          "Nutrition & weight-cut consultation",
-          "Premium locker facility",
-          "Towel service included"
+          "6 months unlimited combat training",
+          "Daily training sessions access",
+          "Save ₹1,500 over monthly plan",
+          "Sparring & fight conditioning drills",
+          "Locker facility access"
         ]
       },
       {
         "id": "elite",
-        "name": "Elite Fighter (MMA)",
-        "price": 3499,
-        "duration": "per month",
+        "name": "Yearly Fighter",
+        "price": 12000,
+        "duration": "per year",
         "features": [
-          "Unlimited access to all classes (MMA, BJJ, Boxing, Karate)",
-          "Daily supervised sparring access",
-          "4 personal coaching sessions per month",
-          "Custom fight-conditioning plan",
-          "Premium locker & shower amenities",
-          "Recovery cold plunge access"
+          "1 year unlimited combat training access",
+          "Save ₹6,000 over monthly plan",
+          "Sparring and fight-conditioning advice",
+          "Full facilities & amenities access",
+          "Custom fight weight-planning tips"
         ]
       },
       {
         "id": "annual",
-        "name": "Annual Champion",
-        "price": 34999,
-        "duration": "per year",
-        "discount_label": "Save ₹7,000/year",
+        "name": "Self-Defense Course",
+        "price": 15000,
+        "duration": "crash course",
+        "discount_label": "45 days min duration",
         "features": [
-          "Unlimited 24/7 access (full year)",
-          "Free combat sparring gear kit",
-          "6 personal coaching sessions per month",
-          "Free guest privileges (2x/week)",
-          "Custom nutrition & fight weight planning",
-          "Full recovery room & cold plunge access",
-          "Quarterly skill & performance assessments"
+          "Free style defending (street fight) syllabus",
+          "Threat handling & life-saving strategies",
+          "Duration adjusts according to person's ability",
+          "One-on-one drills and situational awareness",
+          "Sparring and escape maneuvers practice"
         ]
       }
     ]
   },
   "contact": {
     "title": "Visit the Cage",
-    "phone": "+91-9876543210",
+    "phone": "+91-7995040067",
     "email": "info@gripmma.com",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
     "hours": {
       "weekdays": "6:00 AM - 9:30 PM (Monday to Saturday)",
       "weekends": "CLOSED (Sunday)"
@@ -328,8 +324,8 @@
     "company_name": "GRIPMMA",
     "tagline": "Train Combat. Fight Smarter.",
     "description": "Your premier combat sports academy in Bhadrachalam, specializing in Mixed Martial Arts, BJJ, Wrestling, Striking, and Self-Defense.",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
-    "phone": "+91-9876543210",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
+    "phone": "+91-7995040067",
     "email": "info@gripmma.com",
     "hours": {
       "weekdays": "6:00 AM - 9:30 PM (Monday to Saturday)",

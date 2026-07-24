@@ -208,7 +208,7 @@ function renderHeader(metadata, tagline, data) {
         "name": metadata.gym_name || "GripGym",
         "description": `${metadata.gym_name || "GripGym"} - Premium fitness classes including powerlifting, strength training, and conditioning`,
         "url": metadata.og_url || window.location.href,
-        "telephone": data.contact ? data.contact.phone : "+91-9876543210",
+        "telephone": data.contact ? data.contact.phone : "+91-7995040067",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": metadata.address || "Old Market Road",
@@ -361,7 +361,7 @@ function renderServices(servicesData) {
       const h4 = document.createElement('h4');
       h4.textContent = item.title;
       const span = document.createElement('span');
-      span.className = index === 0 ? 'fa fa-angle-down' : 'fa fa-angle-up';
+      span.className = index === 0 ? 'fa fa-angle-up' : 'fa fa-angle-down';
       
       head.appendChild(h4);
       head.appendChild(span);
@@ -389,7 +389,7 @@ function renderServices(servicesData) {
             if (b) slideUp(b);
             const s = c.querySelector('.head span');
             if (s) {
-              s.className = 'fa fa-angle-up';
+              s.className = 'fa fa-angle-down';
             }
           }
         });
@@ -399,11 +399,11 @@ function renderServices(servicesData) {
         if (container.classList.contains('active')) {
           container.classList.remove('active');
           if (myBody) slideUp(myBody);
-          if (mySpan) mySpan.className = 'fa fa-angle-up';
+          if (mySpan) mySpan.className = 'fa fa-angle-down';
         } else {
           container.classList.add('active');
           if (myBody) slideDown(myBody);
-          if (mySpan) mySpan.className = 'fa fa-angle-down';
+          if (mySpan) mySpan.className = 'fa fa-angle-up';
         }
       });
     });
@@ -921,7 +921,7 @@ function attachFormHandler(contactData) {
     if (contactData && contactData.form_type === 'whatsapp') {
       const isMMA = window.location.pathname.includes('/mma');
       const gymName = isMMA ? "GRIPMMA" : "GripGym";
-      const rawPhone = contactData.phone || "+91-9876543210";
+      const rawPhone = contactData.phone || "+91-7995040067";
       const cleanPhone = rawPhone.replace(/[^\d]/g, '');
       
       const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Message:* ${message}`;
