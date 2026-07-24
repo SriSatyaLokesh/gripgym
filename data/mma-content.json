@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "gym_name": "GRIPMMA",
+    "gym_name": "GRIP COMBAT STUDIO",
     "version": "1.0",
     "last_updated": "2026-07-21",
     "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
-    "keywords": "MMA, self defense, karate, BJJ, boxing, kickboxing, muay thai, taekwondo, wrestling, martial arts, GRIPMMA",
+    "keywords": "MMA, self defense, karate, BJJ, boxing, kickboxing, muay thai, taekwondo, wrestling, martial arts, GRIP COMBAT STUDIO",
     "google_analytics_id": "G-XXXXXXXXXX",
     "og_url": "https://sristayalokesh.is-a.dev/gripgym/mma.html",
     "og_image": "https://sristayalokesh.is-a.dev/gripgym/images/gallery3.jpg"
@@ -35,7 +35,7 @@
   "hero": {
     "tagline": "Train Combat. Fight Smarter.",
     "title_main": "Grip",
-    "title_span": "MMA",
+    "title_span": "Combat Studio",
     "subtitle": "Unleash the Fighter Within",
     "description": "Bhadrachalam's premier combat sports academy. Master Mixed Martial Arts, Brazilian Jiu-Jitsu, Muay Thai, Boxing, and practical Self-Defense with expert coaches.",
     "cta_primary_text": "Start Training",
@@ -48,7 +48,7 @@
       {
         "title": "Professional MMA Coaching",
         "image": "images/mma-about2.png",
-        "text": "At Grip MMA, we offer world-class coaching in Mixed Martial Arts. Our structured programs combine striking, wrestling, and submission grappling to build complete combat readiness. Whether you are training for a competition, looking to learn self-defense, or wanting an intense physical workout, our expert trainers design sessions that push your limits safely and progressively."
+        "text": "At Grip Combat Studio, we offer world-class coaching in Mixed Martial Arts. Our structured programs combine striking, wrestling, and submission grappling to build complete combat readiness. Whether you are training for a competition, looking to learn self-defense, or wanting an intense physical workout, our expert trainers design sessions that push your limits safely and progressively."
       },
       {
         "title": "Elite Grappling & BJJ",
@@ -64,7 +64,7 @@
   },
   "services": {
     "title": "Disciplines",
-    "description": "Discover the range of martial arts and combat disciplines we coach at Grip MMA. Our programs are designed to accommodate absolute beginners as well as seasoned fighters, with a primary focus on safety, form, and skill progression.",
+    "description": "Discover the range of martial arts and combat disciplines we coach at Grip Combat Studio. Our programs are designed to accommodate absolute beginners as well as seasoned fighters, with a primary focus on safety, form, and skill progression.",
     "cta_text": "Join a Class",
     "cta_link": "#classes",
     "accordion": [
@@ -315,13 +315,13 @@
   },
   "start_today": {
     "title": "Enter the Cage Today",
-    "description": "Ready to challenge yourself, build discipline, and learn practical combat skills? Join GRIPMMA today and train under professional coaches who will guide you from the basics to advanced combat readiness. Step onto the mats and transform your strength, agility, and focus.",
+    "description": "Ready to challenge yourself, build discipline, and learn practical combat skills? Join GRIP COMBAT STUDIO today and train under professional coaches who will guide you from the basics to advanced combat readiness. Step onto the mats and transform your strength, agility, and focus.",
     "cta_text": "Start Training",
     "cta_link": "#contact",
     "image": "images/mma-gallery3.png"
   },
   "footer": {
-    "company_name": "GRIPMMA",
+    "company_name": "GRIP COMBAT STUDIO",
     "tagline": "Train Combat. Fight Smarter.",
     "description": "Your premier combat sports academy in Bhadrachalam, specializing in Mixed Martial Arts, BJJ, Wrestling, Striking, and Self-Defense.",
     "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",

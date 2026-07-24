@@ -920,7 +920,7 @@ function attachFormHandler(contactData) {
     
     if (contactData && contactData.form_type === 'whatsapp') {
       const isMMA = window.location.pathname.includes('/mma');
-      const gymName = isMMA ? "GRIPMMA" : "GripGym";
+      const gymName = isMMA ? "GRIP COMBAT STUDIO" : "GripGym";
       const rawPhone = contactData.phone || "+91-7995040067";
       const cleanPhone = rawPhone.replace(/[^\d]/g, '');
       
