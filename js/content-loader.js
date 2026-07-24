@@ -87,14 +87,13 @@ async function loadContent() {
     initNavigationListeners();
     console.log('[ContentLoader] Navigation listeners initialized');
     
-    // Reinitialize WOW.js for newly rendered elements
     if (typeof WOW !== 'undefined') {
       new WOW({
         animateClass: 'animated',
         offset: 0,
-        mobile: false
+        mobile: true
       }).init();
-      console.log('[ContentLoader] WOW.js reinitialized');
+      console.log('[ContentLoader] WOW.js reinitialized with mobile animations enabled');
     }
     
     // Initialize lightbox after gallery render
