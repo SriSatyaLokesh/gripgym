@@ -208,7 +208,7 @@ function renderHeader(metadata, tagline, data) {
         "name": metadata.gym_name || "GripGym",
         "description": `${metadata.gym_name || "GripGym"} - Premium fitness classes including powerlifting, strength training, and conditioning`,
         "url": metadata.og_url || window.location.href,
-        "telephone": data.contact ? data.contact.phone : "+91-9876543210",
+        "telephone": data.contact ? data.contact.phone : "+91-7995040067",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": metadata.address || "Old Market Road",
@@ -921,7 +921,7 @@ function attachFormHandler(contactData) {
     if (contactData && contactData.form_type === 'whatsapp') {
       const isMMA = window.location.pathname.includes('/mma');
       const gymName = isMMA ? "GRIPMMA" : "GripGym";
-      const rawPhone = contactData.phone || "+91-9876543210";
+      const rawPhone = contactData.phone || "+91-7995040067";
       const cleanPhone = rawPhone.replace(/[^\d]/g, '');
       
       const text = `Hello ${gymName}! I have a new inquiry from the website contact form:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Message:* ${message}`;

@@ -3,7 +3,7 @@
     "gym_name": "GripGym",
     "version": "1.0",
     "last_updated": "2026-07-21",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
     "keywords": "fitness, gym, CrossFit, powerlifting, yoga, boxing, personal training, strength training",
     "google_analytics_id": "G-XXXXXXXXXX",
     "og_url": "https://sristayalokesh.is-a.dev/gripgym/",
@@ -91,32 +91,25 @@
     "description": "Our classes combine expert coaching with motivational group energy to accelerate your strength and fitness journey. Learn proper technique, progression strategies, and injury prevention under certified instructors.",
     "cards": [
       {
-        "title": "Grip Strength Mastery",
-        "coach": "Coach Rahul • Certified Strength Coach",
+        "title": "Men Session",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
         "price": "₹1,999/mo",
         "image": "images/class-grip.jpg",
-        "description": "Build crushing hand strength and forearm endurance through grip-focused conditioning. Learn proper technique, progression strategies, and injury prevention with personalized form feedback. 60 minutes, 4x per week."
+        "description": "Our motto is to transform people like an athlete (active, endurance, built stamina). General fitness for special population. 60 minutes, 4x per week."
       },
       {
-        "title": "Power Lifting & Strength",
-        "coach": "Coach Vikram • ISSA Personal Trainer",
-        "price": "₹2,499/mo",
+        "title": "MMA (Mixed Martial Arts)",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹1,500/mo",
         "image": "images/class-powerlifting.jpg",
-        "description": "Master the big three lifts—squat, bench, deadlift—with emphasis on explosive power and perfect form. Build muscle and increase your one-rep max while learning how grip strength amplifies lifting. 75 minutes, 3x per week."
+        "description": "Specialized combat sports training covering MMA, Boxing, Kickboxing, Muay Thai, Wrestling, and BJJ. Timings: 5:30 AM - 7:00 AM."
       },
       {
-        "title": "HIIT Conditioning & Cardio",
-        "coach": "Coach Priya • ACE Fitness Trainer",
-        "price": "₹1,499/mo",
+        "title": "Self Defense",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹10,000",
         "image": "images/class-hiit.jpg",
-        "description": "High-intensity interval training combining cardio bursts with grip circuits for total-body fitness. Alternates farmer carries, dead hangs, and plate pinches with calorie-burning exercises. 45 minutes, 5x per week."
-      },
-      {
-        "title": "Mobility & Recovery",
-        "coach": "Trainer Anjali • Yoga Instructor",
-        "price": "₹1,299/mo",
-        "image": "images/class-mobility.jpg",
-        "description": "Restore and rebuild your body through guided stretching, mobility work, and joint health training. Focus on improving range of motion, reducing soreness, and preventing injury. Perfect recovery tool. 50 minutes, 3x per week."
+        "description": "Free style defending (street fight). Random attacks have only a 5% chance of survival. We train to handle the situation and save life. 15 days short course."
       }
     ]
   },
@@ -137,7 +130,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -148,7 +141,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -159,7 +152,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -170,7 +163,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -181,7 +174,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -192,7 +185,7 @@
         ],
         "evening": [
           { "time": "4:00 PM - 5:00 PM", "text": "Women's Mobility & Core", "type": "women" },
-          { "time": "5:00 PM - 8:30 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
+          { "time": "5:00 PM - 9:00 PM", "text": "Men's Powerlifting & Grip", "type": "men" }
         ]
       },
       {
@@ -209,73 +202,60 @@
       {
         "id": "basic",
         "name": "Basic Membership",
-        "price": 999,
-        "duration": "per month",
-        "features": [
-          "Gym access during off-peak hours (9 AM - 5 PM)",
-          "Full equipment access (cardio, strength, functional)",
-          "1 welcome session with trainer",
-          "Locker facility",
-          "Access to gym amenities (changing room, shower)"
-        ]
-      },
-      {
-        "id": "premium",
-        "name": "Premium Membership",
         "price": 1999,
         "duration": "per month",
         "features": [
-          "24/7 gym access",
-          "Unlimited group fitness classes (all 4 class types)",
-          "2 personal training sessions per month",
-          "Nutrition consultation (monthly)",
-          "Premium locker facility",
-          "Towel service included",
-          "Priority class booking"
+          "Gym access during standard operating hours",
+          "Full equipment access (cardio, strength, functional)",
+          "1 welcome session with trainer",
+          "Locker facility access",
+          "Includes 3-month (₹5,399) & 6-month (₹9,599) options"
         ]
       },
       {
-        "id": "elite",
-        "name": "Elite Pro Membership",
-        "price": 3499,
+        "id": "special",
+        "name": "Special Sessions",
+        "price": 3500,
         "duration": "per month",
         "features": [
-          "24/7 gym access",
-          "Unlimited all classes (Grip Strength, Power Lifting, HIIT, Mobility)",
-          "8 personal training sessions per month",
-          "Monthly nutrition planning and consultation",
-          "Premium locker + full amenities access",
-          "Guest privileges (2 times per week)",
-          "Recovery room and cold plunge access",
-          "Priority in all programs and events"
+          "Special timings (10:00 AM - 11:30 AM)",
+          "Training for family or friends (3-4 members)",
+          "Semi-private group attention & coaching",
+          "Full equipment & locker access"
+        ]
+      },
+      {
+        "id": "pt",
+        "name": "Personal Training",
+        "price": 3999,
+        "duration": "per month",
+        "features": [
+          "Customized workouts based on individual health type",
+          "Group timings (3 days a week)",
+          "Dedicated tracking and performance testing",
+          "Close alignment with Coach Shaik Arshad"
         ]
       },
       {
         "id": "annual",
-        "name": "Annual Elite",
-        "price": 35999,
+        "name": "Annual Membership",
+        "price": 16799,
         "duration": "per year",
-        "discount_label": "Save ₹6,000/year",
+        "discount_label": "Save over ₹7,000/year",
         "features": [
-          "24/7 gym access (full year)",
-          "Unlimited all classes (Grip Strength, Power Lifting, HIIT, Mobility)",
-          "10 personal training sessions per month",
-          "Monthly nutrition planning and consultation",
-          "Premium locker + full amenities access",
-          "Guest privileges (3 times per week)",
-          "Recovery room and cold plunge access",
-          "Priority in all programs and events",
-          "Quarterly fitness assessments with detailed reports",
-          "Free guest membership (1 month value)"
+          "13 months total access (12 + 1 free month)",
+          "Ability to pause membership for up to 20 days",
+          "Full gym & locker access",
+          "Customized fitness assessment"
         ]
       }
     ]
   },
   "contact": {
     "title": "Get In Touch",
-    "phone": "+91-9876543210",
+    "phone": "+91-7995040067",
     "email": "info@gripgym.com",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
     "hours": {
       "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
       "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
@@ -346,8 +326,8 @@
     "company_name": "GripGym",
     "tagline": "Train Harder. Grip Stronger.",
     "description": "Your premier fitness destination in Bhadrachalam, specializing in grip strength, functional training, and comprehensive fitness excellence.",
-    "address": "Old Market Road, Bhadrachalam, Telangana 507111",
-    "phone": "+91-9876543210",
+    "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
+    "phone": "+91-7995040067",
     "email": "info@gripgym.com",
     "hours": {
       "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
