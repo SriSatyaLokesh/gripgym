@@ -91,25 +91,32 @@
     "description": "Our classes combine expert coaching with motivational group energy to accelerate your strength and fitness journey. Learn proper technique, progression strategies, and injury prevention under certified instructors.",
     "cards": [
       {
-        "title": "Men Session",
+        "title": "Grip Strength Mastery",
         "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
         "price": "₹1,999/mo",
         "image": "images/class-grip.jpg",
-        "description": "Our motto is to transform people like an athlete (active, endurance, built stamina). General fitness for special population. 60 minutes, 4x per week."
+        "description": "Build crushing hand strength and forearm endurance through grip-focused conditioning. Learn proper technique, progression strategies, and injury prevention with personalized form feedback. 60 minutes, 4x per week."
       },
       {
-        "title": "MMA (Mixed Martial Arts)",
+        "title": "Power Lifting & Strength",
         "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
-        "price": "Starts from ₹1,500/mo",
+        "price": "₹2,499/mo",
         "image": "images/class-powerlifting.jpg",
-        "description": "Specialized combat sports training covering MMA, Boxing, Kickboxing, Muay Thai, Wrestling, and BJJ. Timings: 5:30 AM - 7:00 AM."
+        "description": "Master the big three lifts—squat, bench, deadlift—with emphasis on explosive power and perfect form. Build muscle and increase your one-rep max while learning how grip strength amplifies lifting. 75 minutes, 3x per week."
       },
       {
-        "title": "Self Defense",
+        "title": "HIIT Conditioning & Cardio",
         "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
-        "price": "Starts from ₹10,000",
+        "price": "₹1,499/mo",
         "image": "images/class-hiit.jpg",
-        "description": "Free style defending (street fight). Random attacks have only a 5% chance of survival. We train to handle the situation and save life. 15 days short course."
+        "description": "High-intensity interval training combining cardio bursts with grip circuits for total-body fitness. Alternates farmer carries, dead hangs, and plate pinches with calorie-burning exercises. 45 minutes, 5x per week."
+      },
+      {
+        "title": "Mobility & Recovery",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "₹1,299/mo",
+        "image": "images/class-mobility.jpg",
+        "description": "Restore and rebuild your body through guided stretching, mobility work, and joint health training. Focus on improving range of motion, reducing soreness, and preventing injury. Perfect recovery tool. 50 minutes, 3x per week."
       }
     ]
   },
