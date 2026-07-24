@@ -361,7 +361,7 @@ function renderServices(servicesData) {
       const h4 = document.createElement('h4');
       h4.textContent = item.title;
       const span = document.createElement('span');
-      span.className = index === 0 ? 'fa fa-angle-down' : 'fa fa-angle-up';
+      span.className = index === 0 ? 'fa fa-angle-up' : 'fa fa-angle-down';
       
       head.appendChild(h4);
       head.appendChild(span);
@@ -389,7 +389,7 @@ function renderServices(servicesData) {
             if (b) slideUp(b);
             const s = c.querySelector('.head span');
             if (s) {
-              s.className = 'fa fa-angle-up';
+              s.className = 'fa fa-angle-down';
             }
           }
         });
@@ -399,11 +399,11 @@ function renderServices(servicesData) {
         if (container.classList.contains('active')) {
           container.classList.remove('active');
           if (myBody) slideUp(myBody);
-          if (mySpan) mySpan.className = 'fa fa-angle-up';
+          if (mySpan) mySpan.className = 'fa fa-angle-down';
         } else {
           container.classList.add('active');
           if (myBody) slideDown(myBody);
-          if (mySpan) mySpan.className = 'fa fa-angle-down';
+          if (mySpan) mySpan.className = 'fa fa-angle-up';
         }
       });
     });
