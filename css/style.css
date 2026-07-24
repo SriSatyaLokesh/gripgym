@@ -3314,5 +3314,57 @@ header .logo a span,
   justify-content: center;
 }
 
+/* Premium Mobile Animation Overrides */
+@media (max-width: 767px) {
+  /* Snappier duration, hardware acceleration, and GPU paint optimizations */
+  .animated {
+    -webkit-animation-duration: 0.5s !important;
+    animation-duration: 0.5s !important;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Soften slideInLeft: subtle translate-X + fade-in (avoids horizontal overflow / jitter) */
+  @keyframes slideInLeft {
+    from { transform: translate3d(-20px, 0, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes slideInLeft {
+    from { -webkit-transform: translate3d(-20px, 0, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+
+  /* Soften slideInRight: subtle translate-X + fade-in (avoids horizontal overflow / jitter) */
+  @keyframes slideInRight {
+    from { transform: translate3d(20px, 0, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes slideInRight {
+    from { -webkit-transform: translate3d(20px, 0, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+
+  /* Soften fadeInUp: tight translation-Y + fade-in for snappier appearance */
+  @keyframes fadeInUp {
+    from { transform: translate3d(0, 15px, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes fadeInUp {
+    from { -webkit-transform: translate3d(0, 15px, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+
+  /* Replace bounceInUp with a smooth, professional slide-up fade (no bouncy overshoot) */
+  @keyframes bounceInUp {
+    from { transform: translate3d(0, 20px, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+  @-webkit-keyframes bounceInUp {
+    from { -webkit-transform: translate3d(0, 20px, 0); opacity: 0; }
+    to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+  }
+}
+
 
 
