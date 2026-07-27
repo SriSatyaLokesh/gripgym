@@ -208,7 +208,7 @@
     "tiers": [
       {
         "id": "basic",
-        "name": "Basic Membership",
+        "name": "Monthly Membership",
         "price": 1999,
         "duration": "per month",
         "features": [
@@ -221,8 +221,8 @@
       },
       {
         "id": "special",
-        "name": "Special Sessions",
-        "price": 3500,
+        "name": "3 Months Membership",
+        "price": 5399,
         "duration": "per month",
         "features": [
           "Special timings (10:00 AM - 11:30 AM)",
@@ -233,8 +233,8 @@
       },
       {
         "id": "pt",
-        "name": "Personal Training",
-        "price": 3999,
+        "name": "6 Months Membership",
+        "price": 9599,
         "duration": "per month",
         "features": [
           "Customized workouts based on individual health type",

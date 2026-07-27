@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "gym_name": "GRIP COMBAT STUDIO",
+    "gym_name": "GRIP COMBAT",
     "version": "1.0",
     "last_updated": "2026-07-21",
     "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
@@ -10,14 +10,38 @@
     "og_image": "https://sristayalokesh.is-a.dev/gripgym/images/gallery3.jpg"
   },
   "navigation": [
-    { "label": "Home", "link": "#home" },
-    { "label": "About", "link": "#about" },
-    { "label": "Disciplines", "link": "#service" },
-    { "label": "Classes", "link": "#classes" },
-    { "label": "Schedule", "link": "#schedule" },
-    { "label": "Pricing", "link": "#pricing" },
-    { "label": "Gallery", "link": "#gallery" },
-    { "label": "Contact", "link": "#contact" }
+    {
+      "label": "Home",
+      "link": "#home"
+    },
+    {
+      "label": "About",
+      "link": "#about"
+    },
+    {
+      "label": "Disciplines",
+      "link": "#service"
+    },
+    {
+      "label": "Classes",
+      "link": "#classes"
+    },
+    {
+      "label": "Schedule",
+      "link": "#schedule"
+    },
+    {
+      "label": "Pricing",
+      "link": "#pricing"
+    },
+    {
+      "label": "Gallery",
+      "link": "#gallery"
+    },
+    {
+      "label": "Contact",
+      "link": "#contact"
+    }
   ],
   "theme": {
     "primary": "#d01c28",
@@ -73,16 +97,16 @@
         "description": "Our MMA classes integrate striking, takedowns, wall work, and ground fighting into a cohesive system. You'll learn how to transition seamlessly between stand-up fighting, clinch wrestling, and ground grappling, mimicking the demands of modern combat sports."
       },
       {
-        "title": "Brazilian Jiu-Jitsu & Wrestling",
-        "description": "Focusing on the grappling aspect of combat. We train both Gi and No-Gi BJJ along with freestyle wrestling takedowns. Learn to control opponents, defend against submissions, and secure tapouts using technique and leverage over raw size and strength."
+        "title": "Boxing & Kickboxing",
+        "description": "Develop footwork, combinations, hand speed, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring to build cardiovascular endurance and punching power."
       },
       {
-        "title": "Striking (Boxing & Kickboxing)",
-        "description": "A high-intensity program covering punches, kicks, knees, and elbow strikes. Our classes combine pad work, heavy bag drills, and controlled sparring to build cardiovascular endurance, punching power, and defensive head movement."
+        "title": "Muay Thai & BJJ",
+        "description": "Learn the Art of Eight Limbs (punches, kicks, knees, elbows) alongside Brazilian Jiu-Jitsu submission grappling. Build complete stand-up and ground proficiency with wrestling and submission techniques."
       },
       {
-        "title": "Self-Defense & Traditional Arts",
-        "description": "Practical self-defense courses drawing on Karate, Taekwondo, and Krav Maga. Learn situational awareness, threat de-escalation, strike evasion, and escape techniques designed for real-world scenarios to build confidence and personal safety."
+        "title": "Self-Defense & Karate",
+        "description": "Practical free-style street fight defending and traditional Karate forms. Focuses on situational awareness, threat handling, strike evasion, and life-saving escape maneuvers."
       }
     ]
   },
@@ -98,18 +122,18 @@
         "description": "Comprehensive MMA training linking stand-up striking, clinch wrestling, and ground submissions. Learn cage control, takedown defense, and ground-and-pound."
       },
       {
-        "title": "Brazilian Jiu-Jitsu (BJJ)",
-        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
-        "price": "Starts from ₹1,500/mo",
-        "image": "images/mma-class-bjj.png",
-        "description": "Learn submission grappling, positioning, escapes, and submissions. Classes cover freestyle wrestling takedowns and submission defense."
-      },
-      {
         "title": "Boxing & Kickboxing",
         "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
         "price": "Starts from ₹1,500/mo",
         "image": "images/mma-class-boxing.png",
         "description": "Develop footwork, combinations, and head movement. Incorporates heavy bag conditioning, mitt work, and light technical sparring."
+      },
+      {
+        "title": "Muay Thai & BJJ",
+        "coach": "Coach Shaik Arshad • Black Belt 2nd Dan",
+        "price": "Starts from ₹1,500/mo",
+        "image": "images/mma-class-bjj.png",
+        "description": "Master Muay Thai striking alongside Brazilian Jiu-Jitsu (BJJ) grappling. Covers clinch work, kicks, sweeps, positioning, and submissions."
       },
       {
         "title": "Self-Defense & Karate",
@@ -132,55 +156,103 @@
       {
         "day": "Monday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
         "day": "Tuesday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
         "day": "Wednesday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
         "day": "Thursday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
         "day": "Friday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
         "day": "Saturday",
         "morning": [
-          { "time": "5:30 AM - 7:00 AM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:30 AM - 7:00 AM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ],
         "evening": [
-          { "time": "5:00 PM - 6:00 PM", "text": "MMA Arts Training", "type": "general" }
+          {
+            "time": "5:00 PM - 6:00 PM",
+            "text": "MMA Arts Training",
+            "type": "general"
+          }
         ]
       },
       {
