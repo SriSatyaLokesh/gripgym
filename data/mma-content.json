@@ -418,13 +418,8 @@
     "social_links": [
       {
         "platform": "Instagram",
-        "url": "https://instagram.com/gripmma",
+        "url": "https://instagram.com/gripgym.in",
         "icon": "fa fa-instagram"
-      },
-      {
-        "platform": "Facebook",
-        "url": "https://facebook.com/gripmma",
-        "icon": "fa fa-facebook"
       }
     ],
     "copyright_text": "All rights reserved."
