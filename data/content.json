@@ -276,9 +276,7 @@
       "success_message": "Thank you {name}! Your message has been sent. We will contact you shortly."
     },
     "social_media": {
-      "instagram": "https://instagram.com/gripgym",
-      "facebook": "https://facebook.com/gripgym"
-    }
+      "instagram": "https://instagram.com/gripgym.in"
   },
   "gallery": {
     "title": "Workout Gallery",
@@ -335,7 +333,7 @@
     "description": "Your premier fitness destination in Bhadrachalam, specializing in grip strength, functional training, and comprehensive fitness excellence.",
     "address": "Old Market Road, apollo pharmacy building Bhadrachalam, Telangana 507111",
     "phone": "+91-7995040067",
-    "email": "info@gripgym.com",
+    "email": "gripgym.in@gmail.com",
     "hours": {
       "weekdays": "6:00 AM - 10:00 PM (Monday to Friday)",
       "weekends": "7:00 AM - 9:00 PM (Saturday & Sunday)"
